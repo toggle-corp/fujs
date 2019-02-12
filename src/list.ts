@@ -3,7 +3,6 @@ import { isNotDefined, isDefined } from './core';
 import { listToMap } from './transform';
 
 // NOTE: doesn't assume mutation of individual item
-// previously isArrayEqual
 export function isListEqual(array1: unknown[], array2: unknown[]) {
     return (
         array1.length === array2.length &&
@@ -64,7 +63,6 @@ interface KeySelector<T>{
     (element: T): string | number;
 }
 
-// previously findDuplicates
 // NOTE: extensive test required
 export function getDuplicates<T>(list: Maybe<T[]>, keySelector: KeySelector<T>): string[] {
     const counts = listToMap<T, number>(

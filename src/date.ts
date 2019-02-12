@@ -117,7 +117,6 @@ export function breakFormat(format: string): Value[] {
     ];
 };
 
-// previously: insertValues
 export function populateFormat(formatList: Value[], date: Date) {
     return formatList.filter(a => a.value !== '').map((format) => {
         if (format.type === ValueType.date) {
@@ -159,14 +158,12 @@ export function populateFormat(formatList: Value[], date: Date) {
     });
 };
 
-// previously: formatDate
 export function formatDateToString(date: Date, format: string): string {
     return populateFormat(breakFormat(format), date)
         .map(e => e.value)
         .join('');
 };
 
-// previously: extractDate
 export function getDate(timestamp: string | number): number {
     const today = new Date(timestamp);
     today.setHours(0, 0, 0, 0);

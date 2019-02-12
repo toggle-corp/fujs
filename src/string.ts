@@ -2,7 +2,6 @@ import { Maybe } from './declarations';
 import { isTruthyString, isFalsyString, isNotDefined } from './core';
 
 // NOTE: String(num).padStart(length, str) not fully supported
-// previously leftPad
 export function padStart(num: Maybe<string | number>, length: number, pad: string = '0'): string {
     if (isNotDefined(num)) {
         return '';
@@ -70,11 +69,7 @@ export function randomString(length: number = 8, mixedCase: boolean = false) {
     */
 };
 
-/*
- * Convert camel case to kebab case
- * eg: camelToDash -> camel-to-dash
- */
-// previously camelToDash
+// Convert camel case to kebab case
 export function camelToKebab(str: Maybe<string>) {
     if (isNotDefined(str)) {
         return str;

@@ -63,7 +63,6 @@ export function mapToMap<T, Q>(obj: Obj<T>, keySelector?: NewKeySelector<T>, mod
     )
 };
 
-// previously groupList
 export function listToGroupList<T>(list: Maybe<T[]>, keySelector: KeySelector<T>): Obj<T>;
 export function listToGroupList<T, Q>(list: Maybe<T[]>, keySelector: KeySelector<T>, modifier: Modifier<T, Q>): Obj<Q>;
 export function listToGroupList<T, Q>(list: Maybe<T[]>, keySelector: KeySelector<T>, modifier?: Modifier<T, Q>) {
