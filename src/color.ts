@@ -1,3 +1,7 @@
+import { isNotDefined } from './core';
+
+type Color = [number, number, number];
+
 export function getContrastYIQ(hexColor: string): number {
     const r = parseInt(hexColor.substr(1, 2), 16);
     const g = parseInt(hexColor.substr(3, 2), 16);
@@ -30,6 +34,7 @@ export function getHexFromCode(hashCode: number) {
         .toString(16)
         .toUpperCase();
 
+    // FIXME: use padStart
     const rgb = '00000'.substring(0, 6 - color.length) + color;
     return `#${rgb}`;
 };
@@ -47,24 +52,36 @@ export function getHexFromRgb(rgb: string) {
     const g = parseInt(result[2], 10);
     const b = parseInt(result[3], 10);
 
-    // eslint-disable-next-line no-bitwise
-    return `#${((r << 16) + (g << 8) + b).toString(16).padStart(6, '0')}`
+    return getHexFromRgbRaw([r, g, b]);
 };
 
-export function getRgbFromHex(hex: string) {
+export function getHexFromRgbRaw(color: Color) {
+    const [r, g, b] = color;
+    // eslint-disable-next-line no-bitwise
+    return `#${((r << 16) + (g << 8) + b).toString(16).padStart(6, '0')}`
+}
+
+export function getRgbRawFromHex(hex: string): Color | undefined {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     if (!result) {
         return undefined;
     }
 
-    return {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-    };
+    return [
+        parseInt(result[1], 16),
+        parseInt(result[2], 16),
+        parseInt(result[3], 16),
+    ];
 };
 
-type Color = [number, number, number];
+export function getRgbFromHex(hex: string) {
+    const color = getRgbRawFromHex(hex);
+    if (isNotDefined(color)) {
+        return undefined;
+    }
+    const [r, g, b] = color;
+    return `rgb(${r}, ${g}, ${b})`;
+}
 
 // Interpolates two [r,g,b] colors and returns an [r,g,b] of the result
 // Taken from the awesome ROT.js roguelike dev library at

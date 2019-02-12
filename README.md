@@ -15,15 +15,13 @@
 - getClassNameListAndIndex
 - getObjectChildren
 - getStandardFilename
-- hexToRgb
 - isDifferentAndTruthy
 - isEmpty
 - isEqual,
-- isEqualAndTruthy,
-- isFalsyOrEmptyOrZero,
+- isEqualAndTruthy
+- isFalsyOrEmptyOrZero
 - isObjectEmpty
 - removeClassName
-- rgbToHex
 - saveSvg
 - unique
 
@@ -37,3 +35,5 @@
 - insertValues -> populateFormat
 - isArrayEqual -> isListEqual
 - leftPad -> padStart
+- rgbToHex -> getHexFromRgbRaw
+- hexToRgb -> getRgbRawFromHex
