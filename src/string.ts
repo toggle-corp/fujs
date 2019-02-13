@@ -1,5 +1,9 @@
 import { Maybe } from './declarations';
-import { isTruthyString, isFalsyString, isNotDefined } from './core';
+import {
+    isTruthyString,
+    isFalsyString,
+    isNotDefined,
+} from './core';
 
 // NOTE: String(num).padStart(length, str) not fully supported
 export function padStart(num: Maybe<string | number>, length: number, pad: string = '0'): string {

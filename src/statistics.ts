@@ -6,10 +6,17 @@ export function sum(values: number[]) {
 }
 
 export function mean(values: number[]) {
+    if (values.length <= 0) {
+        return 0;
+    }
     return sum(values) / values.length;
 }
 
 export function median(values: number[]) {
+    if (values.length <= 0) {
+        return undefined;
+    }
+
     const sortedValues = [...values].sort();
 
     const centerIndex = Math.floor(sortedValues.length / 2);

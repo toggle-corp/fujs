@@ -1,5 +1,6 @@
 import {
     isFalsy,
+    isTruthy,
     intersection,
     union,
     doesObjectHaveNoData,
@@ -13,6 +14,16 @@ test('isFalsy', () => {
     expect(isFalsy('')).toBe(false);
     expect(isFalsy([])).toBe(false);
     expect(isFalsy(0)).toBe(false);
+});
+
+test('isTruthy', () => {
+    expect(isTruthy(NaN)).toBe(false);
+    expect(isTruthy(undefined)).toBe(false);
+    expect(isTruthy(null)).toBe(false);
+    expect(isTruthy(false)).toBe(false);
+    expect(isTruthy('')).toBe(true);
+    expect(isTruthy([])).toBe(true);
+    expect(isTruthy(0)).toBe(true);
 });
 
 test('should union the sets', () => {

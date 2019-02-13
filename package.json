@@ -1,39 +1,39 @@
 {
-  "name": "@togglecorp/fujs",
-  "version": "1.0.1",
-  "description": "Friendly Utility for JS",
-  "files": "build",
-  "main": "build/index.js",
-  "module": "build/index.es.js",
-  "typings": "build/index.d.ts",
-  "scripts": {
-    "prepare": "rollup -c",
-    "build": "rollup -c",
-    "watch": "rollup -cw",
-    "test": "jest",
-    "test:coverage": "jest --coverage"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/toggle-corp/fujs.git"
-  },
-  "author": "tnagorra",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/toggle-corp/fujs/issues"
-  },
-  "homepage": "https://github.com/toggle-corp/fujs#readme",
-  "devDependencies": {
-    "@types/core-js": "^2.5.0",
-    "@types/jest": "^23.3.1",
-    "jest": "^23.5.0",
-    "rollup": "^1.1.2",
-    "rollup-plugin-typescript2": "^0.19.2",
-    "ts-jest": "^23.1.4",
-    "ts-loader": "^5.3.3",
-    "ts-node": "^7.0.1",
-    "tslint-config-airbnb": "^5.11.1",
-    "tslint-react": "^3.6.0",
-    "typescript": "^3.2.2"
-  }
+    "name": "@togglecorp/fujs",
+    "version": "1.0.1",
+    "description": "Friendly Utility for JS",
+    "files": "build",
+    "main": "build/index.js",
+    "module": "build/index.es.js",
+    "typings": "build/index.d.ts",
+    "scripts": {
+        "prepare": "rollup -c",
+        "build": "rollup -c",
+        "watch": "rollup -cw",
+        "test": "TZ=Asia/Katmandu jest",
+        "test:coverage": "TZ=Asia/Katmandu jest --coverage"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/toggle-corp/fujs.git"
+    },
+    "author": "tnagorra",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/toggle-corp/fujs/issues"
+    },
+    "homepage": "https://github.com/toggle-corp/fujs#readme",
+    "devDependencies": {
+        "@types/core-js": "^2.5.0",
+        "@types/jest": "^23.3.1",
+        "jest": "^23.5.0",
+        "rollup": "^1.1.2",
+        "rollup-plugin-typescript2": "^0.19.2",
+        "ts-jest": "^23.1.4",
+        "ts-loader": "^5.3.3",
+        "ts-node": "^7.0.1",
+        "tslint-config-airbnb": "^5.11.1",
+        "tslint-react": "^3.6.0",
+        "typescript": "^3.2.2"
+    }
 }

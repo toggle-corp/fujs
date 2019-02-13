@@ -37,7 +37,7 @@ export function mapToList<T>(obj: Maybe<Obj<T>>): T[];
 export function mapToList<T, Q>(obj: Maybe<Obj<T>>, modifier: ListModifier<T, Q>): Q[];
 export function mapToList<T, Q>(obj: Maybe<Obj<T>>, modifier?: ListModifier<T, Q>) {
     if (isNotDefined(obj)) {
-        return {};
+        return [];
     }
     return Object.keys(obj).reduce(
         (acc, key, i) => {
@@ -49,9 +49,12 @@ export function mapToList<T, Q>(obj: Maybe<Obj<T>>, modifier?: ListModifier<T, Q
     );
 };
 
-export function mapToMap<T>(obj: Obj<T>, keySelector?: NewKeySelector<T>): Obj<T>;
-export function mapToMap<T, Q>(obj: Obj<T>, keySelector: NewKeySelector<T> | undefined, modifier: Modifier<T, Q>): Obj<Q>;
-export function mapToMap<T, Q>(obj: Obj<T>, keySelector?: NewKeySelector<T>, modifier?: Modifier<T, Q>) {
+export function mapToMap<T>(obj: Maybe<Obj<T>>, keySelector?: NewKeySelector<T>): Obj<T>;
+export function mapToMap<T, Q>(obj: Maybe<Obj<T>>, keySelector: NewKeySelector<T> | undefined, modifier: Modifier<T, Q>): Obj<Q>;
+export function mapToMap<T, Q>(obj: Maybe<Obj<T>>, keySelector?: NewKeySelector<T>, modifier?: Modifier<T, Q>) {
+    if (isNotDefined(obj)) {
+        return {};
+    }
     return Object.keys(obj).reduce(
         (acc, k, i) => {
             const elem = obj[k];

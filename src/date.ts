@@ -68,7 +68,7 @@ export function breakFormat(format: string): Value[] {
     if (dateStart === undefined && timeStart === undefined) {
         return [
             { value: format },
-        ];
+        ].filter(a => a.value !== '');
     } else if (dateStart === undefined) {
         return [
             { value: getSubFormat(0, timeStart) },
@@ -77,7 +77,7 @@ export function breakFormat(format: string): Value[] {
                 value: getSubFormat(timeStart, timeEnd),
             },
             { value: getSubFormat(timeEnd, formatEnd) },
-        ];
+        ].filter(a => a.value !== '');
     } else if (timeStart === undefined) {
         return [
             { value: getSubFormat(0, dateStart) },
@@ -86,7 +86,7 @@ export function breakFormat(format: string): Value[] {
                 value: getSubFormat(dateStart, dateEnd),
             },
             { value: getSubFormat(dateEnd, formatEnd) },
-        ];
+        ].filter(a => a.value !== '');
     } else if (dateStart < timeStart) {
         return [
             { value: getSubFormat(0, dateStart) },
@@ -100,7 +100,7 @@ export function breakFormat(format: string): Value[] {
                 value: getSubFormat(timeStart, timeEnd),
             },
             { value: getSubFormat(timeEnd, formatEnd) },
-        ];
+        ].filter(a => a.value !== '');
     }
     return [
         { value: getSubFormat(0, timeStart) },
@@ -114,11 +114,11 @@ export function breakFormat(format: string): Value[] {
             value: getSubFormat(dateStart, dateEnd),
         },
         { value: getSubFormat(dateEnd, formatEnd) },
-    ];
+    ].filter(a => a.value !== '');
 };
 
 export function populateFormat(formatList: Value[], date: Date) {
-    return formatList.filter(a => a.value !== '').map((format) => {
+    return formatList.map((format) => {
         if (format.type === ValueType.date) {
             const year = date.getFullYear();
             const month = date.getMonth() + 1;

@@ -25,7 +25,7 @@ const comparision = <A, B>(extractor: Extractor<A, B>, comparisionFunc: Comparat
 export const compareBoolean = comparision((x: boolean) => x, (a, b) => (Number(a) - Number(b)));
 export const compareString = comparision((x: string) => x, (a, b) => a.localeCompare(b));
 export const compareNumber = comparision((x: number) => x, (a, b) => (a - b));
-export const compareDate = comparision((x: Date) => x, (a, b) => {
+export const compareDate = comparision((x: Date | string | number) => x, (a, b) => {
     const dateA = new Date(a);
     const dateB = new Date(b);
     return dateA.getTime() - dateB.getTime();

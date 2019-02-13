@@ -19,7 +19,7 @@ export function addSeparator(num: Maybe<string | number>, separator: string = ',
     return x1 + x2;
 };
 
-const enum Lang {
+export const enum Lang {
     en = 'en',
     np = 'ne',
 }
