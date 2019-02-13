@@ -11,6 +11,7 @@ before_install:
     curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64\
     > /tmp/cc-test-reporter
   - chmod +x /tmp/cc-test-reporter
+  - yarn global add codecov
 
 install:
   - yarn install
@@ -23,3 +24,4 @@ script:
 
 after_success:
   - /tmp/cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - codecov
