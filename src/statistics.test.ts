@@ -6,7 +6,19 @@ import {
     median,
     sum,
     bucket,
+    modulo,
 } from './statistics';
+
+test('get modulo', () => {
+    expect(modulo(0, 10)).toEqual(0);
+    expect(modulo(1, 1)).toEqual(0);
+    expect(modulo(2, 10)).toEqual(2);
+    expect(modulo(10, 10)).toEqual(0);
+    expect(modulo(-1, 10)).toEqual(9);
+    expect(modulo(-2, 10)).toEqual(8);
+    expect(modulo(-10, 10)).toEqual(0);
+    expect(modulo(-11, 10)).toEqual(9);
+});
 
 test('get bucket', () => {
     expect(bucket(-200, [[-1, 10, 'hari'], [10, 100, 'shyam']])).toEqual(undefined);

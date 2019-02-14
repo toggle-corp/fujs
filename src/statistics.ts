@@ -1,3 +1,12 @@
+export function modulo(x: number, length: number) {
+    const value = x % length;
+    if (value < 0) {
+        return length + value;
+    }
+    // Because -0 is not less than 0
+    return Math.abs(value);
+}
+
 export function sum(values: number[]) {
     return values.reduce(
         (acc, b) => acc + b,
