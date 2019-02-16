@@ -4,6 +4,7 @@ import {
     isList,
     isValidEmail,
     isValidUrl,
+    typeOf,
 } from './type';
 
 test('isInteger', () => {
@@ -135,4 +136,26 @@ test('url condition', () => {
     expect(isValidUrl('http://.www.foo.bar/')).toBe(false);
     // expect(isValidUrl('http://www.foo.bar./')).toBe(false);
     expect(isValidUrl('http://.www.foo.bar./')).toBe(false);
+});
+
+test('type of', () => {
+    expect(typeOf(null)).toBe('null');
+    expect(typeOf(NaN)).toBe('number');
+    // FIXME: typeof undefined should be undefined
+    expect(typeOf(undefined)).toBe('null');
+    expect(typeOf(1)).toBe('number');
+    expect(typeOf(-1.100)).toBe('number');
+    expect(typeOf(true)).toBe('boolean');
+    expect(typeOf(false)).toBe('boolean');
+    expect(typeOf('')).toBe('string');
+    expect(typeOf('hari')).toBe('string');
+    expect(typeOf(' ')).toBe('string');
+    expect(typeOf([])).toBe('array');
+    expect(typeOf([1, 2, 3])).toBe('array');
+    expect(typeOf([{ id: 1 }, { id: 2 }])).toBe('array');
+    expect(typeOf(new Date())).toBe('date');
+    expect(typeOf(/.txt$/)).toBe('regexp');
+    expect(typeOf({})).toBe('object');
+    expect(typeOf({ id: 1 })).toBe('object');
+    expect(typeOf(() => {})).toBe('function');
 });

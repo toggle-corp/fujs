@@ -1,5 +1,3 @@
-import { listToMap } from './transform';
-
 export function isList(item: unknown): item is unknown[] {
     return Array.isArray(item);
 }
@@ -26,14 +24,16 @@ export const basicTypes: string[] = [
 ];
 
 // Mapping to hold javascript class to custom type
-const classToType = listToMap(
-    basicTypes,
-    type => `object ${type}`,
-    type => type.toLowerCase(),
+const classToType = basicTypes.reduce(
+    (acc, type: string) => ({
+        ...acc,
+        [`[object ${type}]`]: type.toLowerCase(),
+    }),
+    {},
 );
 
 export const typeOf = (obj: unknown): string => {
-    if (obj === null) {
+    if (obj == null) {
         return 'null';
     }
 
