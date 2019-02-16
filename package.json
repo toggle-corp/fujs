@@ -1,6 +1,6 @@
 {
     "name": "@togglecorp/fujs",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Friendly Utility for JS",
     "files": "build",
     "main": "build/index.js",
