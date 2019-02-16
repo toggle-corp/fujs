@@ -14,3 +14,4 @@ export * from './stringSimilarity';
 export * from './string';
 export * from './transform';
 export * from './type';
+export * from './declarations';

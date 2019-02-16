@@ -1,5 +1,6 @@
-import { Maybe } from './declarations';
-import { isList, isObject } from './type';
+import { Maybe, Parameters } from './declarations';
+
+export function noOp() {};
 
 export function union<T>(setA: Set<T>, setB: Set<T>): Set<T> {
     return new Set([ ...setA, ...setB ]);
@@ -39,28 +40,9 @@ export function isTruthyString(val: Maybe<string | false>): val is string {
     return !isFalsyString(val);
 }
 
-export function doesObjectHaveNoData(obj: unknown): boolean {
-    // NOTE: null and NaN are truthy values here
-    if (obj === undefined) {
-        return true;
+export function resolve<T>(variable: T, ...args: Parameters<T>) {
+    if (typeof variable === 'function') {
+        return variable(...args);
     }
-
-    if (isList(obj)) {
-        if (obj.length <= 0) {
-            return true;
-        }
-        return obj.every(doesObjectHaveNoData);
-    }
-
-    if (isObject(obj)) {
-        if (Object.keys(obj).length <= 0) {
-            return true;
-        }
-        return Object.keys(obj).every(
-            key => doesObjectHaveNoData(obj[key])
-        );
-    }
-
-    return false;
-};
-
+    return variable;
+}

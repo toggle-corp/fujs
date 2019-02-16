@@ -3,7 +3,7 @@ import {
     isTruthy,
     intersection,
     union,
-    doesObjectHaveNoData,
+    resolve,
 } from './core';
 
 test('isFalsy', () => {
@@ -55,30 +55,11 @@ test('should intersect the sets', () => {
     expect(intersection(seta, setb)).toEqual(intersected);
 });
 
-test('check if object has no data', () => {
-    expect(doesObjectHaveNoData(undefined)).toBe(true);
-    expect(doesObjectHaveNoData({})).toBe(true);
-    expect(doesObjectHaveNoData([])).toBe(true);
-    expect(doesObjectHaveNoData([undefined, undefined])).toBe(true);
-    expect(doesObjectHaveNoData([{}, {}])).toBe(true);
-    expect(doesObjectHaveNoData({ hari: undefined })).toBe(true);
-    expect(doesObjectHaveNoData({ hari: { shyam: undefined } })).toBe(true);
-    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [] } })).toBe(true);
-    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [{}, {}] } })).toBe(true);
-
-    expect(doesObjectHaveNoData(NaN)).toBe(false);
-    expect(doesObjectHaveNoData(null)).toBe(false);
-    expect(doesObjectHaveNoData(1)).toBe(false);
-    expect(doesObjectHaveNoData('')).toBe(false);
-    expect(doesObjectHaveNoData('hari')).toBe(false);
-    expect(doesObjectHaveNoData(false)).toBe(false);
-    expect(doesObjectHaveNoData(true)).toBe(false);
-
-    expect(doesObjectHaveNoData([true, undefined])).toBe(false);
-    expect(doesObjectHaveNoData([{}, {}, false])).toBe(false);
-    expect(doesObjectHaveNoData({ hari: '', shyam: undefined })).toBe(false);
-    expect(doesObjectHaveNoData({ hari: { shyam: 1 } })).toBe(false);
-    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [1, 2] } })).toBe(false);
-    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [{}, { value: 0 }] } })).toBe(false);
+test('resolve', () => {
+    expect(resolve((a: number, b: number) => a + b, 1, 2)).toBe(3);
+    expect(resolve(1)).toBe(1);
+    expect(resolve(false)).toBe(false);
+    expect(resolve(undefined)).toBe(undefined);
+    expect(resolve(0)).toBe(0);
+    expect(resolve('hari')).toBe('hari');
 });
-

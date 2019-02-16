@@ -2,6 +2,7 @@ import {
     getFirstKeyByValue,
     removeKey,
     pick,
+    doesObjectHaveNoData,
 } from './object';
 
 test('get key by value', () => {
@@ -24,3 +25,31 @@ test('remove key', () => {
     expect(removeKey({ hari: 1, shyam: 2 }, 'hari')).toEqual({ shyam: 2 });
     expect(removeKey({ hari: 1, shyam: 2 }, 'shyam')).toEqual({ hari: 1 });
 });
+
+test('check if object has no data', () => {
+    expect(doesObjectHaveNoData(undefined)).toBe(true);
+    expect(doesObjectHaveNoData({})).toBe(true);
+    expect(doesObjectHaveNoData([])).toBe(true);
+    expect(doesObjectHaveNoData([undefined, undefined])).toBe(true);
+    expect(doesObjectHaveNoData([{}, {}])).toBe(true);
+    expect(doesObjectHaveNoData({ hari: undefined })).toBe(true);
+    expect(doesObjectHaveNoData({ hari: { shyam: undefined } })).toBe(true);
+    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [] } })).toBe(true);
+    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [{}, {}] } })).toBe(true);
+
+    expect(doesObjectHaveNoData(NaN)).toBe(false);
+    expect(doesObjectHaveNoData(null)).toBe(false);
+    expect(doesObjectHaveNoData(1)).toBe(false);
+    expect(doesObjectHaveNoData('')).toBe(false);
+    expect(doesObjectHaveNoData('hari')).toBe(false);
+    expect(doesObjectHaveNoData(false)).toBe(false);
+    expect(doesObjectHaveNoData(true)).toBe(false);
+
+    expect(doesObjectHaveNoData([true, undefined])).toBe(false);
+    expect(doesObjectHaveNoData([{}, {}, false])).toBe(false);
+    expect(doesObjectHaveNoData({ hari: '', shyam: undefined })).toBe(false);
+    expect(doesObjectHaveNoData({ hari: { shyam: 1 } })).toBe(false);
+    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [1, 2] } })).toBe(false);
+    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [{}, { value: 0 }] } })).toBe(false);
+});
+
