@@ -276,3 +276,41 @@ export const getErrorForDateValues = (val: Partial<Ymd>) => {
     return undefined;
 };
 
+const MIN_HOUR = 0;
+const MAX_HOUR = 23;
+const MIN_MINUTE = 0;
+const MAX_MINUTE = 59;
+const MIN_SECOND = 0;
+const MAX_SECOND = 59;
+
+interface Hms {
+    hourValue: number,
+    minuteValue: number,
+    secondValue: number,
+}
+
+export const isTimeValuesComplete = (val: Partial<Hms>): val is Hms => {
+    const { hourValue, minuteValue, secondValue } = val;
+    // Complete if all values are undefined or none are
+    return (
+        (isTruthy(hourValue) && isTruthy(minuteValue) && isTruthy(secondValue)) ||
+        (isFalsy(hourValue) && isFalsy(minuteValue) && isFalsy(secondValue))
+    );
+};
+
+export const getErrorForTimeValues = (val: Partial<Hms>) => {
+    if (!isTimeValuesComplete(val)) {
+        return 'Time values incomplete';
+    }
+    const { hourValue, minuteValue, secondValue } = val;
+
+    if (hourValue < MIN_HOUR || hourValue > MAX_HOUR) {
+        return `Hour must be between ${MIN_HOUR} and ${MAX_HOUR}`;
+    } else if (minuteValue < MIN_MINUTE || minuteValue > MAX_MINUTE) {
+        return `Minute must be between ${MIN_MINUTE} and ${MAX_MINUTE}`;
+    } else if (secondValue < MIN_SECOND || secondValue > MAX_SECOND) {
+        return `Second must be between ${MIN_SECOND} and ${MAX_SECOND}`;
+    }
+
+    return undefined;
+};
