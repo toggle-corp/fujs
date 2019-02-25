@@ -20,7 +20,7 @@ export function getFirstKeyByValue<T>(obj: T, value: unknown): string | undefine
     return Object.keys(obj).find(key => obj[key] === value);
 };
 
-export function doesObjectHaveNoData(obj: unknown): boolean {
+export function doesObjectHaveNoData(obj: unknown, invalids: unknown[] = []): boolean {
     // NOTE: null and NaN are truthy values here
     if (obj === undefined) {
         return true;
@@ -30,7 +30,7 @@ export function doesObjectHaveNoData(obj: unknown): boolean {
         if (obj.length <= 0) {
             return true;
         }
-        return obj.every(doesObjectHaveNoData);
+        return obj.every(e => doesObjectHaveNoData(e, invalids));
     }
 
     if (isObject(obj)) {
@@ -38,9 +38,9 @@ export function doesObjectHaveNoData(obj: unknown): boolean {
             return true;
         }
         return Object.keys(obj).every(
-            key => doesObjectHaveNoData(obj[key])
+            key => doesObjectHaveNoData(obj[key], invalids)
         );
     }
 
-    return false;
+    return invalids.includes(obj);
 };

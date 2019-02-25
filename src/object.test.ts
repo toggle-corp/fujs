@@ -53,3 +53,30 @@ test('check if object has no data', () => {
     expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [{}, { value: 0 }] } })).toBe(false);
 });
 
+test('check if object has no data', () => {
+    const invalids = [''];
+    expect(doesObjectHaveNoData(undefined, invalids)).toBe(true);
+    expect(doesObjectHaveNoData({}, invalids)).toBe(true);
+    expect(doesObjectHaveNoData([], invalids)).toBe(true);
+    expect(doesObjectHaveNoData([undefined, undefined], invalids)).toBe(true);
+    expect(doesObjectHaveNoData([{}, {}], invalids)).toBe(true);
+    expect(doesObjectHaveNoData({ hari: undefined }, invalids)).toBe(true);
+    expect(doesObjectHaveNoData({ hari: { shyam: undefined } }, invalids)).toBe(true);
+    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [] } }, invalids)).toBe(true);
+    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [{}, {}] } }, invalids)).toBe(true);
+    expect(doesObjectHaveNoData('', invalids)).toBe(true);
+    expect(doesObjectHaveNoData({ hari: '', shyam: undefined }, invalids)).toBe(true);
+
+    expect(doesObjectHaveNoData(NaN, invalids)).toBe(false);
+    expect(doesObjectHaveNoData(null, invalids)).toBe(false);
+    expect(doesObjectHaveNoData(1, invalids)).toBe(false);
+    expect(doesObjectHaveNoData('hari', invalids)).toBe(false);
+    expect(doesObjectHaveNoData(false, invalids)).toBe(false);
+    expect(doesObjectHaveNoData(true, invalids)).toBe(false);
+
+    expect(doesObjectHaveNoData([true, undefined], invalids)).toBe(false);
+    expect(doesObjectHaveNoData([{}, {}, false], invalids)).toBe(false);
+    expect(doesObjectHaveNoData({ hari: { shyam: 1 } }, invalids)).toBe(false);
+    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [1, 2] } }, invalids)).toBe(false);
+    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [{}, { value: 0 }] } }, invalids)).toBe(false);
+});
