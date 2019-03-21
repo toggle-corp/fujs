@@ -2,6 +2,7 @@ import {
     isFalsy,
     isTruthy,
     intersection,
+    difference,
     union,
     resolve,
 } from './core';
@@ -54,6 +55,18 @@ test('should intersect the sets', () => {
     expect(intersection(seta, empty)).toEqual(empty);
     expect(intersection(seta, setb)).toEqual(intersected);
 });
+
+test('should difference the sets', () => {
+    const empty = new Set();
+    const seta = new Set([1, 2, 3, 4]);
+    const setb = new Set([3, 4, 5, 2]);
+    const differenced = new Set([1]);
+
+    expect(difference(empty, empty)).toEqual(empty);
+    expect(difference(seta, empty)).toEqual(seta);
+    expect(difference(seta, setb)).toEqual(differenced);
+});
+
 
 test('resolve', () => {
     expect(resolve((a: number, b: number) => a + b, 1, 2)).toBe(3);

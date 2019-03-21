@@ -10,6 +10,10 @@ export function intersection<T>(setA: Set<T>, setB: Set<T>): Set<T> {
     return new Set([...setA].filter(x => setB.has(x)));
 }
 
+export function difference<T>(setA: Set<T>, setB: Set<T>): Set<T> {
+    return new Set([...setA].filter(x => !setB.has(x)));
+}
+
 export function isNaN(val: unknown) {
     if (typeof val === 'number') {
         return Number.isNaN(val);
