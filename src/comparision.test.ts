@@ -6,6 +6,7 @@ import {
     compareLength,
     compareStringByWordCount,
     compareDate,
+    compareStringSearch,
 } from './comparision';
 
 test('compare boolean', () => {
@@ -87,3 +88,31 @@ test('compare date', () => {
     expect(compareDate(1550068244746, undefined)).toBe(-1);
     expect(compareDate(undefined, undefined)).toBe(0);
 });
+
+test('compare string search', () => {
+    // without search text
+    expect(compareStringSearch('zoo', 'zoo', undefined)).toBe(0);
+    expect(compareStringSearch('apple', 'zoo', undefined)).toBeLessThan(0);
+    expect(compareStringSearch('zoo', 'apple', undefined)).toBeGreaterThan(0);
+    expect(compareStringSearch('zoo', 'zoo', '')).toBe(0);
+    expect(compareStringSearch('apple', 'zoo', '')).toBeLessThan(0);
+    expect(compareStringSearch('zoo', 'apple', '')).toBeGreaterThan(0);
+
+    // both don't have matching value
+    expect(compareStringSearch('zoo', 'zoo', 'nomatch')).toBe(0);
+    expect(compareStringSearch('apple', 'zoo', 'nomatch')).toBeLessThan(0);
+    expect(compareStringSearch('zoo', 'apple', 'nomatch')).toBeGreaterThan(0);
+
+    // one of them don't have matching value
+    expect(compareStringSearch('hari', 'tent', 'te')).toBeGreaterThan(0);
+    expect(compareStringSearch('tent', 'hari', 'te')).toBeLessThan(0);
+
+    // both have match at same location
+    expect(compareStringSearch('andy', 'andromeda', 'and')).toBeGreaterThan(0);
+    expect(compareStringSearch('andromeda', 'andy', 'and')).toBeLessThan(0);
+
+    // both have match at different location
+    expect(compareStringSearch('fandesk', 'andromeda', 'and')).toBeGreaterThan(0);
+    expect(compareStringSearch('andromeda', 'fandesk', 'and')).toBeLessThan(0);
+});
+

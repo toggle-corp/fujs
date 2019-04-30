@@ -34,3 +34,30 @@ export const compareDate = comparision((x: Date | string | number) => x, (a, b) 
 export const compareStringAsNumber = comparision((x: string) => Number(x), (a, b) => a - b);
 export const compareLength = comparision((x: string | unknown[]) => x.length, (a, b) => (a - b));
 export const compareStringByWordCount = comparision((x: string) => x.split(/\s+/).length, (a, b) => a - b);
+
+export const compareStringSearch = (x: Maybe<string>, y: Maybe<string>, z: Maybe<string>, d?: number) => {
+    if (!z) {
+        return compareString(x, y, d);
+    }
+    return comparision(
+        (x: string) => x,
+        (a: string, b: string) => {
+            const searchText = z.toLowerCase();
+            const firstIndex = a.toLowerCase().indexOf(searchText);
+            const secondIndex = b.toLowerCase().indexOf(searchText);
+
+            if (firstIndex === secondIndex) {
+                return a.localeCompare(b);
+            }
+
+            if (firstIndex === -1 && secondIndex === -1) {
+                return a.localeCompare(b);
+            } else if (secondIndex === -1) {
+                return -1;
+            } else if (firstIndex === -1) {
+                return 1;
+            }
+            return firstIndex - secondIndex;
+        },
+    )(x, y, d);
+}
