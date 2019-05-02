@@ -92,11 +92,11 @@ test('compare date', () => {
 test('compare string search', () => {
     // without search text
     expect(compareStringSearch('zoo', 'zoo', undefined)).toBe(0);
-    expect(compareStringSearch('apple', 'zoo', undefined)).toBeLessThan(0);
-    expect(compareStringSearch('zoo', 'apple', undefined)).toBeGreaterThan(0);
+    expect(compareStringSearch('apple', 'zoo', undefined)).toBe(0);
+    expect(compareStringSearch('zoo', 'apple', undefined)).toBe(0);
     expect(compareStringSearch('zoo', 'zoo', '')).toBe(0);
-    expect(compareStringSearch('apple', 'zoo', '')).toBeLessThan(0);
-    expect(compareStringSearch('zoo', 'apple', '')).toBeGreaterThan(0);
+    expect(compareStringSearch('apple', 'zoo', '')).toBe(0);
+    expect(compareStringSearch('zoo', 'apple', '')).toBe(0);
 
     // both don't have matching value
     expect(compareStringSearch('zoo', 'zoo', 'nomatch')).toBe(0);

@@ -37,7 +37,7 @@ export const compareStringByWordCount = comparision((x: string) => x.split(/\s+/
 
 export const compareStringSearch = (x: Maybe<string>, y: Maybe<string>, z: Maybe<string>, d?: number) => {
     if (!z) {
-        return compareString(x, y, d);
+        return 0;
     }
     return comparision(
         (x: string) => x,
