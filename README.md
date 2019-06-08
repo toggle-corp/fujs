@@ -4,40 +4,7 @@
 
 [![Codecov](https://codecov.io/gh/toggle-corp/fujs/branch/develop/graphs/tree.svg)](https://codecov.io/gh/toggle-corp/fujs)
 
-# Function imported from
-- common.js
-- date.js
-- similarity.js
-- stats.js
-
-## Removed functions
-- addClassName
-- calcFloatingPositionInMainWindow
-- calcFloatingRect
-- calcFloatingRectInMainWindow
-- findDifferenceInObject
-- getClassNameListAndIndex
-- getObjectChildren
-- getStandardFilename
-- isDifferentAndTruthy
-- isEmpty
-- isEqual,
-- isEqualAndTruthy
-- isFalsyOrEmptyOrZero
-- isObjectEmpty
-- removeClassName
-- saveSvg
-- unique
-
-## Renamed functions
-- camelToDash -> camelToKebab
-- extractDate -> getDate
-- findDuplicates -> getDuplicates
-- formatDate -> formatDateToString
-- getKeyByValue -> getFirstKeyByValue
-- groupList -> listToGroupList
-- insertValues -> populateFormat
-- isArrayEqual -> isListEqual
-- leftPad -> padStart
-- rgbToHex -> getHexFromRgbRaw
-- hexToRgb -> getRgbRawFromHex
+## Generate documenatation
+```bash
+node_modules/.bin/typedoc --theme markdown --excludeNotExported --excludePrivate --excludeProtected --mdEngine github --out mydocs --includes src --exclude '**/*.test.ts'
+```

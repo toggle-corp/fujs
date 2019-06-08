@@ -47,6 +47,15 @@ function getStartAndEnd(format: string, matches: string[]) {
     };
 };
 
+/**
+ * Break timedate format into time unit, date unit and other unit.
+ *
+ * @remarks
+ * The date unit are: yyyy, yy, MMM, MM, dd, EEE.
+ * The time unit are: hh, mm, ss, aaa.
+ * Anything can come in between date and time unit and they will be treated as separator.
+ * @param format format for datetime
+ */
 export function breakFormat(format: string): Value[] {
     const {
         start: dateStart,
@@ -117,6 +126,12 @@ export function breakFormat(format: string): Value[] {
     ].filter(a => a.value !== '');
 };
 
+/**
+ * Populate the format list with date
+ *
+ * @param formatList the list of datetime units
+ * @param date
+ */
 export function populateFormat(formatList: Value[], date: Date) {
     return formatList.map((format) => {
         if (format.type === ValueType.date) {
@@ -158,24 +173,51 @@ export function populateFormat(formatList: Value[], date: Date) {
     });
 };
 
+/**
+ * Format date
+ *
+ * @param date
+ * @param format format for datetime
+ * @returns formatted date
+ */
 export function formatDateToString(date: Date, format: string): string {
     return populateFormat(breakFormat(format), date)
         .map(e => e.value)
         .join('');
 };
 
-export function getDate(timestamp: string | number): number {
-    const today = new Date(timestamp);
+/**
+ * Set hour, minute and second to zero in given datetime
+ *
+ * @param date timestamp or a date string
+ * @returns timestamp with hour, minute and second set to zero
+ */
+export function getDate(datetime: string | number): number {
+    const today = new Date(datetime);
     today.setHours(0, 0, 0, 0);
     return today.getTime();
 };
 
+/**
+ * Get number of days betwen two datetime
+ *
+ * @param a timestamp or a date string
+ * @param b timestamp or a date string
+ * @returns number of days between two datetime
+ */
 export function getDifferenceInDays(a: string | number, b: string | number): number {
     const dateA = getDate(a);
     const dateB = getDate(b);
     return (dateA - dateB) / (1000 * 60 * 60 * 24);
 };
 
+/**
+ * Get number of days betwen two datetime
+ *
+ * @param a timestamp or a date string
+ * @param b timestamp or a date string
+ * @returns number of days between two datetime
+ */
 export function getDateDifferenceHumanReadable(a: string, b: string): string {
     const diff = getDifferenceInDays(a, b);
     if (diff === 0) {
@@ -195,25 +237,51 @@ export function getDateDifferenceHumanReadable(a: string, b: string): string {
     return `After ${diff} days`;
 };
 
-// Here month starts from 1 (not zero)
+/**
+ * Get number of days in certain year and month
+ *
+ * @param year
+ * @param month
+ * @returns number of days
+ *
+ * @remarks
+ * Month starts from 1 (not zero)
+ */
 export function getNumDaysInMonthX(year: Maybe<number>, month: Maybe<number>): number {
-    return (isTruthy(year) && isTruthy(month))
-        ? new Date(year, month, 0).getDate()
-        : 32;
+    if (isTruthy(year) && isTruthy(month)) {
+        return new Date(year, month, 0).getDate();
+    }
+    return 32;
 };
 
-// TODO: write test
-export const getNumDaysInMonth = (date: Maybe<Date>) => (
-    date ? (
-        getNumDaysInMonthX(date.getFullYear(), date.getMonth() + 1)
-    ) : 32
-);
+/**
+ * Get number of days in certain year and month from a date
+ *
+ * @param date
+ * @returns number of days
+ */
+export function getNumDaysInMonth(date: Maybe<Date>) {
+    if (date) {
+        return getNumDaysInMonthX(date.getFullYear(), date.getMonth() + 1)
+    }
+    return 32;
+};
 
+/**
+ * Change date into 'yyyy-MM-dd' string
+ *
+ * @param date
+ */
 export function encodeDate(date: Date): string {
     return formatDateToString(date, 'yyyy-MM-dd');
 }
 
-export const decodeDate = (value: Maybe<string | number>) => {
+/**
+ * Change timestamp or 'yyyy-MM-dd' string into date
+ *
+ * @param value timestamp or 'yyyy-MM-dd' string
+ */
+export function decodeDate(value: Maybe<string | number>) {
     // Let's assume that the value is in local time zone
 
     if (!value) {
@@ -245,8 +313,13 @@ interface Ymd {
     dayValue: number,
 }
 
-export const isDateValuesComplete = (val: Partial<Ymd>): val is Ymd => {
-    const { yearValue, monthValue, dayValue } = val;
+/**
+ * Identify if ymd value is complete
+ *
+ * @param ymd
+ */
+export function isDateValuesComplete(ymd: Partial<Ymd>): ymd is Ymd {
+    const { yearValue, monthValue, dayValue } = ymd;
     // Complete if all values are undefined or none are
     return (
         (isTruthy(dayValue) && isTruthy(monthValue) && isTruthy(yearValue)) ||
@@ -254,12 +327,20 @@ export const isDateValuesComplete = (val: Partial<Ymd>): val is Ymd => {
     );
 };
 
-export const getErrorForDateValues = (val: Partial<Ymd>) => {
-    if (!isDateValuesComplete(val)) {
+/**
+ * Identify problem with ymd value
+ *
+ * @param ymd
+ *
+ * @remarks
+ * The return value will be undefined if there are no problems.
+ */
+export function getErrorForDateValues(ymd: Partial<Ymd>) {
+    if (!isDateValuesComplete(ymd)) {
         return 'Date values incomplete';
     }
 
-    const { yearValue, monthValue, dayValue } = val;
+    const { yearValue, monthValue, dayValue } = ymd;
     if (yearValue < MIN_YEAR) {
         return `Year should be greater than or equal to ${MIN_YEAR}`;
     }
@@ -289,6 +370,11 @@ interface Hms {
     secondValue: number,
 }
 
+/**
+ * Identify if hms value is complete
+ *
+ * @param hms
+ */
 export const isTimeValuesComplete = (val: Partial<Hms>): val is Hms => {
     const { hourValue, minuteValue, secondValue } = val;
     // Complete if all values are undefined or none are
@@ -298,6 +384,14 @@ export const isTimeValuesComplete = (val: Partial<Hms>): val is Hms => {
     );
 };
 
+/**
+ * Identify problem with hms value
+ *
+ * @param hms
+ *
+ * @remarks
+ * The return value will be undefined if there are no problems.
+ */
 export const getErrorForTimeValues = (val: Partial<Hms>) => {
     if (!isTimeValuesComplete(val)) {
         return 'Time values incomplete';

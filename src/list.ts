@@ -2,29 +2,52 @@ import { Maybe } from './declarations';
 import { isNotDefined, isDefined } from './core';
 import { listToMap } from './transform';
 
-// NOTE: doesn't assume mutation of individual item
-export function isListEqual(array1: unknown[], array2: unknown[]) {
+/**
+ * Indentify if two list are the same
+ *
+ * @param list1
+ * @param list2
+ *
+ * @remarks
+ * The function assumes that the elements aren't mutated
+ */
+export function isListEqual(list1: unknown[], list2: unknown[]) {
     return (
-        array1.length === array2.length &&
-        array1.every((d, i) => d === array2[i])
+        list1.length === list2.length &&
+        list1.every((d, i) => d === list2[i])
     );
 };
 
-// get random item from the list
-// ex: getRandomFromList([1, 2, 3, 4]);
-export function getRandomFromList(items: unknown[]) {
+/**
+ * Get a random item from the list
+ *
+ * @param items
+ */
+export function getRandomFromList<T>(items: T[]) {
     return items[Math.floor(Math.random() * items.length)];
 };
 
-export function getElementAround<T>(list: T[], currentIndex: number): T | undefined {
-    if (currentIndex + 1 < list.length) {
-        return list[currentIndex + 1];
-    } else if (currentIndex - 1 >= 0) {
-        return list[currentIndex - 1];
+/**
+ * Get an element around certain index in a list
+ *
+ * @param list
+ * @param index
+ */
+export function getElementAround<T>(list: T[], index: number): T | undefined {
+    if (index + 1 < list.length) {
+        return list[index + 1];
+    } else if (index - 1 >= 0) {
+        return list[index - 1];
     }
     return undefined;
 };
 
+/**
+ * Get a defined element around certain index in a list
+ *
+ * @param list
+ * @param index
+ */
 export function getDefinedElementAround<T>(list: Maybe<T>[], currentIndex: number) {
     let i;
     let j;
@@ -63,7 +86,17 @@ interface KeySelector<T>{
     (element: T): string | number;
 }
 
-// NOTE: extensive test required
+/**
+ * Get a duplicate count for each element in a list
+ *
+ * @param list
+ * @param keySelector get key from an element
+ *
+ * @returns map of element key and duplicate count
+ *
+ * @remarks
+ * The map only includes element for which there is a duplicate
+ */
 export function getDuplicates<T>(list: Maybe<T[]>, keySelector: KeySelector<T>): string[] {
     const counts = listToMap<T, number>(
         list,
@@ -75,6 +108,15 @@ export function getDuplicates<T>(list: Maybe<T[]>, keySelector: KeySelector<T>):
     return Object.keys(counts).filter(key => counts[key] > 1);
 }
 
+/**
+ * Find difference between two list
+ *
+ * @param listA
+ * @param listB
+ * @param keySelector get key from an element
+ *
+ * @returns list of added, modified, removed and unmodified elements
+ */
 export function findDifferenceInList<T>(listA: T[], listB: T[], keySelector: KeySelector<T>) {
     const modified: {old: T, new: T}[] = [];
     const added: T[] = [];

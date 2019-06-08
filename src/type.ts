@@ -1,11 +1,25 @@
+/**
+ * Identifies if item is a list.
+ * @param item anything
+ */
 export function isList(item: unknown): item is unknown[] {
     return Array.isArray(item);
 }
 
+/**
+ * Identifies if item is an object.
+ * `null` and `list` are not considered as object.
+ * @param item anything
+ */
 export function isObject(item: unknown): item is object {
     return item !== null && typeof item === 'object' && !isList(item);
 };
 
+/**
+ * Identifies if item is an integer.
+ * Float values are not not considered as integer.
+ * @param item anything
+ */
 export function isInteger(value: unknown) : value is number {
     return typeof value === 'number' && value % 1 === 0
 };
@@ -32,22 +46,36 @@ const classToType = basicTypes.reduce(
     {},
 );
 
-export const typeOf = (obj: unknown): string => {
-    if (obj == null) {
+/**
+ * Get type of an item.
+ * Valid types: null, boolean, number, string, function, array, date, regexp, object, error, symbol
+ * @param item anything
+ * @returns type of that item
+ */
+export const typeOf = (item: unknown): string => {
+    if (item == null) {
         return 'null';
     }
 
-    const simpleType = typeof obj;
+    const simpleType = typeof item;
     return (simpleType === 'object' || simpleType === 'function')
-        ? (classToType[classToType.toString.call(obj)] || 'object')
+        ? (classToType[classToType.toString.call(item)] || 'object')
         : simpleType;
 };
 
+/**
+ * Identifies if string is a valid email.
+ * @param item any string
+ */
 export function isValidEmail(value: string) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(value);
 };
 
+/**
+ * Identifies if string is a valid url.
+ * @param item any string
+ */
 export function isValidUrl(value: string) {
     //
     // Regular Expression for URL validation
