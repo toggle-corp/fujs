@@ -35,7 +35,7 @@
 
 **● MIN_YEAR**: *`1990`* = 1990
 
-*Defined in [date.ts:308](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L308)*
+*Defined in [date.ts:308](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L308)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 ▸ **breakFormat**(format: *`string`*): `Value`[]
 
-*Defined in [date.ts:59](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L59)*
+*Defined in [date.ts:59](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L59)*
 
 Break timedate format into time unit, date unit and other unit.
 
@@ -68,7 +68,7 @@ ___
 
 ▸ **decodeDate**(value: *[Maybe](_declarations_.md#maybe)<`string` \| `number`>*): `undefined` \| `Date`
 
-*Defined in [date.ts:284](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L284)*
+*Defined in [date.ts:284](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L284)*
 
 Change timestamp or 'yyyy-MM-dd' string into date
 
@@ -87,7 +87,7 @@ ___
 
 ▸ **encodeDate**(date: *`Date`*): `string`
 
-*Defined in [date.ts:275](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L275)*
+*Defined in [date.ts:275](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L275)*
 
 Change date into 'yyyy-MM-dd' string
 
@@ -106,7 +106,7 @@ ___
 
 ▸ **formatDateToString**(date: *`Date`*, format: *`string`*): `string`
 
-*Defined in [date.ts:183](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L183)*
+*Defined in [date.ts:183](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L183)*
 
 Format date
 
@@ -127,7 +127,7 @@ ___
 
 ▸ **getDate**(datetime: *`string` \| `number`*): `number`
 
-*Defined in [date.ts:195](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L195)*
+*Defined in [date.ts:195](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L195)*
 
 Set hour, minute and second to zero in given datetime
 
@@ -147,7 +147,7 @@ ___
 
 ▸ **getDateDifferenceHumanReadable**(a: *`string`*, b: *`string`*): `string`
 
-*Defined in [date.ts:221](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L221)*
+*Defined in [date.ts:221](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L221)*
 
 Get number of days betwen two datetime
 
@@ -168,7 +168,7 @@ ___
 
 ▸ **getDifferenceInDays**(a: *`string` \| `number`*, b: *`string` \| `number`*): `number`
 
-*Defined in [date.ts:208](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L208)*
+*Defined in [date.ts:208](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L208)*
 
 Get number of days betwen two datetime
 
@@ -189,7 +189,7 @@ ___
 
 ▸ **getErrorForDateValues**(ymd: *`Partial`<`Ymd`>*): `undefined` \| `string`
 
-*Defined in [date.ts:338](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L338)*
+*Defined in [date.ts:338](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L338)*
 
 Identify problem with ymd value
 
@@ -210,7 +210,7 @@ ___
 
 ▸ **getErrorForTimeValues**(val: *`Partial`<`Hms`>*): `undefined` \| `string`
 
-*Defined in [date.ts:395](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L395)*
+*Defined in [date.ts:395](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L395)*
 
 Identify problem with hms value
 
@@ -229,7 +229,7 @@ ___
 
 ▸ **getNumDaysInMonth**(date: *[Maybe](_declarations_.md#maybe)<`Date`>*): `number`
 
-*Defined in [date.ts:263](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L263)*
+*Defined in [date.ts:263](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L263)*
 
 Get number of days in certain year and month from a date
 
@@ -249,7 +249,7 @@ ___
 
 ▸ **getNumDaysInMonthX**(year: *[Maybe](_declarations_.md#maybe)<`number`>*, month: *[Maybe](_declarations_.md#maybe)<`number`>*): `number`
 
-*Defined in [date.ts:250](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L250)*
+*Defined in [date.ts:250](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L250)*
 
 Get number of days in certain year and month
 
@@ -272,7 +272,7 @@ ___
 
 ▸ **isDateValuesComplete**(ymd: *`Partial`<`Ymd`>*): `boolean`
 
-*Defined in [date.ts:321](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L321)*
+*Defined in [date.ts:321](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L321)*
 
 Identify if ymd value is complete
 
@@ -291,7 +291,7 @@ ___
 
 ▸ **isTimeValuesComplete**(val: *`Partial`<`Hms`>*): `boolean`
 
-*Defined in [date.ts:378](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L378)*
+*Defined in [date.ts:378](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L378)*
 
 Identify if hms value is complete
 
@@ -310,7 +310,7 @@ ___
 
 ▸ **populateFormat**(formatList: *`Value`[]*, date: *`Date`*): `Value`[]
 
-*Defined in [date.ts:135](https://github.com/toggle-corp/fujs/blob/bd560f8/src/date.ts#L135)*
+*Defined in [date.ts:135](https://github.com/toggle-corp/fujs/blob/ade87ee/src/date.ts#L135)*
 
 Populate the format list with date
 

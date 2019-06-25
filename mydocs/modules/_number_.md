@@ -23,15 +23,17 @@
 
 ▸ **addSeparator**(num: *[Maybe](_declarations_.md#maybe)<`string` \| `number`>*, separator?: *`string`*, decimalSeparator?: *`string`*): `undefined` \| `null` \| `string`
 
-*Defined in [number.ts:5](https://github.com/toggle-corp/fujs/blob/bd560f8/src/number.ts#L5)*
+*Defined in [number.ts:12](https://github.com/toggle-corp/fujs/blob/ade87ee/src/number.ts#L12)*
+
+Get comma separated number
 
 **Parameters:**
 
-| Name | Type | Default value |
-| ------ | ------ | ------ |
-| num | [Maybe](_declarations_.md#maybe)<`string` \| `number`> | - |
-| `Default value` separator | `string` | &quot;,&quot; |
-| `Default value` decimalSeparator | `string` | &quot;.&quot; |
+| Name | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| num | [Maybe](_declarations_.md#maybe)<`string` \| `number`> | - |  \- |
+| `Default value` separator | `string` | &quot;,&quot; |  thousand separator |
+| `Default value` decimalSeparator | `string` | &quot;.&quot; |  decimal separator |
 
 **Returns:** `undefined` \| `null` \| `string`
 
@@ -42,14 +44,16 @@ ___
 
 ▸ **formattedNormalize**(num: *`number`*, lang?: *[Lang](../enums/_number_.lang.md)*): `object` \| `object`
 
-*Defined in [number.ts:50](https://github.com/toggle-corp/fujs/blob/bd560f8/src/number.ts#L50)*
+*Defined in [number.ts:61](https://github.com/toggle-corp/fujs/blob/ade87ee/src/number.ts#L61)*
+
+Get normalized number
 
 **Parameters:**
 
-| Name | Type | Default value |
-| ------ | ------ | ------ |
-| num | `number` | - |
-| `Default value` lang | [Lang](../enums/_number_.lang.md) |  Lang.np |
+| Name | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| num | `number` | - |  \- |
+| `Default value` lang | [Lang](../enums/_number_.lang.md) |  Lang.np |  language |
 
 **Returns:** `object` \| `object`
 

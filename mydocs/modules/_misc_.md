@@ -18,7 +18,7 @@
 
 ▸ **checkVersion**(oldVersionId: *[Maybe](_declarations_.md#maybe)<`number`>*, newVersionId: *`number`*): `object`
 
-*Defined in [misc.ts:11](https://github.com/toggle-corp/fujs/blob/bd560f8/src/misc.ts#L11)*
+*Defined in [misc.ts:11](https://github.com/toggle-corp/fujs/blob/ade87ee/src/misc.ts#L11)*
 
 Check if new object should be set and should the message of overriden shown
 

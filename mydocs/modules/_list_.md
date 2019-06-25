@@ -23,7 +23,7 @@
 
 ▸ **findDifferenceInList**<`T`>(listA: *`T`[]*, listB: *`T`[]*, keySelector: *`KeySelector`<`T`>*): `object`
 
-*Defined in [list.ts:120](https://github.com/toggle-corp/fujs/blob/bd560f8/src/list.ts#L120)*
+*Defined in [list.ts:120](https://github.com/toggle-corp/fujs/blob/ade87ee/src/list.ts#L120)*
 
 Find difference between two list
 
@@ -48,7 +48,7 @@ ___
 
 ▸ **getDefinedElementAround**<`T`>(list: *[Maybe](_declarations_.md#maybe)<`T`>[]*, currentIndex: *`number`*): `undefined` \| `null` \| `T`
 
-*Defined in [list.ts:51](https://github.com/toggle-corp/fujs/blob/bd560f8/src/list.ts#L51)*
+*Defined in [list.ts:51](https://github.com/toggle-corp/fujs/blob/ade87ee/src/list.ts#L51)*
 
 Get a defined element around certain index in a list
 
@@ -71,7 +71,7 @@ ___
 
 ▸ **getDuplicates**<`T`>(list: *[Maybe](_declarations_.md#maybe)<`T`[]>*, keySelector: *`KeySelector`<`T`>*): `string`[]
 
-*Defined in [list.ts:100](https://github.com/toggle-corp/fujs/blob/bd560f8/src/list.ts#L100)*
+*Defined in [list.ts:100](https://github.com/toggle-corp/fujs/blob/ade87ee/src/list.ts#L100)*
 
 Get a duplicate count for each element in a list
 
@@ -97,7 +97,7 @@ ___
 
 ▸ **getElementAround**<`T`>(list: *`T`[]*, index: *`number`*): `T` \| `undefined`
 
-*Defined in [list.ts:36](https://github.com/toggle-corp/fujs/blob/bd560f8/src/list.ts#L36)*
+*Defined in [list.ts:36](https://github.com/toggle-corp/fujs/blob/ade87ee/src/list.ts#L36)*
 
 Get an element around certain index in a list
 
@@ -120,7 +120,7 @@ ___
 
 ▸ **getRandomFromList**<`T`>(items: *`T`[]*): `T`
 
-*Defined in [list.ts:26](https://github.com/toggle-corp/fujs/blob/bd560f8/src/list.ts#L26)*
+*Defined in [list.ts:26](https://github.com/toggle-corp/fujs/blob/ade87ee/src/list.ts#L26)*
 
 Get a random item from the list
 
@@ -142,7 +142,7 @@ ___
 
 ▸ **isListEqual**(list1: *`unknown`[]*, list2: *`unknown`[]*): `boolean`
 
-*Defined in [list.ts:14](https://github.com/toggle-corp/fujs/blob/bd560f8/src/list.ts#L14)*
+*Defined in [list.ts:14](https://github.com/toggle-corp/fujs/blob/ade87ee/src/list.ts#L14)*
 
 Indentify if two list are the same
 

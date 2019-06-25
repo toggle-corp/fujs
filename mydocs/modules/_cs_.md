@@ -18,7 +18,7 @@
 
 ▸ **_cs**(...props: *[Maybe](_declarations_.md#maybe)<`string` \| `false`>[]*): `string`
 
-*Defined in [cs.ts:9](https://github.com/toggle-corp/fujs/blob/bd560f8/src/cs.ts#L9)*
+*Defined in [cs.ts:9](https://github.com/toggle-corp/fujs/blob/ade87ee/src/cs.ts#L9)*
 
 Concatenate valid string into classname
 

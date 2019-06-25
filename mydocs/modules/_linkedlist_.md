@@ -18,7 +18,7 @@
 
 ▸ **getLinkedListNode**<`T`>(node: *`T`*, n: *`number`*, selector: *`LinkSelector`<`T`>*): `undefined` \| `T`
 
-*Defined in [linkedlist.ts:15](https://github.com/toggle-corp/fujs/blob/bd560f8/src/linkedlist.ts#L15)*
+*Defined in [linkedlist.ts:15](https://github.com/toggle-corp/fujs/blob/ade87ee/src/linkedlist.ts#L15)*
 
 Get nth node from a linked list.
 

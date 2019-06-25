@@ -19,14 +19,16 @@
 
 ▸ **getTrigramSimilarity**(foo: *`string`*, bar: *`string`*): `number`
 
-*Defined in [stringSimilarity.ts:20](https://github.com/toggle-corp/fujs/blob/bd560f8/src/stringSimilarity.ts#L20)*
+*Defined in [stringSimilarity.ts:29](https://github.com/toggle-corp/fujs/blob/ade87ee/src/stringSimilarity.ts#L29)*
+
+Get trigram similarity between two sentences
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| foo | `string` |
-| bar | `string` |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| foo | `string` |  first string |
+| bar | `string` |  second string |
 
 **Returns:** `number`
 
@@ -35,15 +37,17 @@ ___
 
 ###  getTrigrams
 
-▸ **getTrigrams**(word: *`string`*): `Set`<`string`>
+▸ **getTrigrams**(sentence: *`string`*): `Set`<`string`>
 
-*Defined in [stringSimilarity.ts:3](https://github.com/toggle-corp/fujs/blob/bd560f8/src/stringSimilarity.ts#L3)*
+*Defined in [stringSimilarity.ts:7](https://github.com/toggle-corp/fujs/blob/ade87ee/src/stringSimilarity.ts#L7)*
+
+Get trigrams from a sentence
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| word | `string` |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| sentence | `string` |   |
 
 **Returns:** `Set`<`string`>
 

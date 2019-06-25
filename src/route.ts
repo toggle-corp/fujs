@@ -1,5 +1,10 @@
 import { Obj } from './declarations';
 
+/**
+ * Fill parameters in route url
+ * @param route route template
+ * @param params map of values
+ */
 export function reverseRoute(route: string, params: Obj<string | number>): string {
     const paths = route.split('/');
 
@@ -35,6 +40,11 @@ export function reverseRoute(route: string, params: Obj<string | number>): strin
     return paths.join('/');
 };
 
+/**
+ * Identify if param is required in certain route
+ * @param route route template
+ * @param param parameter name
+ */
 export function isParamRequired(route: string, param: string) {
     const re = new RegExp(`:${param}([^\\?]|$)`);
     return route.search(re) !== -1;

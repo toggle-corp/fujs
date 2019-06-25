@@ -25,15 +25,17 @@
 
 ▸ **bound**(value: *`number`*, a: *`number`*, b: *`number`*): `number`
 
-*Defined in [statistics.ts:48](https://github.com/toggle-corp/fujs/blob/bd560f8/src/statistics.ts#L48)*
+*Defined in [statistics.ts:87](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L87)*
+
+Get number bounded on two sides
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| value | `number` |
-| a | `number` |
-| b | `number` |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| value | `number` |  \- |
+| a | `number` |  upper or lower bound |
+| b | `number` |  upper or lower bound |
 
 **Returns:** `number`
 
@@ -44,17 +46,19 @@ ___
 
 ▸ **bucket**<`T`>(value: *`number`*, buckets: *`Bucket`<`T`>[]*): `T` \| `undefined`
 
-*Defined in [statistics.ts:41](https://github.com/toggle-corp/fujs/blob/bd560f8/src/statistics.ts#L41)*
+*Defined in [statistics.ts:73](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L73)*
+
+Get the bucket for a given number
 
 **Type parameters:**
 
 #### T 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| value | `number` |
-| buckets | `Bucket`<`T`>[] |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| value | `number` |  \- |
+| buckets | `Bucket`<`T`>[] |   |
 
 **Returns:** `T` \| `undefined`
 
@@ -65,14 +69,16 @@ ___
 
 ▸ **getNumbers**(start: *`number`*, end: *`number`*): `number`[]
 
-*Defined in [statistics.ts:58](https://github.com/toggle-corp/fujs/blob/bd560f8/src/statistics.ts#L58)*
+*Defined in [statistics.ts:110](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L110)*
+
+Get list of numbers from `start` to `end`
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| start | `number` |
-| end | `number` |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| start | `number` |  number from where list starts |
+| end | `number` |  number where list ends |
 
 **Returns:** `number`[]
 
@@ -83,7 +89,9 @@ ___
 
 ▸ **mean**(values: *`number`[]*): `number`
 
-*Defined in [statistics.ts:17](https://github.com/toggle-corp/fujs/blob/bd560f8/src/statistics.ts#L17)*
+*Defined in [statistics.ts:38](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L38)*
+
+Get mean of all elements in a list
 
 **Parameters:**
 
@@ -100,7 +108,9 @@ ___
 
 ▸ **median**(values: *`number`[]*): `undefined` \| `number`
 
-*Defined in [statistics.ts:24](https://github.com/toggle-corp/fujs/blob/bd560f8/src/statistics.ts#L24)*
+*Defined in [statistics.ts:50](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L50)*
+
+Get median of all elements in a list
 
 **Parameters:**
 
@@ -115,16 +125,20 @@ ___
 
 ###  modulo
 
-▸ **modulo**(x: *`number`*, length: *`number`*): `number`
+▸ **modulo**(a: *`number`*, b: *`number`*): `number`
 
-*Defined in [statistics.ts:1](https://github.com/toggle-corp/fujs/blob/bd560f8/src/statistics.ts#L1)*
+*Defined in [statistics.ts:9](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L9)*
+
+Get `a` modulo `b`
+
+*__remarks__*: Return a positive modulo
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| x | `number` |
-| length | `number` |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| a | `number` |  dividend |
+| b | `number` |  divisor |
 
 **Returns:** `number`
 
@@ -135,15 +149,17 @@ ___
 
 ▸ **normalize**(value: *`number`*, max: *`number`*, min: *`number`*): `number`
 
-*Defined in [statistics.ts:54](https://github.com/toggle-corp/fujs/blob/bd560f8/src/statistics.ts#L54)*
+*Defined in [statistics.ts:100](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L100)*
+
+Get normalized value for a number
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| value | `number` |
-| max | `number` |
-| min | `number` |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| value | `number` |  \- |
+| max | `number` |  max value |
+| min | `number` |  min value |
 
 **Returns:** `number`
 
@@ -154,7 +170,11 @@ ___
 
 ▸ **sum**(values: *`number`[]*): `number`
 
-*Defined in [statistics.ts:10](https://github.com/toggle-corp/fujs/blob/bd560f8/src/statistics.ts#L10)*
+*Defined in [statistics.ts:26](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L26)*
+
+Get sum of all elements in a list
+
+*__remarks__*: Return a positive modulo
 
 **Parameters:**
 

@@ -27,7 +27,7 @@
 
 ▸ **camelToKebab**(str: *[Maybe](_declarations_.md#maybe)<`string`>*): `undefined` \| `null` \| `string`
 
-*Defined in [string.ts:77](https://github.com/toggle-corp/fujs/blob/bd560f8/src/string.ts#L77)*
+*Defined in [string.ts:104](https://github.com/toggle-corp/fujs/blob/ade87ee/src/string.ts#L104)*
 
 **Parameters:**
 
@@ -44,13 +44,15 @@ ___
 
 ▸ **camelToNormal**(str: *[Maybe](_declarations_.md#maybe)<`string`>*): `undefined` \| `null` \| `string`
 
-*Defined in [string.ts:90](https://github.com/toggle-corp/fujs/blob/bd560f8/src/string.ts#L90)*
+*Defined in [string.ts:118](https://github.com/toggle-corp/fujs/blob/ade87ee/src/string.ts#L118)*
+
+Convert camelcase to space separated words
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| str | [Maybe](_declarations_.md#maybe)<`string`> |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| str | [Maybe](_declarations_.md#maybe)<`string`> |   |
 
 **Returns:** `undefined` \| `null` \| `string`
 
@@ -61,13 +63,15 @@ ___
 
 ▸ **capitalize**(str: *[Maybe](_declarations_.md#maybe)<`string`>*): `undefined` \| `null` \| `string`
 
-*Defined in [string.ts:19](https://github.com/toggle-corp/fujs/blob/bd560f8/src/string.ts#L19)*
+*Defined in [string.ts:33](https://github.com/toggle-corp/fujs/blob/ade87ee/src/string.ts#L33)*
+
+Change the first letter of word to uppercase
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| str | [Maybe](_declarations_.md#maybe)<`string`> |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| str | [Maybe](_declarations_.md#maybe)<`string`> |   |
 
 **Returns:** `undefined` \| `null` \| `string`
 
@@ -78,14 +82,18 @@ ___
 
 ▸ **caseInsensitiveSubmatch**(longText: *[Maybe](_declarations_.md#maybe)<`string` \| `number`>*, shortText: *[Maybe](_declarations_.md#maybe)<`string` \| `number`>*): `boolean`
 
-*Defined in [string.ts:114](https://github.com/toggle-corp/fujs/blob/bd560f8/src/string.ts#L114)*
+*Defined in [string.ts:161](https://github.com/toggle-corp/fujs/blob/ade87ee/src/string.ts#L161)*
+
+Identify if shortText is inside longText
+
+*__remarks__*: The match is case-insensitive
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| longText | [Maybe](_declarations_.md#maybe)<`string` \| `number`> |
-| shortText | [Maybe](_declarations_.md#maybe)<`string` \| `number`> |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| longText | [Maybe](_declarations_.md#maybe)<`string` \| `number`> |  \- |
+| shortText | [Maybe](_declarations_.md#maybe)<`string` \| `number`> |   |
 
 **Returns:** `boolean`
 
@@ -96,15 +104,15 @@ ___
 
 ▸ **formatPdfText**(text: *`string`*): `string`
 
-*Defined in [string.ts:30](https://github.com/toggle-corp/fujs/blob/bd560f8/src/string.ts#L30)*
+*Defined in [string.ts:45](https://github.com/toggle-corp/fujs/blob/ade87ee/src/string.ts#L45)*
 
 Format text, extracted from pdfs, to remove extraneous spaces
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| text | `string` |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| text | `string` |   |
 
 **Returns:** `string`
 
@@ -115,14 +123,16 @@ ___
 
 ▸ **getRatingForContentInString**(content: *[Maybe](_declarations_.md#maybe)<`string`>*, str: *[Maybe](_declarations_.md#maybe)<`string`>*): `number`
 
-*Defined in [string.ts:48](https://github.com/toggle-corp/fujs/blob/bd560f8/src/string.ts#L48)*
+*Defined in [string.ts:68](https://github.com/toggle-corp/fujs/blob/ade87ee/src/string.ts#L68)*
+
+Get rating for content in string
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| content | [Maybe](_declarations_.md#maybe)<`string`> |
-| str | [Maybe](_declarations_.md#maybe)<`string`> |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| content | [Maybe](_declarations_.md#maybe)<`string`> |  \- |
+| str | [Maybe](_declarations_.md#maybe)<`string`> |   |
 
 **Returns:** `number`
 
@@ -131,17 +141,21 @@ ___
 
 ###  padStart
 
-▸ **padStart**(num: *[Maybe](_declarations_.md#maybe)<`string` \| `number`>*, length: *`number`*, pad?: *`string`*): `string`
+▸ **padStart**(value: *[Maybe](_declarations_.md#maybe)<`string` \| `number`>*, length: *`number`*, pad?: *`string`*): `string`
 
-*Defined in [string.ts:9](https://github.com/toggle-corp/fujs/blob/bd560f8/src/string.ts#L9)*
+*Defined in [string.ts:18](https://github.com/toggle-corp/fujs/blob/ade87ee/src/string.ts#L18)*
+
+Add padding before string or number
+
+*__remarks__*: Use when String(num).padStart(length, str) not fully supported
 
 **Parameters:**
 
-| Name | Type | Default value |
-| ------ | ------ | ------ |
-| num | [Maybe](_declarations_.md#maybe)<`string` \| `number`> | - |
-| length | `number` | - |
-| `Default value` pad | `string` | &quot;0&quot; |
+| Name | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| value | [Maybe](_declarations_.md#maybe)<`string` \| `number`> | - |  \- |
+| length | `number` | - |  total length of the output |
+| `Default value` pad | `string` | &quot;0&quot; |  character used to pad |
 
 **Returns:** `string`
 
@@ -152,14 +166,16 @@ ___
 
 ▸ **randomString**(length?: *`number`*, mixedCase?: *`boolean`*): `string`
 
-*Defined in [string.ts:55](https://github.com/toggle-corp/fujs/blob/bd560f8/src/string.ts#L55)*
+*Defined in [string.ts:82](https://github.com/toggle-corp/fujs/blob/ade87ee/src/string.ts#L82)*
+
+Get random string
 
 **Parameters:**
 
-| Name | Type | Default value |
-| ------ | ------ | ------ |
-| `Default value` length | `number` | 8 |
-| `Default value` mixedCase | `boolean` | false |
+| Name | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| `Default value` length | `number` | 8 |  length of the random string |
+| `Default value` mixedCase | `boolean` | false |  if uppercase alphabets are to be included |
 
 **Returns:** `string`
 
@@ -170,13 +186,15 @@ ___
 
 ▸ **splitInWhitespace**(str: *[Maybe](_declarations_.md#maybe)<`string`>*): `string`[]
 
-*Defined in [string.ts:99](https://github.com/toggle-corp/fujs/blob/bd560f8/src/string.ts#L99)*
+*Defined in [string.ts:132](https://github.com/toggle-corp/fujs/blob/ade87ee/src/string.ts#L132)*
+
+Split sentence
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| str | [Maybe](_declarations_.md#maybe)<`string`> |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| str | [Maybe](_declarations_.md#maybe)<`string`> |   |
 
 **Returns:** `string`[]
 
@@ -187,13 +205,15 @@ ___
 
 ▸ **trimWhitespace**(str: *[Maybe](_declarations_.md#maybe)<`string`>*): `undefined` \| `null` \| `string`
 
-*Defined in [string.ts:106](https://github.com/toggle-corp/fujs/blob/bd560f8/src/string.ts#L106)*
+*Defined in [string.ts:144](https://github.com/toggle-corp/fujs/blob/ade87ee/src/string.ts#L144)*
+
+Convert all whitespaces into single space
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| str | [Maybe](_declarations_.md#maybe)<`string`> |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| str | [Maybe](_declarations_.md#maybe)<`string`> |   |
 
 **Returns:** `undefined` \| `null` \| `string`
 

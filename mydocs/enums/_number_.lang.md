@@ -19,7 +19,7 @@
 
 **en**:  = "en"
 
-*Defined in [number.ts:23](https://github.com/toggle-corp/fujs/blob/bd560f8/src/number.ts#L23)*
+*Defined in [number.ts:30](https://github.com/toggle-corp/fujs/blob/ade87ee/src/number.ts#L30)*
 
 ___
 <a id="np"></a>
@@ -28,7 +28,7 @@ ___
 
 **np**:  = "ne"
 
-*Defined in [number.ts:24](https://github.com/toggle-corp/fujs/blob/bd560f8/src/number.ts#L24)*
+*Defined in [number.ts:31](https://github.com/toggle-corp/fujs/blob/ade87ee/src/number.ts#L31)*
 
 ___
 

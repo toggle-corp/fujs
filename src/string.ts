@@ -5,17 +5,31 @@ import {
     isNotDefined,
 } from './core';
 
-// NOTE: String(num).padStart(length, str) not fully supported
-export function padStart(num: Maybe<string | number>, length: number, pad: string = '0'): string {
-    if (isNotDefined(num)) {
+/**
+ * Add padding before string or number
+ *
+ * @param value
+ * @param length total length of the output
+ * @param pad character used to pad
+ *
+ * @remarks
+ * Use when String(num).padStart(length, str) not fully supported
+ */
+export function padStart(value: Maybe<string | number>, length: number, pad: string = '0'): string {
+    if (isNotDefined(value)) {
         return '';
     }
-    const str = String(num);
+    const str = String(value);
     return str.length >= length
         ? str
         : Array(length - str.length + 1).join(pad) + str;
 };
 
+/**
+ * Change the first letter of word to uppercase
+ *
+ * @param str
+ */
 export function capitalize(str: Maybe<string>) {
     if (isTruthyString(str)) {
         return str.replace(/\b\w/g, l => l.toUpperCase());
@@ -24,8 +38,9 @@ export function capitalize(str: Maybe<string>) {
 };
 
 /**
- * Format text, extracted from pdfs,
- * to remove extraneous spaces
+ * Format text, extracted from pdfs, to remove extraneous spaces
+ *
+ * @param text
  */
 export function formatPdfText(text: string) {
     return text
@@ -44,14 +59,26 @@ export function formatPdfText(text: string) {
         .trim();
 };
 
-// FIXME: the behavior needs to be tested again
+/**
+ * Get rating for content in string
+ *
+ * @param content
+ * @param str
+ */
 export function getRatingForContentInString(content: Maybe<string>, str: Maybe<string>): number {
+    // FIXME: the behavior needs to be tested again
     if (isFalsyString(content) || isFalsyString(str)) {
         return -1;
     }
     return content.toLowerCase().indexOf(str.toLowerCase())
 };
 
+/**
+ * Get random string
+ *
+ * @param length length of the random string
+ * @param mixedCase if uppercase alphabets are to be included
+ */
 export function randomString(length: number = 8, mixedCase: boolean = false) {
     let text = '';
     const possible = mixedCase
@@ -83,9 +110,10 @@ export function camelToKebab(str: Maybe<string>) {
         .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
 };
 
-/*
- * Convert camel case to normal case
- * eg: camelToDash -> camel to dash
+/**
+ * Convert camelcase to space separated words
+ *
+ * @param str
  */
 export function camelToNormal(str: Maybe<string>) {
     if (isNotDefined(str)) {
@@ -96,6 +124,11 @@ export function camelToNormal(str: Maybe<string>) {
         .replace(/([A-Z])/g, ([letter]) => ` ${letter.toLowerCase()}`);
 };
 
+/**
+ * Split sentence
+ *
+ * @param str
+ */
 export function splitInWhitespace(str: Maybe<string>): string[] {
     if (isNotDefined(str)) {
         return [];
@@ -103,6 +136,11 @@ export function splitInWhitespace(str: Maybe<string>): string[] {
     return str.match(/\S+/g) || [];
 };
 
+/**
+ * Convert all whitespaces into single space
+ *
+ * @param str
+ */
 export function trimWhitespace(str: Maybe<string>) {
     if (isNotDefined(str)) {
         return str;
@@ -110,10 +148,28 @@ export function trimWhitespace(str: Maybe<string>) {
     return splitInWhitespace(str).join(' ');
 };
 
-// Match two strings
+/**
+ * Identify if shortText is inside longText
+ *
+ * @param longText
+ * @param shortText
+ *
+ * @remarks
+ * The match is case-insensitive
+ *
+ */
 export function caseInsensitiveSubmatch(longText: Maybe<string | number>, shortText: Maybe<string | number>) {
     if (isNotDefined(longText) || isNotDefined(shortText)) {
         return false;
     }
-    return (String(longText).trim().toLowerCase()).includes(String(shortText).trim().toLowerCase())
+
+    return (
+        String(longText)
+        .trim()
+        .toLowerCase()
+    ).includes(
+        String(shortText)
+        .trim()
+        .toLowerCase()
+    )
 };

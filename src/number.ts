@@ -1,7 +1,14 @@
 import { isNotDefined } from './core';
 import { Maybe, Obj } from './declarations';
 
-// NOTE: check thoroughly
+// TODO: get methods from Numeral
+
+/**
+ * Get comma separated number
+ * @param num
+ * @param separator thousand separator
+ * @param decimalSeparator decimal separator
+ */
 export function addSeparator(num: Maybe<string | number>, separator: string = ',', decimalSeparator: string = '.') {
     if (isNotDefined(num)) {
         return num;
@@ -46,7 +53,11 @@ const mappings: Obj<Mapping> = {
     [Lang.en]: englishMapping,
 }
 
-// NOTE: check throughly
+/**
+ * Get normalized number
+ * @param num
+ * @param lang language
+ */
 export function formattedNormalize(num: number, lang: Lang = Lang.np) {
     const mapping = mappings[lang];
     if (isNotDefined(mapping)) {

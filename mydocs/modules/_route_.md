@@ -19,14 +19,16 @@
 
 ▸ **isParamRequired**(route: *`string`*, param: *`string`*): `boolean`
 
-*Defined in [route.ts:38](https://github.com/toggle-corp/fujs/blob/bd560f8/src/route.ts#L38)*
+*Defined in [route.ts:48](https://github.com/toggle-corp/fujs/blob/ade87ee/src/route.ts#L48)*
+
+Identify if param is required in certain route
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| route | `string` |
-| param | `string` |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| route | `string` |  route template |
+| param | `string` |  parameter name |
 
 **Returns:** `boolean`
 
@@ -37,14 +39,16 @@ ___
 
 ▸ **reverseRoute**(route: *`string`*, params: *[Obj](_declarations_.md#obj)<`string` \| `number`>*): `string`
 
-*Defined in [route.ts:3](https://github.com/toggle-corp/fujs/blob/bd560f8/src/route.ts#L3)*
+*Defined in [route.ts:8](https://github.com/toggle-corp/fujs/blob/ade87ee/src/route.ts#L8)*
+
+Fill parameters in route url
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| route | `string` |
-| params | [Obj](_declarations_.md#obj)<`string` \| `number`> |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| route | `string` |  route template |
+| params | [Obj](_declarations_.md#obj)<`string` \| `number`> |  map of values |
 
 **Returns:** `string`
 

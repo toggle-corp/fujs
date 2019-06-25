@@ -1,7 +1,11 @@
 import { union, intersection } from './core';
 
-export function getTrigrams(word: string) {
-    const newWord = word.trim()
+/**
+ * Get trigrams from a sentence
+ * @param sentence
+ */
+export function getTrigrams(sentence: string) {
+    const newWord = sentence.trim()
         .toLowerCase()
         .replace(/[^a-zA-z0-9]/g, ' ')
         .replace(/\s+/g, '  ');
@@ -17,6 +21,11 @@ export function getTrigrams(word: string) {
     return new Set(trigrams);
 };
 
+/**
+ * Get trigram similarity between two sentences
+ * @param foo first string
+ * @param bar second string
+ */
 export function getTrigramSimilarity(foo: string, bar: string) {
     const fooTrigrams = getTrigrams(foo);
     const barTrigrams = getTrigrams(bar);

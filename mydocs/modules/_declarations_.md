@@ -22,7 +22,7 @@
 
 **Ƭ FirstArgument**: *`FirstArgument<T>`*
 
-*Defined in [declarations.ts:4](https://github.com/toggle-corp/fujs/blob/bd560f8/src/declarations.ts#L4)*
+*Defined in [declarations.ts:4](https://github.com/toggle-corp/fujs/blob/ade87ee/src/declarations.ts#L4)*
 
 ___
 <a id="maybe"></a>
@@ -31,7 +31,7 @@ ___
 
 **Ƭ Maybe**: *`T` \| `undefined` \| `null`*
 
-*Defined in [declarations.ts:1](https://github.com/toggle-corp/fujs/blob/bd560f8/src/declarations.ts#L1)*
+*Defined in [declarations.ts:1](https://github.com/toggle-corp/fujs/blob/ade87ee/src/declarations.ts#L1)*
 
 ___
 <a id="obj"></a>
@@ -40,7 +40,7 @@ ___
 
 **Ƭ Obj**: *`object`*
 
-*Defined in [declarations.ts:2](https://github.com/toggle-corp/fujs/blob/bd560f8/src/declarations.ts#L2)*
+*Defined in [declarations.ts:2](https://github.com/toggle-corp/fujs/blob/ade87ee/src/declarations.ts#L2)*
 
 #### Type declaration
 
@@ -53,7 +53,7 @@ ___
 
 **Ƭ Parameters**: *`Parameters<T>`*
 
-*Defined in [declarations.ts:5](https://github.com/toggle-corp/fujs/blob/bd560f8/src/declarations.ts#L5)*
+*Defined in [declarations.ts:5](https://github.com/toggle-corp/fujs/blob/ade87ee/src/declarations.ts#L5)*
 
 ___
 <a id="returntype"></a>
@@ -62,7 +62,7 @@ ___
 
 **Ƭ ReturnType**: *`ReturnType<T>`*
 
-*Defined in [declarations.ts:6](https://github.com/toggle-corp/fujs/blob/bd560f8/src/declarations.ts#L6)*
+*Defined in [declarations.ts:6](https://github.com/toggle-corp/fujs/blob/ade87ee/src/declarations.ts#L6)*
 
 ___
 

@@ -29,7 +29,7 @@
 
 ▸ **difference**<`T`>(setA: *`Set`<`T`>*, setB: *`Set`<`T`>*): `Set`<`T`>
 
-*Defined in [core.ts:34](https://github.com/toggle-corp/fujs/blob/bd560f8/src/core.ts#L34)*
+*Defined in [core.ts:34](https://github.com/toggle-corp/fujs/blob/ade87ee/src/core.ts#L34)*
 
 Get difference of two sets.
 
@@ -53,7 +53,7 @@ ___
 
 ▸ **intersection**<`T`>(setA: *`Set`<`T`>*, setB: *`Set`<`T`>*): `Set`<`T`>
 
-*Defined in [core.ts:24](https://github.com/toggle-corp/fujs/blob/bd560f8/src/core.ts#L24)*
+*Defined in [core.ts:24](https://github.com/toggle-corp/fujs/blob/ade87ee/src/core.ts#L24)*
 
 Get intersection of two sets.
 
@@ -77,7 +77,7 @@ ___
 
 ▸ **isDefined**<`T`>(val: *[Maybe](_declarations_.md#maybe)<`T`>*): `boolean`
 
-*Defined in [core.ts:62](https://github.com/toggle-corp/fujs/blob/bd560f8/src/core.ts#L62)*
+*Defined in [core.ts:62](https://github.com/toggle-corp/fujs/blob/ade87ee/src/core.ts#L62)*
 
 Identifies if value is defined.
 
@@ -99,7 +99,7 @@ ___
 
 ▸ **isFalsy**(val: *`unknown`*, override?: *`unknown`[]*): `boolean`
 
-*Defined in [core.ts:72](https://github.com/toggle-corp/fujs/blob/bd560f8/src/core.ts#L72)*
+*Defined in [core.ts:72](https://github.com/toggle-corp/fujs/blob/ade87ee/src/core.ts#L72)*
 
 Identifies if value is falsy. undefined, null, NaN and false are considered as false value.
 
@@ -119,7 +119,7 @@ ___
 
 ▸ **isFalsyString**(val: *`unknown`*): `boolean`
 
-*Defined in [core.ts:90](https://github.com/toggle-corp/fujs/blob/bd560f8/src/core.ts#L90)*
+*Defined in [core.ts:90](https://github.com/toggle-corp/fujs/blob/ade87ee/src/core.ts#L90)*
 
 Identifies if value is falsy string. undefined, null, NaN, false, '' are considered as false value.
 
@@ -138,7 +138,7 @@ ___
 
 ▸ **isNaN**(val: *`unknown`*): `boolean`
 
-*Defined in [core.ts:42](https://github.com/toggle-corp/fujs/blob/bd560f8/src/core.ts#L42)*
+*Defined in [core.ts:42](https://github.com/toggle-corp/fujs/blob/ade87ee/src/core.ts#L42)*
 
 Identifies if value is NaN.
 
@@ -157,7 +157,7 @@ ___
 
 ▸ **isNotDefined**(val: *`unknown`*): `boolean`
 
-*Defined in [core.ts:54](https://github.com/toggle-corp/fujs/blob/bd560f8/src/core.ts#L54)*
+*Defined in [core.ts:54](https://github.com/toggle-corp/fujs/blob/ade87ee/src/core.ts#L54)*
 
 Identifies if value is not defined. undefined, null and NaN are not considered as defined.
 
@@ -176,7 +176,7 @@ ___
 
 ▸ **isTruthy**<`T`>(val: *[Maybe](_declarations_.md#maybe)<`T`>*, override?: *`unknown`[]*): `boolean`
 
-*Defined in [core.ts:81](https://github.com/toggle-corp/fujs/blob/bd560f8/src/core.ts#L81)*
+*Defined in [core.ts:81](https://github.com/toggle-corp/fujs/blob/ade87ee/src/core.ts#L81)*
 
 Identifies if value is truthy.
 
@@ -199,7 +199,7 @@ ___
 
 ▸ **isTruthyString**(val: *[Maybe](_declarations_.md#maybe)<`string` \| `false`>*): `boolean`
 
-*Defined in [core.ts:98](https://github.com/toggle-corp/fujs/blob/bd560f8/src/core.ts#L98)*
+*Defined in [core.ts:98](https://github.com/toggle-corp/fujs/blob/ade87ee/src/core.ts#L98)*
 
 Identifies if value is truthy string.
 
@@ -218,7 +218,7 @@ ___
 
 ▸ **noOp**(): `void`
 
-*Defined in [core.ts:6](https://github.com/toggle-corp/fujs/blob/bd560f8/src/core.ts#L6)*
+*Defined in [core.ts:6](https://github.com/toggle-corp/fujs/blob/ade87ee/src/core.ts#L6)*
 
 Does nothing
 
@@ -231,7 +231,7 @@ ___
 
 ▸ **resolve**<`T`>(variable: *`T`*, ...args: *[Parameters](_declarations_.md#parameters)<`T`>*): `any`
 
-*Defined in [core.ts:108](https://github.com/toggle-corp/fujs/blob/bd560f8/src/core.ts#L108)*
+*Defined in [core.ts:108](https://github.com/toggle-corp/fujs/blob/ade87ee/src/core.ts#L108)*
 
 Resolves if first argument is function with other arguments as argument to user supplied function.
 
@@ -255,7 +255,7 @@ ___
 
 ▸ **union**<`T`>(setA: *`Set`<`T`>*, setB: *`Set`<`T`>*): `Set`<`T`>
 
-*Defined in [core.ts:14](https://github.com/toggle-corp/fujs/blob/bd560f8/src/core.ts#L14)*
+*Defined in [core.ts:14](https://github.com/toggle-corp/fujs/blob/ade87ee/src/core.ts#L14)*
 
 Get union of two sets.
 
