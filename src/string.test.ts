@@ -6,6 +6,7 @@ import {
     trimWhitespace,
     camelToKebab,
     camelToNormal,
+    camelToSnake,
     padStart,
     randomString,
 } from './string';
@@ -79,23 +80,39 @@ test('left padding in number', () => {
     expect(padStart(12221, 4)).toEqual('12221');
 });
 
+test('camel case to normal', () => {
+    expect(camelToNormal('')).toEqual('');
+    expect(camelToNormal(undefined)).toEqual(undefined);
+    expect(camelToNormal('hariIsGood')).toEqual('hari is good');
+    expect(camelToNormal('HariIsGood')).toEqual('Hari is good');
+    expect(camelToNormal('HariIsGOOD')).toEqual('Hari is GOOD');
+    expect(camelToNormal('HariIsGOODBoy')).toEqual('Hari is GOOD boy');
+    expect(camelToNormal('HariIsGOODboy')).toEqual('Hari is GOO dboy');
+    expect(camelToNormal('hari')).toEqual('hari');
+    expect(camelToNormal('Hari')).toEqual('Hari');
+});
+
+test('camel case to snake', () => {
+    expect(camelToSnake('')).toEqual('');
+    expect(camelToSnake(undefined)).toEqual(undefined);
+    expect(camelToSnake('hariIsGood')).toEqual('hari_is_good');
+    expect(camelToSnake('HariIsGood')).toEqual('hari_is_good');
+    expect(camelToSnake('HariIsGOOD')).toEqual('hari_is_GOOD');
+    expect(camelToSnake('HariIsGOODBoy')).toEqual('hari_is_GOOD_boy');
+    expect(camelToSnake('HariIsGOODboy')).toEqual('hari_is_GOO_dboy');
+    expect(camelToSnake('hari')).toEqual('hari');
+    expect(camelToSnake('Hari')).toEqual('hari');
+});
+
 test('camel case to kebab case', () => {
     expect(camelToKebab('')).toEqual('');
     expect(camelToKebab(undefined)).toEqual(undefined);
     expect(camelToKebab('hariIsGood')).toEqual('hari-is-good');
     expect(camelToKebab('HariIsGood')).toEqual('hari-is-good');
-    expect(camelToKebab('HariIsGOOD')).toEqual('hari-is-g-o-o-d');
+    expect(camelToKebab('HariIsGOOD')).toEqual('hari-is-GOOD');
+    expect(camelToKebab('HariIsGOODBoy')).toEqual('hari-is-GOOD-boy');
+    expect(camelToKebab('HariIsGOODboy')).toEqual('hari-is-GOO-dboy');
     expect(camelToKebab('hari')).toEqual('hari');
     expect(camelToKebab('Hari')).toEqual('hari');
-});
-
-test('camel case to normal', () => {
-    expect(camelToNormal('')).toEqual('');
-    expect(camelToNormal(undefined)).toEqual(undefined);
-    expect(camelToNormal('hariIsGood')).toEqual('hari is good');
-    expect(camelToNormal('HariIsGood')).toEqual('hari is good');
-    expect(camelToNormal('HariIsGOOD')).toEqual('hari is g o o d');
-    expect(camelToNormal('hari')).toEqual('hari');
-    expect(camelToNormal('Hari')).toEqual('hari');
 });
 

@@ -100,28 +100,58 @@ export function randomString(length: number = 8, mixedCase: boolean = false) {
     */
 };
 
-// Convert camel case to kebab case
-export function camelToKebab(str: Maybe<string>) {
+
+/**
+ * Convert camel case to space separated words
+ *
+ * @param str
+ * @param separator
+ *
+ * @remarks
+ * Only support alphabets (not numerals)
+ */
+const reOne = /([a-z])([A-Z])([A-Z])/g;
+const reTwo = /([a-z])([A-Z])/g;
+const reThree = /([A-Z])([A-Z])([a-z])/g;
+export const camelToNormal = (str: Maybe<string>, separator: string = ' ') => {
     if (isNotDefined(str)) {
         return str;
     }
-    return str
-        .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
-        .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
+    return str.replace(reOne, (_, one, two, three) => `${one}${separator}${two}${three}`)
+        .replace(reTwo, (_, one, two) => `${one}${separator}${two.toLowerCase()}`)
+        .replace(reThree, (_, one, two, three) => `${one}${separator}${two.toLowerCase()}${three}`)
 };
 
 /**
- * Convert camelcase to space separated words
+ * Convert camel case to snake case
  *
  * @param str
+ *
+ * @remarks
+ * Only support alphabets (not numerals)
  */
-export function camelToNormal(str: Maybe<string>) {
-    if (isNotDefined(str)) {
-        return str;
+export const camelToSnake = (str: Maybe<string>) => {
+    const value = camelToNormal(str, '_');
+    if (isNotDefined(value) || value.length <= 1) {
+        return value;
     }
-    return str
-        .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
-        .replace(/([A-Z])/g, ([letter]) => ` ${letter.toLowerCase()}`);
+    return value.charAt(0).toLowerCase() + value.slice(1);
+}
+
+/**
+ * Convert camel case to kebab case
+ *
+ * @param str
+ *
+ * @remarks
+ * Only support alphabets (not numerals)
+ */
+export function camelToKebab(str: Maybe<string>) {
+    const value = camelToNormal(str, '-');
+    if (isNotDefined(value) || value.length <= 1) {
+        return value;
+    }
+    return value.charAt(0).toLowerCase() + value.slice(1);
 };
 
 /**
