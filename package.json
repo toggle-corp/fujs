@@ -1,6 +1,6 @@
 {
     "name": "@togglecorp/fujs",
-    "version": "1.6.1",
+    "version": "1.8.0",
     "description": "Friendly Utility for JS",
     "files": "build",
     "main": "build/index.js",
@@ -25,9 +25,9 @@
     "homepage": "https://github.com/toggle-corp/fujs#readme",
     "devDependencies": {
         "@types/core-js": "^2.5.2",
-        "@types/jest": "^24.0.15",
+        "@types/jest": "^24.0.16",
         "jest": "^24.8.0",
-        "rollup": "^1.16.2",
+        "rollup": "^1.18.0",
         "rollup-plugin-typescript2": "^0.21.2",
         "ts-jest": "^24.0.2",
         "ts-loader": "^6.0.4",
@@ -35,7 +35,7 @@
         "tslint-config-airbnb": "^5.11.1",
         "tslint-react": "^4.0.0",
         "typedoc": "^0.14.2",
-        "typedoc-plugin-markdown": "^2.0.6",
-        "typescript": "^3.5.2"
+        "typedoc-plugin-markdown": "^2.1.0",
+        "typescript": "^3.5.3"
     }
 }

@@ -150,3 +150,44 @@ export function findDifferenceInList<T>(listA: T[], listB: T[], keySelector: Key
         unmodified,
     };
 };
+
+/**
+ * Find unique items from a list
+ *
+ * @param list
+ * @param getItemHash method to get id to check uniqueness
+ *
+ * @remarks
+ * If getItemHash is not supplied, comparision is done by casting items in list
+ * to string
+ */
+export function unique<T>(list: T[] | undefined, getItemHash?: ((item: T) => string | number)) {
+    if (isNotDefined(list)) {
+        return undefined;
+    }
+
+    interface Memory {
+        [key: string]: boolean
+        [key: number]: boolean
+    }
+
+    const memory: Memory = {};
+
+    const arrWithUnique: T[] = [];
+    list.forEach((item) => {
+        const hash = getItemHash
+            ? getItemHash(item)
+            : JSON.stringify(item);
+
+        if (!memory[hash]) {
+            memory[hash] = true;
+            arrWithUnique.push(item);
+        }
+    });
+    // NOTE: just return original array if all elements were unique
+    if (list.length === arrWithUnique.length) {
+        return list;
+    }
+    return arrWithUnique;
+}
+
