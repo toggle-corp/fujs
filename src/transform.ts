@@ -76,7 +76,7 @@ export function mapToMap<T, Q>(obj: Maybe<Obj<T>>, keySelector?: NewKeySelector<
         (acc, k, i) => {
             const elem = obj[k];
             const key = keySelector ? keySelector(k, elem) : k;
-            acc[key] = modifier ? modifier(elem, key, i, acc) : elem;
+            acc[key] = modifier ? modifier(elem, k, i, acc) : elem;
             return acc;
         },
         {},

@@ -83,6 +83,20 @@ test('convert map to map', () => {
     };
     expect(mapToMap(output, k => k, elem => elem.name)).toEqual(output2);
     expect(mapToMap<Input, string>(undefined, k => k, e => e.name)).toEqual({});
+
+    const newObj = {
+        abc: 1,
+        def: 2,
+        ghi: 3,
+        jkl: 4,
+    };
+    expect(mapToMap(newObj, (_, e) => e, (_, k) => k)).toEqual({
+        1: 'abc',
+        2: 'def',
+        3: 'ghi',
+        4: 'jkl',
+    })
+
 });
 
 test('group list into map', () => {

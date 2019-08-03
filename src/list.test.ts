@@ -5,6 +5,7 @@ import {
     isListEqual,
     getDuplicates,
     findDifferenceInList,
+    unique,
 } from './list';
 
 test('random is from list', () => {
@@ -72,4 +73,27 @@ test('find difference in list', () => {
         modified: [{ old: two, new: newTwo }],
         unmodified: [three],
     })
+});
+
+test('unique in list', () => {
+    expect(unique([1, 2, 3, 1, 2, 3, 1]))
+        .toEqual([1, 2, 3])
+    expect(unique([1, 2, 3]))
+        .toEqual([1, 2, 3])
+    expect(unique(undefined))
+        .toEqual(undefined)
+    const foo = [
+        { uid: 14, name: 'hari' },
+        { uid: 15, name: 'kiran' },
+        { uid: 12, name: 'shyam' },
+        { uid: 16, name: 'chyame' },
+        { uid: 12, name: 'shyam' },
+    ];
+    const bar = [
+        { uid: 14, name: 'hari' },
+        { uid: 15, name: 'kiran' },
+        { uid: 12, name: 'shyam' },
+        { uid: 16, name: 'chyame' },
+    ]
+    expect(unique(foo, item => item.uid)).toEqual(bar);
 });
