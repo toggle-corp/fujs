@@ -1,4 +1,6 @@
-[@togglecorp/fujs](../README.md) > ["statistics"](../modules/_statistics_.md)
+> **[@togglecorp/fujs](../README.md)**
+
+[Globals](../globals.md) / ["statistics"](_statistics_.md) /
 
 # External module: "statistics"
 
@@ -15,174 +17,163 @@
 * [normalize](_statistics_.md#normalize)
 * [sum](_statistics_.md#sum)
 
----
-
 ## Functions
-
-<a id="bound"></a>
 
 ###  bound
 
-▸ **bound**(value: *`number`*, a: *`number`*, b: *`number`*): `number`
+▸ **bound**(`value`: number, `a`: number, `b`: number): *number*
 
-*Defined in [statistics.ts:87](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L87)*
+*Defined in [statistics.ts:87](https://github.com/toggle-corp/fujs/blob/6346fe3/src/statistics.ts#L87)*
 
 Get number bounded on two sides
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| value | `number` |  \- |
-| a | `number` |  upper or lower bound |
-| b | `number` |  upper or lower bound |
+Name | Type | Description |
+------ | ------ | ------ |
+`value` | number | - |
+`a` | number | upper or lower bound |
+`b` | number | upper or lower bound  |
 
-**Returns:** `number`
+**Returns:** *number*
 
 ___
-<a id="bucket"></a>
 
 ###  bucket
 
-▸ **bucket**<`T`>(value: *`number`*, buckets: *`Bucket`<`T`>[]*): `T` \| `undefined`
+▸ **bucket**<**T**>(`value`: number, `buckets`: `Bucket<T>`[]): *`T` | undefined*
 
-*Defined in [statistics.ts:73](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L73)*
+*Defined in [statistics.ts:73](https://github.com/toggle-corp/fujs/blob/6346fe3/src/statistics.ts#L73)*
 
 Get the bucket for a given number
 
 **Type parameters:**
 
-#### T 
+▪ **T**
+
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| value | `number` |  \- |
-| buckets | `Bucket`<`T`>[] |   |
+Name | Type | Description |
+------ | ------ | ------ |
+`value` | number | - |
+`buckets` | `Bucket<T>`[] |   |
 
-**Returns:** `T` \| `undefined`
+**Returns:** *`T` | undefined*
 
 ___
-<a id="getnumbers"></a>
 
 ###  getNumbers
 
-▸ **getNumbers**(start: *`number`*, end: *`number`*): `number`[]
+▸ **getNumbers**(`start`: number, `end`: number): *number[]*
 
-*Defined in [statistics.ts:110](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L110)*
+*Defined in [statistics.ts:110](https://github.com/toggle-corp/fujs/blob/6346fe3/src/statistics.ts#L110)*
 
 Get list of numbers from `start` to `end`
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| start | `number` |  number from where list starts |
-| end | `number` |  number where list ends |
+Name | Type | Description |
+------ | ------ | ------ |
+`start` | number | number from where list starts |
+`end` | number | number where list ends  |
 
-**Returns:** `number`[]
+**Returns:** *number[]*
 
 ___
-<a id="mean"></a>
 
 ###  mean
 
-▸ **mean**(values: *`number`[]*): `number`
+▸ **mean**(`values`: number[]): *number*
 
-*Defined in [statistics.ts:38](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L38)*
+*Defined in [statistics.ts:38](https://github.com/toggle-corp/fujs/blob/6346fe3/src/statistics.ts#L38)*
 
 Get mean of all elements in a list
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| values | `number`[] |
+Name | Type |
+------ | ------ |
+`values` | number[] |
 
-**Returns:** `number`
+**Returns:** *number*
 
 ___
-<a id="median"></a>
 
 ###  median
 
-▸ **median**(values: *`number`[]*): `undefined` \| `number`
+▸ **median**(`values`: number[]): *undefined | number*
 
-*Defined in [statistics.ts:50](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L50)*
+*Defined in [statistics.ts:50](https://github.com/toggle-corp/fujs/blob/6346fe3/src/statistics.ts#L50)*
 
 Get median of all elements in a list
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| values | `number`[] |
+Name | Type |
+------ | ------ |
+`values` | number[] |
 
-**Returns:** `undefined` \| `number`
+**Returns:** *undefined | number*
 
 ___
-<a id="modulo"></a>
 
 ###  modulo
 
-▸ **modulo**(a: *`number`*, b: *`number`*): `number`
+▸ **modulo**(`a`: number, `b`: number): *number*
 
-*Defined in [statistics.ts:9](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L9)*
+*Defined in [statistics.ts:9](https://github.com/toggle-corp/fujs/blob/6346fe3/src/statistics.ts#L9)*
 
 Get `a` modulo `b`
 
-*__remarks__*: Return a positive modulo
+**`remarks`** 
+Return a positive modulo
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| a | `number` |  dividend |
-| b | `number` |  divisor |
+Name | Type | Description |
+------ | ------ | ------ |
+`a` | number | dividend |
+`b` | number | divisor |
 
-**Returns:** `number`
+**Returns:** *number*
 
 ___
-<a id="normalize"></a>
 
 ###  normalize
 
-▸ **normalize**(value: *`number`*, max: *`number`*, min: *`number`*): `number`
+▸ **normalize**(`value`: number, `max`: number, `min`: number): *number*
 
-*Defined in [statistics.ts:100](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L100)*
+*Defined in [statistics.ts:100](https://github.com/toggle-corp/fujs/blob/6346fe3/src/statistics.ts#L100)*
 
 Get normalized value for a number
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| value | `number` |  \- |
-| max | `number` |  max value |
-| min | `number` |  min value |
+Name | Type | Description |
+------ | ------ | ------ |
+`value` | number | - |
+`max` | number | max value |
+`min` | number | min value  |
 
-**Returns:** `number`
+**Returns:** *number*
 
 ___
-<a id="sum"></a>
 
 ###  sum
 
-▸ **sum**(values: *`number`[]*): `number`
+▸ **sum**(`values`: number[]): *number*
 
-*Defined in [statistics.ts:26](https://github.com/toggle-corp/fujs/blob/ade87ee/src/statistics.ts#L26)*
+*Defined in [statistics.ts:26](https://github.com/toggle-corp/fujs/blob/6346fe3/src/statistics.ts#L26)*
 
 Get sum of all elements in a list
 
-*__remarks__*: Return a positive modulo
+**`remarks`** 
+Return a positive modulo
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| values | `number`[] |
+Name | Type |
+------ | ------ |
+`values` | number[] |
 
-**Returns:** `number`
-
-___
-
+**Returns:** *number*

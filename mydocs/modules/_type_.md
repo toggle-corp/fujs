@@ -1,4 +1,6 @@
-[@togglecorp/fujs](../README.md) > ["type"](../modules/_type_.md)
+> **[@togglecorp/fujs](../README.md)**
+
+[Globals](../globals.md) / ["type"](_type_.md) /
 
 # External module: "type"
 
@@ -6,7 +8,7 @@
 
 ### Variables
 
-* [basicTypes](_type_.md#basictypes)
+* [basicTypes](_type_.md#const-basictypes)
 
 ### Functions
 
@@ -15,17 +17,13 @@
 * [isObject](_type_.md#isobject)
 * [isValidEmail](_type_.md#isvalidemail)
 * [isValidUrl](_type_.md#isvalidurl)
-* [typeOf](_type_.md#typeof)
-
----
+* [typeOf](_type_.md#const-typeof)
 
 ## Variables
 
-<a id="basictypes"></a>
+### `Const` basicTypes
 
-### `<Const>` basicTypes
-
-**● basicTypes**: *`string`[]* =  [
+• **basicTypes**: *string[]* =  [
     'Boolean',
     'Number',
     'String',
@@ -38,125 +36,117 @@
     'Symbol',
 ]
 
-*Defined in [type.ts:27](https://github.com/toggle-corp/fujs/blob/ade87ee/src/type.ts#L27)*
-
-___
+*Defined in [type.ts:27](https://github.com/toggle-corp/fujs/blob/6346fe3/src/type.ts#L27)*
 
 ## Functions
 
-<a id="isinteger"></a>
-
 ###  isInteger
 
-▸ **isInteger**(value: *`unknown`*): `boolean`
+▸ **isInteger**(`value`: unknown): *boolean*
 
-*Defined in [type.ts:23](https://github.com/toggle-corp/fujs/blob/ade87ee/src/type.ts#L23)*
+*Defined in [type.ts:23](https://github.com/toggle-corp/fujs/blob/6346fe3/src/type.ts#L23)*
 
-Identifies if item is an integer. Float values are not not considered as integer.
+Identifies if item is an integer.
+Float values are not not considered as integer.
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| value | `unknown` |
+Name | Type |
+------ | ------ |
+`value` | unknown |
 
-**Returns:** `boolean`
+**Returns:** *boolean*
 
 ___
-<a id="islist"></a>
 
 ###  isList
 
-▸ **isList**(item: *`unknown`*): `boolean`
+▸ **isList**(`item`: unknown): *boolean*
 
-*Defined in [type.ts:5](https://github.com/toggle-corp/fujs/blob/ade87ee/src/type.ts#L5)*
+*Defined in [type.ts:5](https://github.com/toggle-corp/fujs/blob/6346fe3/src/type.ts#L5)*
 
 Identifies if item is a list.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| item | `unknown` |  anything |
+Name | Type | Description |
+------ | ------ | ------ |
+`item` | unknown | anything  |
 
-**Returns:** `boolean`
+**Returns:** *boolean*
 
 ___
-<a id="isobject"></a>
 
 ###  isObject
 
-▸ **isObject**(item: *`unknown`*): `boolean`
+▸ **isObject**(`item`: unknown): *boolean*
 
-*Defined in [type.ts:14](https://github.com/toggle-corp/fujs/blob/ade87ee/src/type.ts#L14)*
+*Defined in [type.ts:14](https://github.com/toggle-corp/fujs/blob/6346fe3/src/type.ts#L14)*
 
-Identifies if item is an object. `null` and `list` are not considered as object.
+Identifies if item is an object.
+`null` and `list` are not considered as object.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| item | `unknown` |  anything |
+Name | Type | Description |
+------ | ------ | ------ |
+`item` | unknown | anything  |
 
-**Returns:** `boolean`
+**Returns:** *boolean*
 
 ___
-<a id="isvalidemail"></a>
 
 ###  isValidEmail
 
-▸ **isValidEmail**(value: *`string`*): `boolean`
+▸ **isValidEmail**(`value`: string): *boolean*
 
-*Defined in [type.ts:70](https://github.com/toggle-corp/fujs/blob/ade87ee/src/type.ts#L70)*
+*Defined in [type.ts:70](https://github.com/toggle-corp/fujs/blob/6346fe3/src/type.ts#L70)*
 
 Identifies if string is a valid email.
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| value | `string` |
+Name | Type |
+------ | ------ |
+`value` | string |
 
-**Returns:** `boolean`
+**Returns:** *boolean*
 
 ___
-<a id="isvalidurl"></a>
 
 ###  isValidUrl
 
-▸ **isValidUrl**(value: *`string`*): `boolean`
+▸ **isValidUrl**(`value`: string): *boolean*
 
-*Defined in [type.ts:79](https://github.com/toggle-corp/fujs/blob/ade87ee/src/type.ts#L79)*
+*Defined in [type.ts:79](https://github.com/toggle-corp/fujs/blob/6346fe3/src/type.ts#L79)*
 
 Identifies if string is a valid url.
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| value | `string` |
+Name | Type |
+------ | ------ |
+`value` | string |
 
-**Returns:** `boolean`
+**Returns:** *boolean*
 
 ___
-<a id="typeof"></a>
 
-### `<Const>` typeOf
+### `Const` typeOf
 
-▸ **typeOf**(item: *`unknown`*): `string`
+▸ **typeOf**(`item`: unknown): *string*
 
-*Defined in [type.ts:55](https://github.com/toggle-corp/fujs/blob/ade87ee/src/type.ts#L55)*
+*Defined in [type.ts:55](https://github.com/toggle-corp/fujs/blob/6346fe3/src/type.ts#L55)*
 
-Get type of an item. Valid types: null, boolean, number, string, function, array, date, regexp, object, error, symbol
+Get type of an item.
+Valid types: null, boolean, number, string, function, array, date, regexp, object, error, symbol
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| item | `unknown` |  anything |
+Name | Type | Description |
+------ | ------ | ------ |
+`item` | unknown | anything |
 
-**Returns:** `string`
+**Returns:** *string*
+
 type of that item
-
-___
-

@@ -90,8 +90,8 @@ export function mapToMap<T, Q>(obj: Maybe<Obj<T>>, keySelector?: NewKeySelector<
  * @param keySelector get key for item in list
  * @param modifier get new value for item in list
  */
-export function listToGroupList<T>(list: Maybe<T[]>, keySelector: KeySelector<T>): Obj<T>;
-export function listToGroupList<T, Q>(list: Maybe<T[]>, keySelector: KeySelector<T>, modifier: Modifier<T, Q>): Obj<Q>;
+export function listToGroupList<T>(list: Maybe<T[]>, keySelector: KeySelector<T>): Obj<T[]>;
+export function listToGroupList<T, Q>(list: Maybe<T[]>, keySelector: KeySelector<T>, modifier: Modifier<T, Q>): Obj<Q[]>;
 export function listToGroupList<T, Q>(list: Maybe<T[]>, keySelector: KeySelector<T>, modifier?: Modifier<T, Q>) {
     if (isNotDefined(list)) {
         return {};
