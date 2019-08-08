@@ -1,4 +1,6 @@
-[@togglecorp/fujs](../README.md) > ["stringSimilarity"](../modules/_stringsimilarity_.md)
+> **[@togglecorp/fujs](../README.md)**
+
+[Globals](../globals.md) / ["stringSimilarity"](_stringsimilarity_.md) /
 
 # External module: "stringSimilarity"
 
@@ -9,47 +11,39 @@
 * [getTrigramSimilarity](_stringsimilarity_.md#gettrigramsimilarity)
 * [getTrigrams](_stringsimilarity_.md#gettrigrams)
 
----
-
 ## Functions
-
-<a id="gettrigramsimilarity"></a>
 
 ###  getTrigramSimilarity
 
-▸ **getTrigramSimilarity**(foo: *`string`*, bar: *`string`*): `number`
+▸ **getTrigramSimilarity**(`foo`: string, `bar`: string): *number*
 
-*Defined in [stringSimilarity.ts:29](https://github.com/toggle-corp/fujs/blob/ade87ee/src/stringSimilarity.ts#L29)*
+*Defined in [stringSimilarity.ts:29](https://github.com/toggle-corp/fujs/blob/6346fe3/src/stringSimilarity.ts#L29)*
 
 Get trigram similarity between two sentences
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| foo | `string` |  first string |
-| bar | `string` |  second string |
+Name | Type | Description |
+------ | ------ | ------ |
+`foo` | string | first string |
+`bar` | string | second string  |
 
-**Returns:** `number`
+**Returns:** *number*
 
 ___
-<a id="gettrigrams"></a>
 
 ###  getTrigrams
 
-▸ **getTrigrams**(sentence: *`string`*): `Set`<`string`>
+▸ **getTrigrams**(`sentence`: string): *`Set<string>`*
 
-*Defined in [stringSimilarity.ts:7](https://github.com/toggle-corp/fujs/blob/ade87ee/src/stringSimilarity.ts#L7)*
+*Defined in [stringSimilarity.ts:7](https://github.com/toggle-corp/fujs/blob/6346fe3/src/stringSimilarity.ts#L7)*
 
 Get trigrams from a sentence
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| sentence | `string` |   |
+Name | Type | Description |
+------ | ------ | ------ |
+`sentence` | string |   |
 
-**Returns:** `Set`<`string`>
-
-___
-
+**Returns:** *`Set<string>`*

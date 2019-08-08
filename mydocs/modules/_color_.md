@@ -1,4 +1,6 @@
-[@togglecorp/fujs](../README.md) > ["color"](../modules/_color_.md)
+> **[@togglecorp/fujs](../README.md)**
+
+[Globals](../globals.md) / ["color"](_color_.md) /
 
 # External module: "color"
 
@@ -18,226 +20,214 @@
 * [interpolateRgb](_color_.md#interpolatergb)
 * [isValidHexColor](_color_.md#isvalidhexcolor)
 
----
-
 ## Functions
-
-<a id="getcoloronbgcolor"></a>
 
 ###  getColorOnBgColor
 
-▸ **getColorOnBgColor**(color: *`HexColor`*, colorOnLight?: *`HexColor`*, colorOnDark?: *`HexColor`*): `string`
+▸ **getColorOnBgColor**(`color`: `HexColor`, `colorOnLight`: `HexColor`, `colorOnDark`: `HexColor`): *string*
 
-*Defined in [color.ts:39](https://github.com/toggle-corp/fujs/blob/ade87ee/src/color.ts#L39)*
+*Defined in [color.ts:39](https://github.com/toggle-corp/fujs/blob/6346fe3/src/color.ts#L39)*
 
 Get appropriate foreground color for a given background color.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| color | `HexColor` | - |  color for background |
-| `Default value` colorOnLight | `HexColor` | &quot;#212121&quot; |  color for light background |
-| `Default value` colorOnDark | `HexColor` | &quot;#ffffff&quot; |  color for dark background |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`color` | `HexColor` | - | color for background |
+`colorOnLight` | `HexColor` | "#212121" | color for light background |
+`colorOnDark` | `HexColor` | "#ffffff" | color for dark background |
 
-**Returns:** `string`
+**Returns:** *string*
+
 appropriate foreground color
 
 ___
-<a id="getcontrastyiq"></a>
 
 ###  getContrastYIQ
 
-▸ **getContrastYIQ**(color: *`HexColor`*): `number`
+▸ **getContrastYIQ**(`color`: `HexColor`): *number*
 
-*Defined in [color.ts:14](https://github.com/toggle-corp/fujs/blob/ade87ee/src/color.ts#L14)*
+*Defined in [color.ts:14](https://github.com/toggle-corp/fujs/blob/6346fe3/src/color.ts#L14)*
 
 Convert hex to yiq colorspace and get the luma value
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| color | `HexColor` |  \- |
+Name | Type |
+------ | ------ |
+`color` | `HexColor` |
 
-**Returns:** `number`
+**Returns:** *number*
+
 yiq luma value
 
 ___
-<a id="gethashfromstring"></a>
 
 ###  getHashFromString
 
-▸ **getHashFromString**(str: *`string`*): `number`
+▸ **getHashFromString**(`str`: string): *number*
 
-*Defined in [color.ts:48](https://github.com/toggle-corp/fujs/blob/ade87ee/src/color.ts#L48)*
+*Defined in [color.ts:48](https://github.com/toggle-corp/fujs/blob/6346fe3/src/color.ts#L48)*
 
 Get hash from a string.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| str | `string` |  any string |
+Name | Type | Description |
+------ | ------ | ------ |
+`str` | string | any string |
 
-**Returns:** `number`
+**Returns:** *number*
+
 hash derived from string
 
 ___
-<a id="gethexfromcode"></a>
 
 ###  getHexFromCode
 
-▸ **getHexFromCode**(code: *`number`*): `HexColor`
+▸ **getHexFromCode**(`code`: number): *`HexColor`*
 
-*Defined in [color.ts:61](https://github.com/toggle-corp/fujs/blob/ade87ee/src/color.ts#L61)*
+*Defined in [color.ts:61](https://github.com/toggle-corp/fujs/blob/6346fe3/src/color.ts#L61)*
 
 Get color from a number.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| code | `number` |  \- |
+Name | Type |
+------ | ------ |
+`code` | number |
 
-**Returns:** `HexColor`
+**Returns:** *`HexColor`*
+
 color derived from hash
 
 ___
-<a id="gethexfromrgb"></a>
 
 ###  getHexFromRgb
 
-▸ **getHexFromRgb**(color: *`RgbRawColor`*): `undefined` \| `string`
+▸ **getHexFromRgb**(`color`: `RgbRawColor`): *undefined | string*
 
-*Defined in [color.ts:83](https://github.com/toggle-corp/fujs/blob/ade87ee/src/color.ts#L83)*
+*Defined in [color.ts:83](https://github.com/toggle-corp/fujs/blob/6346fe3/src/color.ts#L83)*
 
 Get hex color from rgb color.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| color | `RgbRawColor` |   |
+Name | Type | Description |
+------ | ------ | ------ |
+`color` | `RgbRawColor` |   |
 
-**Returns:** `undefined` \| `string`
+**Returns:** *undefined | string*
 
 ___
-<a id="gethexfromrgbraw"></a>
 
 ###  getHexFromRgbRaw
 
-▸ **getHexFromRgbRaw**(color: *`RgbColor`*): `string`
+▸ **getHexFromRgbRaw**(`color`: `RgbColor`): *string*
 
-*Defined in [color.ts:99](https://github.com/toggle-corp/fujs/blob/ade87ee/src/color.ts#L99)*
+*Defined in [color.ts:99](https://github.com/toggle-corp/fujs/blob/6346fe3/src/color.ts#L99)*
 
 Get hex color from rgb color.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| color | `RgbColor` |   |
+Name | Type | Description |
+------ | ------ | ------ |
+`color` | `RgbColor` |   |
 
-**Returns:** `string`
+**Returns:** *string*
 
 ___
-<a id="gethexfromstring"></a>
 
 ###  getHexFromString
 
-▸ **getHexFromString**(str: *`string`*): `string`
+▸ **getHexFromString**(`str`: string): *string*
 
-*Defined in [color.ts:75](https://github.com/toggle-corp/fujs/blob/ade87ee/src/color.ts#L75)*
+*Defined in [color.ts:75](https://github.com/toggle-corp/fujs/blob/6346fe3/src/color.ts#L75)*
 
 Get color from string.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| str | `string` |  any string |
+Name | Type | Description |
+------ | ------ | ------ |
+`str` | string | any string  |
 
-**Returns:** `string`
+**Returns:** *string*
 
 ___
-<a id="getrgbfromhex"></a>
 
 ###  getRgbFromHex
 
-▸ **getRgbFromHex**(hex: *`HexColor`*): `RgbRawColor` \| `undefined`
+▸ **getRgbFromHex**(`hex`: `HexColor`): *`RgbRawColor` | undefined*
 
-*Defined in [color.ts:126](https://github.com/toggle-corp/fujs/blob/ade87ee/src/color.ts#L126)*
+*Defined in [color.ts:126](https://github.com/toggle-corp/fujs/blob/6346fe3/src/color.ts#L126)*
 
 Get rgb color from hex color 'rgb(255, 255, 255)'.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| hex | `HexColor` |  hex color '#ffffff' |
+Name | Type | Description |
+------ | ------ | ------ |
+`hex` | `HexColor` | hex color '#ffffff'  |
 
-**Returns:** `RgbRawColor` \| `undefined`
+**Returns:** *`RgbRawColor` | undefined*
 
 ___
-<a id="getrgbrawfromhex"></a>
 
 ###  getRgbRawFromHex
 
-▸ **getRgbRawFromHex**(color: *`HexColor`*): `RgbColor` \| `undefined`
+▸ **getRgbRawFromHex**(`color`: `HexColor`): *`RgbColor` | undefined*
 
-*Defined in [color.ts:109](https://github.com/toggle-corp/fujs/blob/ade87ee/src/color.ts#L109)*
+*Defined in [color.ts:109](https://github.com/toggle-corp/fujs/blob/6346fe3/src/color.ts#L109)*
 
 Get rgb color from hex color.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| color | `HexColor` |   |
+Name | Type | Description |
+------ | ------ | ------ |
+`color` | `HexColor` |   |
 
-**Returns:** `RgbColor` \| `undefined`
+**Returns:** *`RgbColor` | undefined*
 
 ___
-<a id="interpolatergb"></a>
 
 ###  interpolateRgb
 
-▸ **interpolateRgb**(color1: *`RgbColor`*, color2: *`RgbColor`*, factor?: *`number`*): [`number`, `number`, `number`]
+▸ **interpolateRgb**(`color1`: `RgbColor`, `color2`: `RgbColor`, `factor`: number): *[number, number, number]*
 
-*Defined in [color.ts:144](https://github.com/toggle-corp/fujs/blob/ade87ee/src/color.ts#L144)*
+*Defined in [color.ts:144](https://github.com/toggle-corp/fujs/blob/6346fe3/src/color.ts#L144)*
 
 Interpolate two rgb colors.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| color1 | `RgbColor` | - |  \- |
-| color2 | `RgbColor` | - |  \- |
-| `Default value` factor | `number` | 0.5 |  decides where the interpolated color lies. |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`color1` | `RgbColor` | - | - |
+`color2` | `RgbColor` | - | - |
+`factor` | number | 0.5 | decides where the interpolated color lies. |
 
-**Returns:** [`number`, `number`, `number`]
+**Returns:** *[number, number, number]*
+
 interpolated rgb color
 
 ___
-<a id="isvalidhexcolor"></a>
 
 ###  isValidHexColor
 
-▸ **isValidHexColor**(color: *`string`*): `boolean`
+▸ **isValidHexColor**(`color`: string): *boolean*
 
-*Defined in [color.ts:27](https://github.com/toggle-corp/fujs/blob/ade87ee/src/color.ts#L27)*
+*Defined in [color.ts:27](https://github.com/toggle-corp/fujs/blob/6346fe3/src/color.ts#L27)*
 
 Identifies if given color is valid color.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| color | `string` |   |
+Name | Type | Description |
+------ | ------ | ------ |
+`color` | string |   |
 
-**Returns:** `boolean`
-
-___
-
+**Returns:** *boolean*
