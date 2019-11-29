@@ -7,7 +7,7 @@ import { union, intersection } from './core';
 export function getTrigrams(sentence: string) {
     const newWord = sentence.trim()
         .toLowerCase()
-        .replace(/[^a-zA-z0-9]/g, ' ')
+        .replace(/[^a-zA-Z0-9]/g, ' ')
         .replace(/\s+/g, '  ');
     const formattedWord = `  ${newWord} `;
 
