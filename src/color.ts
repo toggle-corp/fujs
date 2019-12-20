@@ -18,7 +18,7 @@ export function getContrastYIQ(color: HexColor): number {
     const yiq = ((r * 299) + (g * 587) + (b * 114)) / (255 * 1000);
 
     return yiq;
-};
+}
 
 /**
  * Identifies if given color is valid color.
@@ -27,7 +27,7 @@ export function getContrastYIQ(color: HexColor): number {
 export function isValidHexColor(color: string) {
     const colorHex = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
     return colorHex.test(color);
-};
+}
 
 /**
  * Get appropriate foreground color for a given background color.
@@ -36,9 +36,9 @@ export function isValidHexColor(color: string) {
  * @param colorOnDark color for dark background
  * @returns appropriate foreground color
  */
-export function getColorOnBgColor(color: HexColor, colorOnLight: HexColor= '#212121', colorOnDark: HexColor= '#ffffff') {
+export function getColorOnBgColor(color: HexColor, colorOnLight: HexColor = '#212121', colorOnDark: HexColor = '#ffffff') {
     return getContrastYIQ(color) > 0.5 ? colorOnLight : colorOnDark;
-};
+}
 
 /**
  * Get hash from a string.
@@ -51,7 +51,7 @@ export function getHashFromString(str: string) {
         hash = str.charCodeAt(i) + ((hash << 5) - hash); // eslint-disable-line
     }
     return hash;
-};
+}
 
 /**
  * Get color from a number.
@@ -66,7 +66,7 @@ export function getHexFromCode(code: number): HexColor {
     // FIXME: use padStart
     const hex = '00000'.substring(0, 6 - color.length) + color;
     return `#${hex}`;
-};
+}
 
 /**
  * Get color from string.
@@ -74,7 +74,17 @@ export function getHexFromCode(code: number): HexColor {
  */
 export function getHexFromString(str: string) {
     return getHexFromCode(getHashFromString(str));
-};
+}
+
+/**
+ * Get hex color from rgb color.
+ * @param color
+ */
+export function getHexFromRgbRaw(color: RgbColor) {
+    const [r, g, b] = color;
+    // eslint-disable-next-line no-bitwise
+    return `#${((r << 16) + (g << 8) + b).toString(16).padStart(6, '0')}`;
+}
 
 /**
  * Get hex color from rgb color.
@@ -90,16 +100,6 @@ export function getHexFromRgb(color: RgbRawColor) {
     const b = parseInt(result[3], 10);
 
     return getHexFromRgbRaw([r, g, b]);
-};
-
-/**
- * Get hex color from rgb color.
- * @param color
- */
-export function getHexFromRgbRaw(color: RgbColor) {
-    const [r, g, b] = color;
-    // eslint-disable-next-line no-bitwise
-    return `#${((r << 16) + (g << 8) + b).toString(16).padStart(6, '0')}`
 }
 
 /**
@@ -117,7 +117,7 @@ export function getRgbRawFromHex(color: HexColor): RgbColor | undefined {
         parseInt(result[2], 16),
         parseInt(result[3], 16),
     ];
-};
+}
 
 /**
  * Get rgb color from hex color 'rgb(255, 255, 255)'.
@@ -141,11 +141,11 @@ export function getRgbFromHex(hex: HexColor): RgbRawColor | undefined {
  */
 // Taken from the awesome ROT.js roguelike dev library at
 // https://github.com/ondras/rot.js
-export function interpolateRgb(color1: RgbColor, color2: RgbColor, factor: number = 0.5) {
+export function interpolateRgb(color1: RgbColor, color2: RgbColor, factor = 0.5) {
     const result: RgbColor = [
         Math.round((factor * (color2[0] - color1[0])) + color1[0]),
         Math.round((factor * (color2[1] - color1[1])) + color1[1]),
         Math.round((factor * (color2[2] - color1[2])) + color1[2]),
     ];
     return result;
-};
+}

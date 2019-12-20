@@ -1,15 +1,16 @@
 {
     "name": "@togglecorp/fujs",
-    "version": "1.8.1",
+    "version": "1.8.1-beta.0",
     "description": "Friendly Utility for JS",
     "files": "build",
     "main": "build/index.js",
     "module": "build/index.es.js",
     "typings": "build/index.d.ts",
     "scripts": {
-        "prepare": "rollup -c",
-        "build": "rollup -c",
+        "prepare": "rollup -c && tsc",
+        "build": "rollup -c && tsc",
         "watch": "rollup -cw",
+        "lint": "eslint ./src/**/*.ts --rule 'import/no-unresolved: 0'",
         "test": "TZ=Asia/Katmandu jest",
         "test:coverage": "TZ=Asia/Katmandu jest --coverage"
     },
@@ -24,18 +25,44 @@
     },
     "homepage": "https://github.com/toggle-corp/fujs#readme",
     "devDependencies": {
+        "@babel/core": "^7.7.7",
+        "@babel/plugin-proposal-class-properties": "^7.7.4",
+        "@babel/plugin-proposal-decorators": "^7.7.4",
+        "@babel/plugin-proposal-export-namespace-from": "^7.7.4",
+        "@babel/plugin-proposal-function-sent": "^7.7.4",
+        "@babel/plugin-proposal-json-strings": "^7.7.4",
+        "@babel/plugin-proposal-numeric-separator": "^7.7.4",
+        "@babel/plugin-proposal-throw-expressions": "^7.7.4",
+        "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+        "@babel/plugin-syntax-import-meta": "^7.7.4",
+        "@babel/plugin-transform-runtime": "^7.7.6",
+        "@babel/preset-env": "^7.7.7",
+        "@babel/preset-typescript": "^7.7.7",
         "@types/core-js": "^2.5.2",
         "@types/jest": "^24.0.16",
-        "jest": "^24.8.0",
-        "rollup": "^1.18.0",
-        "rollup-plugin-typescript2": "^0.21.2",
-        "ts-jest": "^24.0.2",
-        "ts-loader": "^6.0.4",
-        "ts-node": "^8.3.0",
-        "tslint-config-airbnb": "^5.11.1",
-        "tslint-react": "^4.0.0",
+        "@typescript-eslint/eslint-plugin": "^2.12.0",
+        "@typescript-eslint/parser": "^2.12.0",
+        "babel-eslint": "^10.0.3",
+        "babel-jest": "^24.9.0",
+        "eslint": "^6.7.2",
+        "eslint-config-airbnb": "^18.0.1",
+        "eslint-config-airbnb-base": "^14.0.0",
+        "eslint-plugin-import": "^2.19.1",
+        "eslint_d": "^8.0.0",
+        "jest": "^24.9.0",
+        "rollup": "^1.27.13",
+        "rollup-plugin-babel": "^4.3.3",
+        "rollup-plugin-commonjs": "^10.1.0",
+        "rollup-plugin-eslint": "^7.0.0",
+        "rollup-plugin-node-resolve": "^5.2.0",
         "typedoc": "^0.14.2",
         "typedoc-plugin-markdown": "^2.1.0",
-        "typescript": "^3.5.3"
+        "typescript": "^3.7.3"
+    },
+    "peerDependencies": {
+        "@babel/runtime": "^7.7.7"
+    },
+    "dependencies": {
+        "@babel/runtime": "^7.7.7"
     }
 }

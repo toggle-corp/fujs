@@ -1,7 +1,7 @@
 import { isNotDefined } from './core';
 
 interface LinkSelector<T> {
-    (node: T, index: number): T | undefined
+    (node: T, index: number): T | undefined;
 }
 
 /**
@@ -12,6 +12,7 @@ interface LinkSelector<T> {
  *
  * @returns the nth node
  */
+// eslint-disable-next-line import/prefer-default-export
 export function getLinkedListNode<T>(node: T, n: number, selector: LinkSelector<T>) {
     let newNode: T | undefined = node;
     for (let i = 0; i < n; i += 1) {
@@ -21,4 +22,4 @@ export function getLinkedListNode<T>(node: T, n: number, selector: LinkSelector<
         }
     }
     return newNode;
-};
+}

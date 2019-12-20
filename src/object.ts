@@ -24,7 +24,7 @@ export function removeKey<T extends object>(obj: T, key: keyof T) {
     const newObj = { ...obj };
     delete newObj[key];
     return newObj;
-};
+}
 
 /**
  * Get key of the first element in an object
@@ -32,8 +32,8 @@ export function removeKey<T extends object>(obj: T, key: keyof T) {
  * @param value
  */
 export function getFirstKeyByValue<T>(obj: T, value: unknown): string | undefined {
-    return Object.keys(obj).find(key => obj[key] === value);
-};
+    return Object.keys(obj).find((key) => obj[key] === value);
+}
 
 /**
  * Identify if object has no data
@@ -50,7 +50,7 @@ export function doesObjectHaveNoData(obj: unknown, invalids: unknown[] = []): bo
         if (obj.length <= 0) {
             return true;
         }
-        return obj.every(e => doesObjectHaveNoData(e, invalids));
+        return obj.every((e) => doesObjectHaveNoData(e, invalids));
     }
 
     if (isObject(obj)) {
@@ -58,9 +58,9 @@ export function doesObjectHaveNoData(obj: unknown, invalids: unknown[] = []): bo
             return true;
         }
         return Object.keys(obj).every(
-            key => doesObjectHaveNoData(obj[key], invalids)
+            (key) => doesObjectHaveNoData(obj[key], invalids),
         );
     }
 
     return invalids.includes(obj);
-};
+}

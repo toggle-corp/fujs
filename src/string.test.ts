@@ -115,4 +115,3 @@ test('camel case to kebab case', () => {
     expect(camelToKebab('hari')).toEqual('hari');
     expect(camelToKebab('Hari')).toEqual('hari');
 });
-

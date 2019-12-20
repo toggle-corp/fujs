@@ -17,9 +17,9 @@ enum ValueType {
 }
 
 interface Value {
-    type?: ValueType,
-    value: string,
-};
+    type?: ValueType;
+    value: string;
+}
 
 function getStartAndEnd(format: string, matches: string[]) {
     let minStart: number | undefined;
@@ -36,7 +36,7 @@ function getStartAndEnd(format: string, matches: string[]) {
         if (minStart === undefined || start < minStart) {
             minStart = start;
         }
-        if (maxEnd === undefined  || end > maxEnd) {
+        if (maxEnd === undefined || end > maxEnd) {
             maxEnd = end;
         }
     });
@@ -45,7 +45,7 @@ function getStartAndEnd(format: string, matches: string[]) {
         start: minStart,
         end: maxEnd,
     };
-};
+}
 
 /**
  * Break timedate format into time unit, date unit and other unit.
@@ -60,11 +60,11 @@ export function breakFormat(format: string): Value[] {
     const {
         start: dateStart,
         end: dateEnd,
-    }= getStartAndEnd(format, ['yyyy', 'yy', 'MMM', 'MM', 'dd', 'EEE']);
+    } = getStartAndEnd(format, ['yyyy', 'yy', 'MMM', 'MM', 'dd', 'EEE']);
     const {
         start: timeStart,
         end: timeEnd,
-    }= getStartAndEnd(format, ['hh', 'mm', 'ss', 'aaa']);
+    } = getStartAndEnd(format, ['hh', 'mm', 'ss', 'aaa']);
 
     const formatEnd = format.length;
     const getSubFormat = (start: number | undefined, end: number | undefined) => {
@@ -72,13 +72,14 @@ export function breakFormat(format: string): Value[] {
             return '';
         }
         return format.substring(start, end);
-    }
+    };
 
     if (dateStart === undefined && timeStart === undefined) {
         return [
             { value: format },
-        ].filter(a => a.value !== '');
-    } else if (dateStart === undefined) {
+        ].filter((a) => a.value !== '');
+    }
+    if (dateStart === undefined) {
         return [
             { value: getSubFormat(0, timeStart) },
             {
@@ -86,8 +87,9 @@ export function breakFormat(format: string): Value[] {
                 value: getSubFormat(timeStart, timeEnd),
             },
             { value: getSubFormat(timeEnd, formatEnd) },
-        ].filter(a => a.value !== '');
-    } else if (timeStart === undefined) {
+        ].filter((a) => a.value !== '');
+    }
+    if (timeStart === undefined) {
         return [
             { value: getSubFormat(0, dateStart) },
             {
@@ -95,8 +97,9 @@ export function breakFormat(format: string): Value[] {
                 value: getSubFormat(dateStart, dateEnd),
             },
             { value: getSubFormat(dateEnd, formatEnd) },
-        ].filter(a => a.value !== '');
-    } else if (dateStart < timeStart) {
+        ].filter((a) => a.value !== '');
+    }
+    if (dateStart < timeStart) {
         return [
             { value: getSubFormat(0, dateStart) },
             {
@@ -109,7 +112,7 @@ export function breakFormat(format: string): Value[] {
                 value: getSubFormat(timeStart, timeEnd),
             },
             { value: getSubFormat(timeEnd, formatEnd) },
-        ].filter(a => a.value !== '');
+        ].filter((a) => a.value !== '');
     }
     return [
         { value: getSubFormat(0, timeStart) },
@@ -123,8 +126,8 @@ export function breakFormat(format: string): Value[] {
             value: getSubFormat(dateStart, dateEnd),
         },
         { value: getSubFormat(dateEnd, formatEnd) },
-    ].filter(a => a.value !== '');
-};
+    ].filter((a) => a.value !== '');
+}
 
 /**
  * Populate the format list with date
@@ -149,7 +152,8 @@ export function populateFormat(formatList: Value[], date: Date) {
                 .replace('EEE', weekName)
                 .replace('dd', padStart(day, 2));
             return newFormat;
-        } else if (format.type === ValueType.time) {
+        }
+        if (format.type === ValueType.time) {
             const ttIndex = format.value.indexOf('aaa');
 
             const originalHour = date.getHours();
@@ -171,7 +175,7 @@ export function populateFormat(formatList: Value[], date: Date) {
         }
         return format;
     });
-};
+}
 
 /**
  * Format date
@@ -182,9 +186,9 @@ export function populateFormat(formatList: Value[], date: Date) {
  */
 export function formatDateToString(date: Date, format: string): string {
     return populateFormat(breakFormat(format), date)
-        .map(e => e.value)
+        .map((e) => e.value)
         .join('');
-};
+}
 
 /**
  * Set hour, minute and second to zero in given datetime
@@ -196,7 +200,7 @@ export function getDate(datetime: string | number): number {
     const today = new Date(datetime);
     today.setHours(0, 0, 0, 0);
     return today.getTime();
-};
+}
 
 /**
  * Get number of days betwen two datetime
@@ -209,7 +213,7 @@ export function getDifferenceInDays(a: string | number, b: string | number): num
     const dateA = getDate(a);
     const dateB = getDate(b);
     return (dateA - dateB) / (1000 * 60 * 60 * 24);
-};
+}
 
 /**
  * Get number of days betwen two datetime
@@ -235,7 +239,7 @@ export function getDateDifferenceHumanReadable(a: string, b: string): string {
     }
 
     return `After ${diff} days`;
-};
+}
 
 /**
  * Get number of days in certain year and month
@@ -252,7 +256,7 @@ export function getNumDaysInMonthX(year: Maybe<number>, month: Maybe<number>): n
         return new Date(year, month, 0).getDate();
     }
     return 32;
-};
+}
 
 /**
  * Get number of days in certain year and month from a date
@@ -262,10 +266,10 @@ export function getNumDaysInMonthX(year: Maybe<number>, month: Maybe<number>): n
  */
 export function getNumDaysInMonth(date: Maybe<Date>) {
     if (date) {
-        return getNumDaysInMonthX(date.getFullYear(), date.getMonth() + 1)
+        return getNumDaysInMonthX(date.getFullYear(), date.getMonth() + 1);
     }
     return 32;
-};
+}
 
 /**
  * Change date into 'yyyy-MM-dd' string
@@ -303,14 +307,14 @@ export function decodeDate(value: Maybe<string | number>) {
         Number(splits[1]) - 1,
         Number(splits[2]),
     );
-};
+}
 
 export const MIN_YEAR = 1990;
 
 interface Ymd {
-    yearValue: number,
-    monthValue: number,
-    dayValue: number,
+    yearValue: number;
+    monthValue: number;
+    dayValue: number;
 }
 
 /**
@@ -322,10 +326,10 @@ export function isDateValuesComplete(ymd: Partial<Ymd>): ymd is Ymd {
     const { yearValue, monthValue, dayValue } = ymd;
     // Complete if all values are undefined or none are
     return (
-        (isTruthy(dayValue) && isTruthy(monthValue) && isTruthy(yearValue)) ||
-        (isFalsy(dayValue) && isFalsy(monthValue) && isFalsy(yearValue))
+        (isTruthy(dayValue) && isTruthy(monthValue) && isTruthy(yearValue))
+        || (isFalsy(dayValue) && isFalsy(monthValue) && isFalsy(yearValue))
     );
-};
+}
 
 /**
  * Identify problem with ymd value
@@ -355,7 +359,7 @@ export function getErrorForDateValues(ymd: Partial<Ymd>) {
     }
 
     return undefined;
-};
+}
 
 const MIN_HOUR = 0;
 const MAX_HOUR = 23;
@@ -365,9 +369,9 @@ const MIN_SECOND = 0;
 const MAX_SECOND = 59;
 
 interface Hms {
-    hourValue: number,
-    minuteValue: number,
-    secondValue: number,
+    hourValue: number;
+    minuteValue: number;
+    secondValue: number;
 }
 
 /**
@@ -379,8 +383,8 @@ export const isTimeValuesComplete = (val: Partial<Hms>): val is Hms => {
     const { hourValue, minuteValue, secondValue } = val;
     // Complete if all values are undefined or none are
     return (
-        (isTruthy(hourValue) && isTruthy(minuteValue) && isTruthy(secondValue)) ||
-        (isFalsy(hourValue) && isFalsy(minuteValue) && isFalsy(secondValue))
+        (isTruthy(hourValue) && isTruthy(minuteValue) && isTruthy(secondValue))
+        || (isFalsy(hourValue) && isFalsy(minuteValue) && isFalsy(secondValue))
     );
 };
 
@@ -400,9 +404,11 @@ export const getErrorForTimeValues = (val: Partial<Hms>) => {
 
     if (hourValue < MIN_HOUR || hourValue > MAX_HOUR) {
         return `Hour must be between ${MIN_HOUR} and ${MAX_HOUR}`;
-    } else if (minuteValue < MIN_MINUTE || minuteValue > MAX_MINUTE) {
+    }
+    if (minuteValue < MIN_MINUTE || minuteValue > MAX_MINUTE) {
         return `Minute must be between ${MIN_MINUTE} and ${MAX_MINUTE}`;
-    } else if (secondValue < MIN_SECOND || secondValue > MAX_SECOND) {
+    }
+    if (secondValue < MIN_SECOND || secondValue > MAX_SECOND) {
         return `Second must be between ${MIN_SECOND} and ${MAX_SECOND}`;
     }
 

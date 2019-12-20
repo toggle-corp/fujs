@@ -3,19 +3,16 @@ module.exports = {
     "<rootDir>/src"
   ],
   "collectCoverageFrom": [
-    "**/*.{ts,tsx}",
+    "**/*.{js,ts}",
     "!**/node_modules/**",
   ],
   "transform": {
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.(js|ts)?$": "./babel-transform.js"
   },
-  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)?$",
   "moduleFileExtensions": [
     "ts",
-    "tsx",
     "js",
-    "jsx",
     "json",
-    "node"
   ],
 }

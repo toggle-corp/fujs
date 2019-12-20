@@ -57,9 +57,9 @@ export function median(values: number[]) {
     const centerIndex = Math.floor(sortedValues.length / 2);
 
     return sortedValues.length % 2
-        ?  sortedValues[centerIndex]
+        ? sortedValues[centerIndex]
         : (sortedValues[centerIndex - 1] + sortedValues[centerIndex]) / 2.0;
-};
+}
 
 // min, max, output
 type Bucket<T> = [number, number, T];
@@ -72,10 +72,10 @@ type Bucket<T> = [number, number, T];
  */
 export function bucket<T>(value: number, buckets: Bucket<T>[]): T | undefined {
     const currentBucket = buckets.find(
-        ([min, max]) => (value >= min && value < max)
+        ([min, max]) => (value >= min && value < max),
     );
     return currentBucket && currentBucket[2];
-};
+}
 
 /**
  * Get number bounded on two sides
@@ -88,7 +88,7 @@ export function bound(value: number, a: number, b: number): number {
     const min = Math.min(a, b);
     const max = Math.max(a, b);
     return Math.max(min, Math.min(max, value));
-};
+}
 
 /**
  * Get normalized value for a number
@@ -99,7 +99,7 @@ export function bound(value: number, a: number, b: number): number {
  */
 export function normalize(value: number, max: number, min: number) {
     return (value - min) / (max - min);
-};
+}
 
 /**
  * Get list of numbers from `start` to `end`
@@ -113,4 +113,4 @@ export function getNumbers(start: number, end: number): number[] {
         list.push(i);
     }
     return list;
-};
+}

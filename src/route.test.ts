@@ -15,4 +15,3 @@ test('check isRaramRequired', () => {
     expect(isParamRequired('/projects/:projectId?', 'userId')).toEqual(false);
     expect(isParamRequired('/:userId/projects/:projectId?', 'userId')).toEqual(true);
 });
-

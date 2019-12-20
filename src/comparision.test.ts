@@ -115,4 +115,3 @@ test('compare string search', () => {
     expect(compareStringSearch('fandesk', 'andromeda', 'and')).toBeGreaterThan(0);
     expect(compareStringSearch('andromeda', 'fandesk', 'and')).toBeLessThan(0);
 });
-
