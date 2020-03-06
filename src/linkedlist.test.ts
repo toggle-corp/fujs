@@ -2,8 +2,8 @@ import { getLinkedListNode } from './linkedlist';
 
 test('get linked list node', () => {
     interface Node {
-        value: number,
-        child?: Node,
+        value: number;
+        child?: Node;
     }
 
     const selector = (node: Node) => node.child;

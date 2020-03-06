@@ -38,7 +38,7 @@ export function reverseRoute(route: string, params: Obj<string | number>): strin
     }
 
     return paths.join('/');
-};
+}
 
 /**
  * Identify if param is required in certain route
@@ -48,4 +48,4 @@ export function reverseRoute(route: string, params: Obj<string | number>): strin
 export function isParamRequired(route: string, param: string) {
     const re = new RegExp(`:${param}([^\\?]|$)`);
     return route.search(re) !== -1;
-};
+}

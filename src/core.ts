@@ -3,7 +3,8 @@ import { Maybe, Parameters } from './declarations';
 /**
  * Does nothing
  */
-export function noOp() {};
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+export function noOp() {}
 
 /**
  * Get union of two sets.
@@ -12,7 +13,7 @@ export function noOp() {};
  * @returns union of two sets
  */
 export function union<T>(setA: Set<T>, setB: Set<T>): Set<T> {
-    return new Set([ ...setA, ...setB ]);
+    return new Set([...setA, ...setB]);
 }
 
 /**
@@ -22,7 +23,7 @@ export function union<T>(setA: Set<T>, setB: Set<T>): Set<T> {
  * @returns intersection of two sets
  */
 export function intersection<T>(setA: Set<T>, setB: Set<T>): Set<T> {
-    return new Set([...setA].filter(x => setB.has(x)));
+    return new Set([...setA].filter((x) => setB.has(x)));
 }
 
 /**
@@ -32,7 +33,7 @@ export function intersection<T>(setA: Set<T>, setB: Set<T>): Set<T> {
  * @returns difference between two sets
  */
 export function difference<T>(setA: Set<T>, setB: Set<T>): Set<T> {
-    return new Set([...setA].filter(x => !setB.has(x)));
+    return new Set([...setA].filter((x) => !setB.has(x)));
 }
 
 /**
@@ -70,7 +71,7 @@ export function isDefined<T>(val: Maybe<T>): val is T {
  * @param override list of additional values that are considered false values
  */
 export function isFalsy(val: unknown, override: unknown[] = []): val is undefined | null {
-    return isNotDefined(val) || val === false || override.includes(val)
+    return isNotDefined(val) || val === false || override.includes(val);
 }
 
 /**
@@ -80,7 +81,7 @@ export function isFalsy(val: unknown, override: unknown[] = []): val is undefine
  */
 export function isTruthy<T>(val: Maybe<T>, override: unknown[] = []): val is T {
     return !isFalsy(val) || override.includes(val);
-};
+}
 
 /**
  * Identifies if value is falsy string.
@@ -100,7 +101,8 @@ export function isTruthyString(val: Maybe<string | false>): val is string {
 }
 
 /**
- * Resolves if first argument is function with other arguments as argument to user supplied function.
+ * Resolves if first argument is function with other arguments as argument to
+ * user supplied function.
  * @param variable either a function to resolive or any value
  * @param args arguments for user supplied function
  * @returns value resolved from user supplied function

@@ -19,7 +19,7 @@ export function getTrigrams(sentence: string) {
         }
     }
     return new Set(trigrams);
-};
+}
 
 /**
  * Get trigram similarity between two sentences
@@ -33,5 +33,4 @@ export function getTrigramSimilarity(foo: string, bar: string) {
     const common = intersection(fooTrigrams, barTrigrams);
     const all = union(fooTrigrams, barTrigrams);
     return common.size / all.size;
-};
-
+}

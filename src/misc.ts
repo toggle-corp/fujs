@@ -8,6 +8,7 @@ import { isFalsy, isTruthy } from './core';
  * @param oldVersionId
  * @param newVersionId
  */
+// eslint-disable-next-line import/prefer-default-export
 export function checkVersion(oldVersionId: Maybe<number>, newVersionId: number) {
     return {
         shouldSetValue: isFalsy(oldVersionId) || oldVersionId < newVersionId,

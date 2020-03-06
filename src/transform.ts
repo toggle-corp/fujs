@@ -21,9 +21,20 @@ interface NewKeySelector<T>{
  * @param keySelector get key from item in list
  * @param modifier get new value from item in list
  */
-export function listToMap<T>(list: Maybe<T[]>, keySelector: KeySelector<T>): Obj<T>;
-export function listToMap<T, Q>(list: Maybe<T[]>, keySelector: KeySelector<T>, modifier: Modifier<T, Q>): Obj<Q>;
-export function listToMap<T, Q>(list: Maybe<T[]>, keySelector: KeySelector<T>, modifier?: Modifier<T, Q>) {
+export function listToMap<T>(
+    list: Maybe<T[]>,
+    keySelector: KeySelector<T>,
+): Obj<T>;
+export function listToMap<T, Q>(
+    list: Maybe<T[]>,
+    keySelector: KeySelector<T>,
+    modifier: Modifier<T, Q>
+): Obj<Q>;
+export function listToMap<T, Q>(
+    list: Maybe<T[]>,
+    keySelector: KeySelector<T>,
+    modifier?: Modifier<T, Q>,
+) {
     if (isNotDefined(list)) {
         return {};
     }
@@ -58,7 +69,7 @@ export function mapToList<T, Q>(obj: Maybe<Obj<T>>, modifier?: ListModifier<T, Q
         },
         [] as (Q|T)[],
     );
-};
+}
 
 /**
  * Transform object to object
@@ -66,9 +77,20 @@ export function mapToList<T, Q>(obj: Maybe<Obj<T>>, modifier?: ListModifier<T, Q
  * @param keySelector get new key for item in object
  * @param modifier get new value for item in object
  */
-export function mapToMap<T>(obj: Maybe<Obj<T>>, keySelector?: NewKeySelector<T>): Obj<T>;
-export function mapToMap<T, Q>(obj: Maybe<Obj<T>>, keySelector: NewKeySelector<T> | undefined, modifier: Modifier<T, Q>): Obj<Q>;
-export function mapToMap<T, Q>(obj: Maybe<Obj<T>>, keySelector?: NewKeySelector<T>, modifier?: Modifier<T, Q>) {
+export function mapToMap<T>(
+    obj: Maybe<Obj<T>>,
+    keySelector?: NewKeySelector<T>,
+): Obj<T>;
+export function mapToMap<T, Q>(
+    obj: Maybe<Obj<T>>,
+    keySelector: NewKeySelector<T> | undefined,
+    modifier: Modifier<T, Q>,
+): Obj<Q>;
+export function mapToMap<T, Q>(
+    obj: Maybe<Obj<T>>,
+    keySelector?: NewKeySelector<T>,
+    modifier?: Modifier<T, Q>,
+) {
     if (isNotDefined(obj)) {
         return {};
     }
@@ -80,8 +102,8 @@ export function mapToMap<T, Q>(obj: Maybe<Obj<T>>, keySelector?: NewKeySelector<
             return acc;
         },
         {},
-    )
-};
+    );
+}
 
 /**
  * Group list into object of list.
@@ -90,9 +112,20 @@ export function mapToMap<T, Q>(obj: Maybe<Obj<T>>, keySelector?: NewKeySelector<
  * @param keySelector get key for item in list
  * @param modifier get new value for item in list
  */
-export function listToGroupList<T>(list: Maybe<T[]>, keySelector: KeySelector<T>): Obj<T[]>;
-export function listToGroupList<T, Q>(list: Maybe<T[]>, keySelector: KeySelector<T>, modifier: Modifier<T, Q>): Obj<Q[]>;
-export function listToGroupList<T, Q>(list: Maybe<T[]>, keySelector: KeySelector<T>, modifier?: Modifier<T, Q>) {
+export function listToGroupList<T>(
+    list: Maybe<T[]>,
+    keySelector: KeySelector<T>,
+): Obj<T[]>;
+export function listToGroupList<T, Q>(
+    list: Maybe<T[]>,
+    keySelector: KeySelector<T>,
+    modifier: Modifier<T, Q>,
+): Obj<Q[]>;
+export function listToGroupList<T, Q>(
+    list: Maybe<T[]>,
+    keySelector: KeySelector<T>,
+    modifier?: Modifier<T, Q>,
+) {
     if (isNotDefined(list)) {
         return {};
     }

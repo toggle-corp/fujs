@@ -48,7 +48,7 @@ test('is list equal', () => {
 });
 
 test('find duplicates', () => {
-    expect(getDuplicates([1, 2, 2, 3, 3, 3], k => k)).toEqual(['2', '3']);
+    expect(getDuplicates([1, 2, 2, 3, 3, 3], (k) => k)).toEqual(['2', '3']);
 });
 
 test('find difference in list', () => {
@@ -67,21 +67,21 @@ test('find difference in list', () => {
         three,
         four,
     ];
-    expect(findDifferenceInList(oldList, newList, elem => elem.key)).toEqual({
+    expect(findDifferenceInList(oldList, newList, (elem) => elem.key)).toEqual({
         added: [four],
         removed: [one],
         modified: [{ old: two, new: newTwo }],
         unmodified: [three],
-    })
+    });
 });
 
 test('unique in list', () => {
     expect(unique([1, 2, 3, 1, 2, 3, 1]))
-        .toEqual([1, 2, 3])
+        .toEqual([1, 2, 3]);
     expect(unique([1, 2, 3]))
-        .toEqual([1, 2, 3])
+        .toEqual([1, 2, 3]);
     expect(unique(undefined))
-        .toEqual(undefined)
+        .toEqual(undefined);
     const foo = [
         { uid: 14, name: 'hari' },
         { uid: 15, name: 'kiran' },
@@ -94,6 +94,6 @@ test('unique in list', () => {
         { uid: 15, name: 'kiran' },
         { uid: 12, name: 'shyam' },
         { uid: 16, name: 'chyame' },
-    ]
-    expect(unique(foo, item => item.uid)).toEqual(bar);
+    ];
+    expect(unique(foo, (item) => item.uid)).toEqual(bar);
 });

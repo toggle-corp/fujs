@@ -15,7 +15,7 @@ import {
  * @remarks
  * Use when String(num).padStart(length, str) not fully supported
  */
-export function padStart(value: Maybe<string | number>, length: number, pad: string = '0'): string {
+export function padStart(value: Maybe<string | number>, length: number, pad = '0'): string {
     if (isNotDefined(value)) {
         return '';
     }
@@ -23,7 +23,7 @@ export function padStart(value: Maybe<string | number>, length: number, pad: str
     return str.length >= length
         ? str
         : Array(length - str.length + 1).join(pad) + str;
-};
+}
 
 /**
  * Change the first letter of word to uppercase
@@ -32,10 +32,10 @@ export function padStart(value: Maybe<string | number>, length: number, pad: str
  */
 export function capitalize(str: Maybe<string>) {
     if (isTruthyString(str)) {
-        return str.replace(/\b\w/g, l => l.toUpperCase());
+        return str.replace(/\b\w/g, (l) => l.toUpperCase());
     }
     return str;
-};
+}
 
 /**
  * Format text, extracted from pdfs, to remove extraneous spaces
@@ -57,7 +57,7 @@ export function formatPdfText(text: string) {
         // This weird -? text combo to just -
         .replace(/-\?/gi, '-')
         .trim();
-};
+}
 
 /**
  * Get rating for content in string
@@ -70,8 +70,8 @@ export function getRatingForContentInString(content: Maybe<string>, str: Maybe<s
     if (isFalsyString(content) || isFalsyString(str)) {
         return -1;
     }
-    return content.toLowerCase().indexOf(str.toLowerCase())
-};
+    return content.toLowerCase().indexOf(str.toLowerCase());
+}
 
 /**
  * Get random string
@@ -79,7 +79,7 @@ export function getRatingForContentInString(content: Maybe<string>, str: Maybe<s
  * @param length length of the random string
  * @param mixedCase if uppercase alphabets are to be included
  */
-export function randomString(length: number = 8, mixedCase: boolean = false) {
+export function randomString(length = 16, mixedCase = false) {
     let text = '';
     const possible = mixedCase
         ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -98,7 +98,7 @@ export function randomString(length: number = 8, mixedCase: boolean = false) {
     window.crypto.getRandomValues(randomValues);
     return Array.from(randomValues, v => v.toString(36)).join('').substring(0, 8);
     */
-};
+}
 
 
 /**
@@ -113,14 +113,14 @@ export function randomString(length: number = 8, mixedCase: boolean = false) {
 const reOne = /([a-z])([A-Z])([A-Z])/g;
 const reTwo = /([a-z])([A-Z])/g;
 const reThree = /([A-Z])([A-Z])([a-z])/g;
-export const camelToNormal = (str: Maybe<string>, separator: string = ' ') => {
+export function camelToNormal(str: Maybe<string>, separator = ' ') {
     if (isNotDefined(str)) {
         return str;
     }
     return str.replace(reOne, (_, one, two, three) => `${one}${separator}${two}${three}`)
         .replace(reTwo, (_, one, two) => `${one}${separator}${two.toLowerCase()}`)
-        .replace(reThree, (_, one, two, three) => `${one}${separator}${two.toLowerCase()}${three}`)
-};
+        .replace(reThree, (_, one, two, three) => `${one}${separator}${two.toLowerCase()}${three}`);
+}
 
 /**
  * Convert camel case to snake case
@@ -130,7 +130,7 @@ export const camelToNormal = (str: Maybe<string>, separator: string = ' ') => {
  * @remarks
  * Only support alphabets (not numerals)
  */
-export const camelToSnake = (str: Maybe<string>) => {
+export function camelToSnake(str: Maybe<string>) {
     const value = camelToNormal(str, '_');
     if (isNotDefined(value) || value.length <= 1) {
         return value;
@@ -152,7 +152,7 @@ export function camelToKebab(str: Maybe<string>) {
         return value;
     }
     return value.charAt(0).toLowerCase() + value.slice(1);
-};
+}
 
 /**
  * Split sentence
@@ -164,7 +164,7 @@ export function splitInWhitespace(str: Maybe<string>): string[] {
         return [];
     }
     return str.match(/\S+/g) || [];
-};
+}
 
 /**
  * Convert all whitespaces into single space
@@ -176,7 +176,7 @@ export function trimWhitespace(str: Maybe<string>) {
         return str;
     }
     return splitInWhitespace(str).join(' ');
-};
+}
 
 /**
  * Identify if shortText is inside longText
@@ -188,18 +188,21 @@ export function trimWhitespace(str: Maybe<string>) {
  * The match is case-insensitive
  *
  */
-export function caseInsensitiveSubmatch(longText: Maybe<string | number>, shortText: Maybe<string | number>) {
+export function caseInsensitiveSubmatch(
+    longText: Maybe<string | number>,
+    shortText: Maybe<string | number>,
+) {
     if (isNotDefined(longText) || isNotDefined(shortText)) {
         return false;
     }
 
     return (
         String(longText)
-        .trim()
-        .toLowerCase()
+            .trim()
+            .toLowerCase()
     ).includes(
         String(shortText)
-        .trim()
-        .toLowerCase()
-    )
-};
+            .trim()
+            .toLowerCase(),
+    );
+}

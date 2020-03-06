@@ -17,5 +17,3 @@ test('normalize numbers', () => {
     expect(formattedNormalize(30000000)).toEqual({ number: 3, normalizeSuffix: 'Cr' });
     expect(formattedNormalize(2000000000)).toEqual({ number: 2, normalizeSuffix: 'Ar' });
 });
-
-

@@ -9,7 +9,11 @@ import { Maybe, Obj } from './declarations';
  * @param separator thousand separator
  * @param decimalSeparator decimal separator
  */
-export function addSeparator(num: Maybe<string | number>, separator: string = ',', decimalSeparator: string = '.') {
+export function addSeparator(
+    num: Maybe<string | number>,
+    separator = ',',
+    decimalSeparator = '.',
+) {
     if (isNotDefined(num)) {
         return num;
     }
@@ -24,7 +28,7 @@ export function addSeparator(num: Maybe<string | number>, separator: string = ',
     const x2 = after !== undefined ? `${decimalSeparator}${after}` : '';
 
     return x1 + x2;
-};
+}
 
 export enum Lang {
     en = 'en',
@@ -32,8 +36,8 @@ export enum Lang {
 }
 
 type Mapping = {
-    suffix: string,
-    value: number,
+    suffix: string;
+    value: number;
 }[];
 
 const nepaliMapping = [
@@ -51,7 +55,7 @@ const englishMapping = [
 const mappings: Obj<Mapping> = {
     [Lang.np]: nepaliMapping,
     [Lang.en]: englishMapping,
-}
+};
 
 /**
  * Get normalized number
@@ -64,14 +68,14 @@ export function formattedNormalize(num: number, lang: Lang = Lang.np) {
         console.error(`Mapping not defined for ${lang}`);
         return { number: num };
     }
-    const rule = mapping.find(n => num >= n.value);
+    const rule = mapping.find((n) => num >= n.value);
 
     if (isNotDefined(rule)) {
-        return { number: num }
+        return { number: num };
     }
     const { suffix, value } = rule;
     return {
         number: num / value,
         normalizeSuffix: suffix,
-    }
-};
+    };
+}

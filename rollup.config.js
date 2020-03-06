@@ -1,5 +1,9 @@
-import typescript from 'rollup-plugin-typescript2'
-import pkg from './package.json'
+import commonjs from 'rollup-plugin-commonjs';
+import resolve from 'rollup-plugin-node-resolve';
+import babel from 'rollup-plugin-babel';
+import { eslint } from 'rollup-plugin-eslint';
+
+import pkg from './package.json';
 
 export default {
     input: 'src/index.ts',
@@ -7,10 +11,12 @@ export default {
         {
             file: pkg.main,
             format: 'cjs',
+            sourcemap: true,
         },
         {
             file: pkg.module,
             format: 'es',
+            sourcemap: true,
         },
     ],
     external: [
@@ -18,8 +24,23 @@ export default {
         ...Object.keys(pkg.peerDependencies || {}),
     ],
     plugins: [
-        typescript({
-            typescript: require('typescript'),
+        // Allows node_modules resolution
+        resolve({ extensions: ['.js', '.ts'] }),
+
+        // Allow bundling cjs modules. Rollup doesn't understand cjs
+        commonjs(),
+
+        eslint({
+            throwOnError: true,
+        }),
+
+        babel({
+            exclude: 'node_modules/**',
+            extensions: ['.js', '.ts'],
+            sourceMaps: true,
+            inputSourceMap: true,
+
+            runtimeHelpers: true,
         }),
     ],
-}
+};

@@ -50,7 +50,8 @@ test('check if object has no data', () => {
     expect(doesObjectHaveNoData({ hari: '', shyam: undefined })).toBe(false);
     expect(doesObjectHaveNoData({ hari: { shyam: 1 } })).toBe(false);
     expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [1, 2] } })).toBe(false);
-    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [{}, { value: 0 }] } })).toBe(false);
+    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [{}, { value: 0 }] } }))
+        .toBe(false);
 });
 
 test('check if object has no data', () => {
@@ -63,7 +64,8 @@ test('check if object has no data', () => {
     expect(doesObjectHaveNoData({ hari: undefined }, invalids)).toBe(true);
     expect(doesObjectHaveNoData({ hari: { shyam: undefined } }, invalids)).toBe(true);
     expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [] } }, invalids)).toBe(true);
-    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [{}, {}] } }, invalids)).toBe(true);
+    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [{}, {}] } }, invalids))
+        .toBe(true);
     expect(doesObjectHaveNoData('', invalids)).toBe(true);
     expect(doesObjectHaveNoData({ hari: '', shyam: undefined }, invalids)).toBe(true);
 
@@ -77,6 +79,8 @@ test('check if object has no data', () => {
     expect(doesObjectHaveNoData([true, undefined], invalids)).toBe(false);
     expect(doesObjectHaveNoData([{}, {}, false], invalids)).toBe(false);
     expect(doesObjectHaveNoData({ hari: { shyam: 1 } }, invalids)).toBe(false);
-    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [1, 2] } }, invalids)).toBe(false);
-    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [{}, { value: 0 }] } }, invalids)).toBe(false);
+    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [1, 2] } }, invalids))
+        .toBe(false);
+    expect(doesObjectHaveNoData({ hari: { shyam: undefined, hari: [{}, { value: 0 }] } }, invalids))
+        .toBe(false);
 });
