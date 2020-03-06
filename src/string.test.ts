@@ -12,7 +12,7 @@ import {
 } from './string';
 
 test('random string', () => {
-    expect(randomString().length).toEqual(8);
+    expect(randomString().length).toEqual(16);
     expect(randomString(10).length).toEqual(10);
     expect(randomString(10, true).length).toEqual(10);
 });

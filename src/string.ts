@@ -79,7 +79,7 @@ export function getRatingForContentInString(content: Maybe<string>, str: Maybe<s
  * @param length length of the random string
  * @param mixedCase if uppercase alphabets are to be included
  */
-export function randomString(length = 8, mixedCase = false) {
+export function randomString(length = 16, mixedCase = false) {
     let text = '';
     const possible = mixedCase
         ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
