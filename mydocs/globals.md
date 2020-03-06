@@ -1,6 +1,4 @@
-> **[@togglecorp/fujs](README.md)**
-
-[Globals](globals.md) /
+[@togglecorp/fujs](README.md) › [Globals](globals.md)
 
 # @togglecorp/fujs
 
@@ -8,6 +6,7 @@
 
 ### External modules
 
+* ["calendar"](modules/_calendar_.md)
 * ["color"](modules/_color_.md)
 * ["comparision"](modules/_comparision_.md)
 * ["core"](modules/_core_.md)

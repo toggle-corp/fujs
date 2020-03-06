@@ -1,6 +1,4 @@
-> **[@togglecorp/fujs](../README.md)**
-
-[Globals](../globals.md) / ["declarations"](_declarations_.md) /
+[@togglecorp/fujs](../README.md) › [Globals](../globals.md) › ["declarations"](_declarations_.md)
 
 # External module: "declarations"
 
@@ -18,17 +16,17 @@
 
 ###  FirstArgument
 
-Ƭ **FirstArgument**: *`FirstArgument<T>`*
+Ƭ **FirstArgument**: *T extends function ? U : any*
 
-*Defined in [declarations.ts:4](https://github.com/toggle-corp/fujs/blob/6346fe3/src/declarations.ts#L4)*
+*Defined in [declarations.ts:4](https://github.com/toggle-corp/fujs/blob/8801a55/src/declarations.ts#L4)*
 
 ___
 
 ###  Maybe
 
-Ƭ **Maybe**: *`T` | undefined | null*
+Ƭ **Maybe**: *T | undefined | null*
 
-*Defined in [declarations.ts:1](https://github.com/toggle-corp/fujs/blob/6346fe3/src/declarations.ts#L1)*
+*Defined in [declarations.ts:1](https://github.com/toggle-corp/fujs/blob/8801a55/src/declarations.ts#L1)*
 
 ___
 
@@ -36,24 +34,24 @@ ___
 
 Ƭ **Obj**: *object*
 
-*Defined in [declarations.ts:2](https://github.com/toggle-corp/fujs/blob/6346fe3/src/declarations.ts#L2)*
+*Defined in [declarations.ts:2](https://github.com/toggle-corp/fujs/blob/8801a55/src/declarations.ts#L2)*
 
 #### Type declaration:
 
-● \[▪ **key**: *string*\]: `T`
+* \[ **key**: *string*\]: T
 
 ___
 
 ###  Parameters
 
-Ƭ **Parameters**: *`Parameters<T>`*
+Ƭ **Parameters**: *T extends function ? T : undefined[]*
 
-*Defined in [declarations.ts:5](https://github.com/toggle-corp/fujs/blob/6346fe3/src/declarations.ts#L5)*
+*Defined in [declarations.ts:5](https://github.com/toggle-corp/fujs/blob/8801a55/src/declarations.ts#L5)*
 
 ___
 
 ###  ReturnType
 
-Ƭ **ReturnType**: *`ReturnType<T>`*
+Ƭ **ReturnType**: *T extends function ? R : never*
 
-*Defined in [declarations.ts:6](https://github.com/toggle-corp/fujs/blob/6346fe3/src/declarations.ts#L6)*
+*Defined in [declarations.ts:6](https://github.com/toggle-corp/fujs/blob/8801a55/src/declarations.ts#L6)*
