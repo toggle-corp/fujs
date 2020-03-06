@@ -1,6 +1,4 @@
-> **[@togglecorp/fujs](../README.md)**
-
-[Globals](../globals.md) / ["number"](../modules/_number_.md) / [Lang](_number_.lang.md) /
+[@togglecorp/fujs](../README.md) › [Globals](../globals.md) › ["number"](../modules/_number_.md) › [Lang](_number_.lang.md)
 
 # Enumeration: Lang
 
@@ -17,7 +15,7 @@
 
 • **en**: = "en"
 
-*Defined in [number.ts:30](https://github.com/toggle-corp/fujs/blob/6346fe3/src/number.ts#L30)*
+*Defined in [number.ts:34](https://github.com/toggle-corp/fujs/blob/8801a55/src/number.ts#L34)*
 
 ___
 
@@ -25,4 +23,4 @@ ___
 
 • **np**: = "ne"
 
-*Defined in [number.ts:31](https://github.com/toggle-corp/fujs/blob/6346fe3/src/number.ts#L31)*
+*Defined in [number.ts:35](https://github.com/toggle-corp/fujs/blob/8801a55/src/number.ts#L35)*

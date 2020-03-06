@@ -1,6 +1,4 @@
-> **[@togglecorp/fujs](../README.md)**
-
-[Globals](../globals.md) / ["core"](_core_.md) /
+[@togglecorp/fujs](../README.md) › [Globals](../globals.md) › ["core"](_core_.md)
 
 # External module: "core"
 
@@ -25,9 +23,9 @@
 
 ###  difference
 
-▸ **difference**<**T**>(`setA`: `Set<T>`, `setB`: `Set<T>`): *`Set<T>`*
+▸ **difference**<**T**>(`setA`: Set‹T›, `setB`: Set‹T›): *Set‹T›*
 
-*Defined in [core.ts:34](https://github.com/toggle-corp/fujs/blob/6346fe3/src/core.ts#L34)*
+*Defined in [core.ts:35](https://github.com/toggle-corp/fujs/blob/8801a55/src/core.ts#L35)*
 
 Get difference of two sets.
 
@@ -39,10 +37,10 @@ Get difference of two sets.
 
 Name | Type |
 ------ | ------ |
-`setA` | `Set<T>` |
-`setB` | `Set<T>` |
+`setA` | Set‹T› |
+`setB` | Set‹T› |
 
-**Returns:** *`Set<T>`*
+**Returns:** *Set‹T›*
 
 difference between two sets
 
@@ -50,9 +48,9 @@ ___
 
 ###  intersection
 
-▸ **intersection**<**T**>(`setA`: `Set<T>`, `setB`: `Set<T>`): *`Set<T>`*
+▸ **intersection**<**T**>(`setA`: Set‹T›, `setB`: Set‹T›): *Set‹T›*
 
-*Defined in [core.ts:24](https://github.com/toggle-corp/fujs/blob/6346fe3/src/core.ts#L24)*
+*Defined in [core.ts:25](https://github.com/toggle-corp/fujs/blob/8801a55/src/core.ts#L25)*
 
 Get intersection of two sets.
 
@@ -64,10 +62,10 @@ Get intersection of two sets.
 
 Name | Type |
 ------ | ------ |
-`setA` | `Set<T>` |
-`setB` | `Set<T>` |
+`setA` | Set‹T› |
+`setB` | Set‹T› |
 
-**Returns:** *`Set<T>`*
+**Returns:** *Set‹T›*
 
 intersection of two sets
 
@@ -75,9 +73,9 @@ ___
 
 ###  isDefined
 
-▸ **isDefined**<**T**>(`val`: [Maybe](_declarations_.md#maybe)‹*`T`*›): *boolean*
+▸ **isDefined**<**T**>(`val`: [Maybe](_declarations_.md#maybe)‹T›): *val is T*
 
-*Defined in [core.ts:62](https://github.com/toggle-corp/fujs/blob/6346fe3/src/core.ts#L62)*
+*Defined in [core.ts:63](https://github.com/toggle-corp/fujs/blob/8801a55/src/core.ts#L63)*
 
 Identifies if value is defined.
 
@@ -89,17 +87,17 @@ Identifies if value is defined.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`val` | [Maybe](_declarations_.md#maybe)‹*`T`*› |   |
+`val` | [Maybe](_declarations_.md#maybe)‹T› |   |
 
-**Returns:** *boolean*
+**Returns:** *val is T*
 
 ___
 
 ###  isFalsy
 
-▸ **isFalsy**(`val`: unknown, `override`: unknown[]): *boolean*
+▸ **isFalsy**(`val`: unknown, `override`: unknown[]): *val is undefined | null*
 
-*Defined in [core.ts:72](https://github.com/toggle-corp/fujs/blob/6346fe3/src/core.ts#L72)*
+*Defined in [core.ts:73](https://github.com/toggle-corp/fujs/blob/8801a55/src/core.ts#L73)*
 
 Identifies if value is falsy.
 undefined, null, NaN and false are considered as false value.
@@ -109,17 +107,17 @@ undefined, null, NaN and false are considered as false value.
 Name | Type | Default | Description |
 ------ | ------ | ------ | ------ |
 `val` | unknown | - | - |
-`override` | unknown[] |  [] | list of additional values that are considered false values  |
+`override` | unknown[] | [] | list of additional values that are considered false values  |
 
-**Returns:** *boolean*
+**Returns:** *val is undefined | null*
 
 ___
 
 ###  isFalsyString
 
-▸ **isFalsyString**(`val`: unknown): *boolean*
+▸ **isFalsyString**(`val`: unknown): *val is undefined | null*
 
-*Defined in [core.ts:90](https://github.com/toggle-corp/fujs/blob/6346fe3/src/core.ts#L90)*
+*Defined in [core.ts:91](https://github.com/toggle-corp/fujs/blob/8801a55/src/core.ts#L91)*
 
 Identifies if value is falsy string.
 undefined, null, NaN, false, '' are considered as false value.
@@ -130,7 +128,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `val` | unknown |   |
 
-**Returns:** *boolean*
+**Returns:** *val is undefined | null*
 
 ___
 
@@ -138,7 +136,7 @@ ___
 
 ▸ **isNaN**(`val`: unknown): *boolean*
 
-*Defined in [core.ts:42](https://github.com/toggle-corp/fujs/blob/6346fe3/src/core.ts#L42)*
+*Defined in [core.ts:43](https://github.com/toggle-corp/fujs/blob/8801a55/src/core.ts#L43)*
 
 Identifies if value is NaN.
 
@@ -154,9 +152,9 @@ ___
 
 ###  isNotDefined
 
-▸ **isNotDefined**(`val`: unknown): *boolean*
+▸ **isNotDefined**(`val`: unknown): *val is undefined | null*
 
-*Defined in [core.ts:54](https://github.com/toggle-corp/fujs/blob/6346fe3/src/core.ts#L54)*
+*Defined in [core.ts:55](https://github.com/toggle-corp/fujs/blob/8801a55/src/core.ts#L55)*
 
 Identifies if value is not defined.
 undefined, null and NaN are not considered as defined.
@@ -167,15 +165,15 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `val` | unknown |   |
 
-**Returns:** *boolean*
+**Returns:** *val is undefined | null*
 
 ___
 
 ###  isTruthy
 
-▸ **isTruthy**<**T**>(`val`: [Maybe](_declarations_.md#maybe)‹*`T`*›, `override`: unknown[]): *boolean*
+▸ **isTruthy**<**T**>(`val`: [Maybe](_declarations_.md#maybe)‹T›, `override`: unknown[]): *val is T*
 
-*Defined in [core.ts:81](https://github.com/toggle-corp/fujs/blob/6346fe3/src/core.ts#L81)*
+*Defined in [core.ts:82](https://github.com/toggle-corp/fujs/blob/8801a55/src/core.ts#L82)*
 
 Identifies if value is truthy.
 
@@ -187,18 +185,18 @@ Identifies if value is truthy.
 
 Name | Type | Default | Description |
 ------ | ------ | ------ | ------ |
-`val` | [Maybe](_declarations_.md#maybe)‹*`T`*› | - | - |
-`override` | unknown[] |  [] | list of additional values that are considered true values  |
+`val` | [Maybe](_declarations_.md#maybe)‹T› | - | - |
+`override` | unknown[] | [] | list of additional values that are considered true values  |
 
-**Returns:** *boolean*
+**Returns:** *val is T*
 
 ___
 
 ###  isTruthyString
 
-▸ **isTruthyString**(`val`: [Maybe](_declarations_.md#maybe)‹*string | false*›): *boolean*
+▸ **isTruthyString**(`val`: [Maybe](_declarations_.md#maybe)‹string | false›): *val is string*
 
-*Defined in [core.ts:98](https://github.com/toggle-corp/fujs/blob/6346fe3/src/core.ts#L98)*
+*Defined in [core.ts:99](https://github.com/toggle-corp/fujs/blob/8801a55/src/core.ts#L99)*
 
 Identifies if value is truthy string.
 
@@ -206,9 +204,9 @@ Identifies if value is truthy string.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`val` | [Maybe](_declarations_.md#maybe)‹*string \| false*› |   |
+`val` | [Maybe](_declarations_.md#maybe)‹string &#124; false› |   |
 
-**Returns:** *boolean*
+**Returns:** *val is string*
 
 ___
 
@@ -216,7 +214,7 @@ ___
 
 ▸ **noOp**(): *void*
 
-*Defined in [core.ts:6](https://github.com/toggle-corp/fujs/blob/6346fe3/src/core.ts#L6)*
+*Defined in [core.ts:7](https://github.com/toggle-corp/fujs/blob/8801a55/src/core.ts#L7)*
 
 Does nothing
 
@@ -226,11 +224,12 @@ ___
 
 ###  resolve
 
-▸ **resolve**<**T**>(`variable`: `T`, ...`args`: [Parameters](_declarations_.md#parameters)‹*`T`*›): *any*
+▸ **resolve**<**T**>(`variable`: T, ...`args`: [Parameters](_declarations_.md#parameters)‹T›): *any*
 
-*Defined in [core.ts:108](https://github.com/toggle-corp/fujs/blob/6346fe3/src/core.ts#L108)*
+*Defined in [core.ts:110](https://github.com/toggle-corp/fujs/blob/8801a55/src/core.ts#L110)*
 
-Resolves if first argument is function with other arguments as argument to user supplied function.
+Resolves if first argument is function with other arguments as argument to
+user supplied function.
 
 **Type parameters:**
 
@@ -240,8 +239,8 @@ Resolves if first argument is function with other arguments as argument to user 
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`variable` | `T` | either a function to resolive or any value |
-`...args` | [Parameters](_declarations_.md#parameters)‹*`T`*› | arguments for user supplied function |
+`variable` | T | either a function to resolive or any value |
+`...args` | [Parameters](_declarations_.md#parameters)‹T› | arguments for user supplied function |
 
 **Returns:** *any*
 
@@ -251,9 +250,9 @@ ___
 
 ###  union
 
-▸ **union**<**T**>(`setA`: `Set<T>`, `setB`: `Set<T>`): *`Set<T>`*
+▸ **union**<**T**>(`setA`: Set‹T›, `setB`: Set‹T›): *Set‹T›*
 
-*Defined in [core.ts:14](https://github.com/toggle-corp/fujs/blob/6346fe3/src/core.ts#L14)*
+*Defined in [core.ts:15](https://github.com/toggle-corp/fujs/blob/8801a55/src/core.ts#L15)*
 
 Get union of two sets.
 
@@ -265,9 +264,9 @@ Get union of two sets.
 
 Name | Type |
 ------ | ------ |
-`setA` | `Set<T>` |
-`setB` | `Set<T>` |
+`setA` | Set‹T› |
+`setB` | Set‹T› |
 
-**Returns:** *`Set<T>`*
+**Returns:** *Set‹T›*
 
 union of two sets

@@ -1,6 +1,4 @@
-> **[@togglecorp/fujs](../README.md)**
-
-[Globals](../globals.md) / ["number"](_number_.md) /
+[@togglecorp/fujs](../README.md) › [Globals](../globals.md) › ["number"](_number_.md)
 
 # External module: "number"
 
@@ -19,9 +17,9 @@
 
 ###  addSeparator
 
-▸ **addSeparator**(`num`: [Maybe](_declarations_.md#maybe)‹*string | number*›, `separator`: string, `decimalSeparator`: string): *undefined | null | string*
+▸ **addSeparator**(`num`: [Maybe](_declarations_.md#maybe)‹string | number›, `separator`: string, `decimalSeparator`: string): *undefined | null | string*
 
-*Defined in [number.ts:12](https://github.com/toggle-corp/fujs/blob/6346fe3/src/number.ts#L12)*
+*Defined in [number.ts:12](https://github.com/toggle-corp/fujs/blob/8801a55/src/number.ts#L12)*
 
 Get comma separated number
 
@@ -29,7 +27,7 @@ Get comma separated number
 
 Name | Type | Default | Description |
 ------ | ------ | ------ | ------ |
-`num` | [Maybe](_declarations_.md#maybe)‹*string \| number*› | - | - |
+`num` | [Maybe](_declarations_.md#maybe)‹string &#124; number› | - | - |
 `separator` | string | "," | thousand separator |
 `decimalSeparator` | string | "." | decimal separator  |
 
@@ -41,7 +39,7 @@ ___
 
 ▸ **formattedNormalize**(`num`: number, `lang`: [Lang](../enums/_number_.lang.md)): *object | object*
 
-*Defined in [number.ts:61](https://github.com/toggle-corp/fujs/blob/6346fe3/src/number.ts#L61)*
+*Defined in [number.ts:65](https://github.com/toggle-corp/fujs/blob/8801a55/src/number.ts#L65)*
 
 Get normalized number
 
@@ -50,6 +48,6 @@ Get normalized number
 Name | Type | Default | Description |
 ------ | ------ | ------ | ------ |
 `num` | number | - | - |
-`lang` | [Lang](../enums/_number_.lang.md) |  Lang.np | language  |
+`lang` | [Lang](../enums/_number_.lang.md) | Lang.np | language  |
 
 **Returns:** *object | object*

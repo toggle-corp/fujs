@@ -1,6 +1,4 @@
-> **[@togglecorp/fujs](../README.md)**
-
-[Globals](../globals.md) / ["type"](_type_.md) /
+[@togglecorp/fujs](../README.md) › [Globals](../globals.md) › ["type"](_type_.md)
 
 # External module: "type"
 
@@ -23,7 +21,7 @@
 
 ### `Const` basicTypes
 
-• **basicTypes**: *string[]* =  [
+• **basicTypes**: *string[]* = [
     'Boolean',
     'Number',
     'String',
@@ -36,15 +34,15 @@
     'Symbol',
 ]
 
-*Defined in [type.ts:27](https://github.com/toggle-corp/fujs/blob/6346fe3/src/type.ts#L27)*
+*Defined in [type.ts:27](https://github.com/toggle-corp/fujs/blob/8801a55/src/type.ts#L27)*
 
 ## Functions
 
 ###  isInteger
 
-▸ **isInteger**(`value`: unknown): *boolean*
+▸ **isInteger**(`value`: unknown): *value is number*
 
-*Defined in [type.ts:23](https://github.com/toggle-corp/fujs/blob/6346fe3/src/type.ts#L23)*
+*Defined in [type.ts:23](https://github.com/toggle-corp/fujs/blob/8801a55/src/type.ts#L23)*
 
 Identifies if item is an integer.
 Float values are not not considered as integer.
@@ -55,15 +53,15 @@ Name | Type |
 ------ | ------ |
 `value` | unknown |
 
-**Returns:** *boolean*
+**Returns:** *value is number*
 
 ___
 
 ###  isList
 
-▸ **isList**(`item`: unknown): *boolean*
+▸ **isList**(`item`: unknown): *item is unknown[]*
 
-*Defined in [type.ts:5](https://github.com/toggle-corp/fujs/blob/6346fe3/src/type.ts#L5)*
+*Defined in [type.ts:5](https://github.com/toggle-corp/fujs/blob/8801a55/src/type.ts#L5)*
 
 Identifies if item is a list.
 
@@ -73,15 +71,15 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `item` | unknown | anything  |
 
-**Returns:** *boolean*
+**Returns:** *item is unknown[]*
 
 ___
 
 ###  isObject
 
-▸ **isObject**(`item`: unknown): *boolean*
+▸ **isObject**(`item`: unknown): *item is object*
 
-*Defined in [type.ts:14](https://github.com/toggle-corp/fujs/blob/6346fe3/src/type.ts#L14)*
+*Defined in [type.ts:14](https://github.com/toggle-corp/fujs/blob/8801a55/src/type.ts#L14)*
 
 Identifies if item is an object.
 `null` and `list` are not considered as object.
@@ -92,7 +90,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `item` | unknown | anything  |
 
-**Returns:** *boolean*
+**Returns:** *item is object*
 
 ___
 
@@ -100,7 +98,7 @@ ___
 
 ▸ **isValidEmail**(`value`: string): *boolean*
 
-*Defined in [type.ts:70](https://github.com/toggle-corp/fujs/blob/6346fe3/src/type.ts#L70)*
+*Defined in [type.ts:70](https://github.com/toggle-corp/fujs/blob/8801a55/src/type.ts#L70)*
 
 Identifies if string is a valid email.
 
@@ -118,7 +116,7 @@ ___
 
 ▸ **isValidUrl**(`value`: string): *boolean*
 
-*Defined in [type.ts:79](https://github.com/toggle-corp/fujs/blob/6346fe3/src/type.ts#L79)*
+*Defined in [type.ts:79](https://github.com/toggle-corp/fujs/blob/8801a55/src/type.ts#L79)*
 
 Identifies if string is a valid url.
 
@@ -136,7 +134,7 @@ ___
 
 ▸ **typeOf**(`item`: unknown): *string*
 
-*Defined in [type.ts:55](https://github.com/toggle-corp/fujs/blob/6346fe3/src/type.ts#L55)*
+*Defined in [type.ts:55](https://github.com/toggle-corp/fujs/blob/8801a55/src/type.ts#L55)*
 
 Get type of an item.
 Valid types: null, boolean, number, string, function, array, date, regexp, object, error, symbol

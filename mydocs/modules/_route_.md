@@ -1,6 +1,4 @@
-> **[@togglecorp/fujs](../README.md)**
-
-[Globals](../globals.md) / ["route"](_route_.md) /
+[@togglecorp/fujs](../README.md) › [Globals](../globals.md) › ["route"](_route_.md)
 
 # External module: "route"
 
@@ -17,7 +15,7 @@
 
 ▸ **isParamRequired**(`route`: string, `param`: string): *boolean*
 
-*Defined in [route.ts:48](https://github.com/toggle-corp/fujs/blob/6346fe3/src/route.ts#L48)*
+*Defined in [route.ts:48](https://github.com/toggle-corp/fujs/blob/8801a55/src/route.ts#L48)*
 
 Identify if param is required in certain route
 
@@ -34,9 +32,9 @@ ___
 
 ###  reverseRoute
 
-▸ **reverseRoute**(`route`: string, `params`: [Obj](_declarations_.md#obj)‹*string | number*›): *string*
+▸ **reverseRoute**(`route`: string, `params`: [Obj](_declarations_.md#obj)‹string | number›): *string*
 
-*Defined in [route.ts:8](https://github.com/toggle-corp/fujs/blob/6346fe3/src/route.ts#L8)*
+*Defined in [route.ts:8](https://github.com/toggle-corp/fujs/blob/8801a55/src/route.ts#L8)*
 
 Fill parameters in route url
 
@@ -45,6 +43,6 @@ Fill parameters in route url
 Name | Type | Description |
 ------ | ------ | ------ |
 `route` | string | route template |
-`params` | [Obj](_declarations_.md#obj)‹*string \| number*› | map of values  |
+`params` | [Obj](_declarations_.md#obj)‹string &#124; number› | map of values  |
 
 **Returns:** *string*

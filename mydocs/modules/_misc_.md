@@ -1,6 +1,4 @@
-> **[@togglecorp/fujs](../README.md)**
-
-[Globals](../globals.md) / ["misc"](_misc_.md) /
+[@togglecorp/fujs](../README.md) › [Globals](../globals.md) › ["misc"](_misc_.md)
 
 # External module: "misc"
 
@@ -14,9 +12,9 @@
 
 ###  checkVersion
 
-▸ **checkVersion**(`oldVersionId`: [Maybe](_declarations_.md#maybe)‹*number*›, `newVersionId`: number): *object*
+▸ **checkVersion**(`oldVersionId`: [Maybe](_declarations_.md#maybe)‹number›, `newVersionId`: number): *object*
 
-*Defined in [misc.ts:11](https://github.com/toggle-corp/fujs/blob/6346fe3/src/misc.ts#L11)*
+*Defined in [misc.ts:12](https://github.com/toggle-corp/fujs/blob/8801a55/src/misc.ts#L12)*
 
 Check if new object should be set
 and should the message of overriden shown
@@ -25,7 +23,11 @@ and should the message of overriden shown
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`oldVersionId` | [Maybe](_declarations_.md#maybe)‹*number*› | - |
+`oldVersionId` | [Maybe](_declarations_.md#maybe)‹number› | - |
 `newVersionId` | number |   |
 
 **Returns:** *object*
+
+* **isValueOverriden**: *boolean* = isTruthy(oldVersionId) && oldVersionId < newVersionId
+
+* **shouldSetValue**: *boolean* = isFalsy(oldVersionId) || oldVersionId < newVersionId
