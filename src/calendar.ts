@@ -58,6 +58,8 @@ export interface Dictionary {
     getDaysInMonth: (year: number, month: number) => number;
     isLeapYear: (year: number) => boolean;
 
+    isValidDate: (ymd: Ymd) => [boolean, string?];
+
     getMinYmd: () => Ymd;
     getMaxYmd: () => Ymd;
 }
@@ -71,15 +73,9 @@ export class Miti extends Ymd {
         super(year, month, day);
         this.dict = dict;
 
-        if (this.isGreaterThan(this.dict.getMaxYmd()) || this.isLessThan(this.dict.getMinYmd())) {
-            const error = new Error('Miti out of bounds');
-            throw error;
-        }
-        if (
-            this.getDay() < 0
-            || this.getDay() > this.dict.getDaysInMonth(this.getYear(), this.getMonth())
-        ) {
-            const error = new Error('Day out of bounds');
+        const [isValid, errorMessage] = this.dict.isValidDate(this);
+        if (!isValid) {
+            const error = new Error(errorMessage);
             throw error;
         }
 
@@ -318,9 +314,28 @@ export const AD: Dictionary = (() => {
         return data[index][month];
     };
 
+    const isValidDate = (ymd: Ymd): [boolean, string?] => {
+        if (ymd.getYear() < minDate.getYear() || ymd.getYear() > maxDate.getYear()) {
+            return [false, 'Year out of bounds'];
+        }
+        if (ymd.getMonth() < 0 || ymd.getMonth() > 12) {
+            return [false, 'Month out of bounds'];
+        }
+        if (ymd.getDay() < 0 || ymd.getDay() > getDaysInMonth(ymd.getYear(), ymd.getMonth())) {
+            return [false, 'Day out of bounds'];
+        }
+
+        // NOTE: can be inside min/max year but still be out of bounds for conversion
+        if (ymd.isGreaterThan(maxDate) || ymd.isLessThan(minDate)) {
+            return [false, 'Miti out of bounds'];
+        }
+        return [true];
+    };
+
     return {
         getMinYmd: () => minDate,
         getMaxYmd: () => maxDate,
+        isValidDate,
         isLeapYear,
         getDaysInYear,
         getDaysInMonth,
@@ -452,9 +467,28 @@ export const BS: Dictionary = (() => {
         getDaysInYear(year) === 366
     );
 
+    const isValidDate = (ymd: Ymd): [boolean, string?] => {
+        if (ymd.getYear() < minDate.getYear() || ymd.getYear() > maxDate.getYear()) {
+            return [false, 'Year out of bounds'];
+        }
+        if (ymd.getMonth() < 0 || ymd.getMonth() > 12) {
+            return [false, 'Month out of bounds'];
+        }
+        if (ymd.getDay() < 0 || ymd.getDay() > getDaysInMonth(ymd.getYear(), ymd.getMonth())) {
+            return [false, 'Day out of bounds'];
+        }
+
+        // NOTE: can be inside min/max year but still be out of bounds for conversion
+        if (ymd.isGreaterThan(maxDate) || ymd.isLessThan(minDate)) {
+            return [false, 'Miti out of bounds'];
+        }
+        return [true];
+    };
+
     return {
         getMinYmd: () => minDate,
         getMaxYmd: () => maxDate,
+        isValidDate,
         isLeapYear,
         getDaysInYear,
         getDaysInMonth,

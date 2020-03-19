@@ -2,7 +2,9 @@
     "name": "@togglecorp/fujs",
     "version": "1.9.0",
     "description": "Friendly Utility for JS",
-    "files": "build",
+    "files": [
+        "/build"
+    ],
     "main": "build/index.js",
     "module": "build/index.es.js",
     "typings": "build/index.d.ts",
