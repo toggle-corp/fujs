@@ -44,7 +44,7 @@
 
 *Overrides [Ymd](_calendar_.ymd.md).[constructor](_calendar_.ymd.md#constructor)*
 
-*Defined in [calendar.ts:68](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L68)*
+*Defined in [calendar.ts:70](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L70)*
 
 **Parameters:**
 
@@ -63,7 +63,7 @@ Name | Type |
 
 ▸ **addDays**(`no`: number): *[Miti](_calendar_.miti.md)‹›*
 
-*Defined in [calendar.ts:177](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L177)*
+*Defined in [calendar.ts:173](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L173)*
 
 **Parameters:**
 
@@ -79,7 +79,7 @@ ___
 
 ▸ **addMonths**(`no`: number): *[Miti](_calendar_.miti.md)‹›*
 
-*Defined in [calendar.ts:167](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L167)*
+*Defined in [calendar.ts:163](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L163)*
 
 **Parameters:**
 
@@ -95,7 +95,7 @@ ___
 
 ▸ **addYears**(`no`: number): *[Miti](_calendar_.miti.md)‹›*
 
-*Defined in [calendar.ts:158](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L158)*
+*Defined in [calendar.ts:154](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L154)*
 
 **Parameters:**
 
@@ -111,7 +111,7 @@ ___
 
 ▸ **convertTo**(`dict`: [Dictionary](../interfaces/_calendar_.dictionary.md)): *[Miti](_calendar_.miti.md)‹›*
 
-*Defined in [calendar.ts:288](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L288)*
+*Defined in [calendar.ts:284](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L284)*
 
 **Parameters:**
 
@@ -129,7 +129,7 @@ ___
 
 *Inherited from [Ymd](_calendar_.ymd.md).[getDay](_calendar_.ymd.md#getday)*
 
-*Defined in [calendar.ts:25](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L25)*
+*Defined in [calendar.ts:25](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L25)*
 
 **Returns:** *number*
 
@@ -139,7 +139,7 @@ ___
 
 ▸ **getDaysInCurrentMonth**(): *number*
 
-*Defined in [calendar.ts:96](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L96)*
+*Defined in [calendar.ts:92](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L92)*
 
 **Returns:** *number*
 
@@ -149,7 +149,7 @@ ___
 
 ▸ **getDaysInCurrentYear**(): *number*
 
-*Defined in [calendar.ts:100](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L100)*
+*Defined in [calendar.ts:96](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L96)*
 
 **Returns:** *number*
 
@@ -159,7 +159,7 @@ ___
 
 ▸ **getDifference**(`sub`: [Ymd](_calendar_.ymd.md)): *number*
 
-*Defined in [calendar.ts:104](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L104)*
+*Defined in [calendar.ts:100](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L100)*
 
 **Parameters:**
 
@@ -177,7 +177,7 @@ ___
 
 *Inherited from [Ymd](_calendar_.ymd.md).[getMonth](_calendar_.ymd.md#getmonth)*
 
-*Defined in [calendar.ts:23](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L23)*
+*Defined in [calendar.ts:23](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L23)*
 
 **Returns:** *number*
 
@@ -189,7 +189,7 @@ ___
 
 *Inherited from [Ymd](_calendar_.ymd.md).[getString](_calendar_.ymd.md#getstring)*
 
-*Defined in [calendar.ts:17](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L17)*
+*Defined in [calendar.ts:17](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L17)*
 
 **Returns:** *string*
 
@@ -199,7 +199,7 @@ ___
 
 ▸ **getWeek**(): *number*
 
-*Defined in [calendar.ts:92](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L92)*
+*Defined in [calendar.ts:88](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L88)*
 
 **Returns:** *number*
 
@@ -211,7 +211,7 @@ ___
 
 *Inherited from [Ymd](_calendar_.ymd.md).[getYear](_calendar_.ymd.md#getyear)*
 
-*Defined in [calendar.ts:21](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L21)*
+*Defined in [calendar.ts:21](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L21)*
 
 **Returns:** *number*
 
@@ -223,7 +223,7 @@ ___
 
 *Inherited from [Ymd](_calendar_.ymd.md).[isEqual](_calendar_.ymd.md#isequal)*
 
-*Defined in [calendar.ts:27](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L27)*
+*Defined in [calendar.ts:27](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L27)*
 
 **Parameters:**
 
@@ -241,7 +241,7 @@ ___
 
 *Inherited from [Ymd](_calendar_.ymd.md).[isGreaterThan](_calendar_.ymd.md#isgreaterthan)*
 
-*Defined in [calendar.ts:47](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L47)*
+*Defined in [calendar.ts:47](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L47)*
 
 **Parameters:**
 
@@ -259,7 +259,7 @@ ___
 
 *Inherited from [Ymd](_calendar_.ymd.md).[isGreaterThanOrEqual](_calendar_.ymd.md#isgreaterthanorequal)*
 
-*Defined in [calendar.ts:43](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L43)*
+*Defined in [calendar.ts:43](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L43)*
 
 **Parameters:**
 
@@ -277,7 +277,7 @@ ___
 
 *Inherited from [Ymd](_calendar_.ymd.md).[isLessThan](_calendar_.ymd.md#islessthan)*
 
-*Defined in [calendar.ts:33](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L33)*
+*Defined in [calendar.ts:33](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L33)*
 
 **Parameters:**
 
@@ -295,7 +295,7 @@ ___
 
 *Inherited from [Ymd](_calendar_.ymd.md).[isLessThanOrEqual](_calendar_.ymd.md#islessthanorequal)*
 
-*Defined in [calendar.ts:51](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L51)*
+*Defined in [calendar.ts:51](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L51)*
 
 **Parameters:**
 
@@ -313,7 +313,7 @@ ___
 
 *Inherited from [Ymd](_calendar_.ymd.md).[isNotEqual](_calendar_.ymd.md#isnotequal)*
 
-*Defined in [calendar.ts:39](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L39)*
+*Defined in [calendar.ts:39](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L39)*
 
 **Parameters:**
 
@@ -329,7 +329,7 @@ ___
 
 ▸ **subtractDays**(`no`: number): *[Miti](_calendar_.miti.md)‹›*
 
-*Defined in [calendar.ts:234](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L234)*
+*Defined in [calendar.ts:230](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L230)*
 
 **Parameters:**
 

@@ -18,7 +18,7 @@
 
 Ƭ **FirstArgument**: *T extends function ? U : any*
 
-*Defined in [declarations.ts:4](https://github.com/toggle-corp/fujs/blob/8801a55/src/declarations.ts#L4)*
+*Defined in [declarations.ts:4](https://github.com/toggle-corp/fujs/blob/4664803/src/declarations.ts#L4)*
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 Ƭ **Maybe**: *T | undefined | null*
 
-*Defined in [declarations.ts:1](https://github.com/toggle-corp/fujs/blob/8801a55/src/declarations.ts#L1)*
+*Defined in [declarations.ts:1](https://github.com/toggle-corp/fujs/blob/4664803/src/declarations.ts#L1)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 Ƭ **Obj**: *object*
 
-*Defined in [declarations.ts:2](https://github.com/toggle-corp/fujs/blob/8801a55/src/declarations.ts#L2)*
+*Defined in [declarations.ts:2](https://github.com/toggle-corp/fujs/blob/4664803/src/declarations.ts#L2)*
 
 #### Type declaration:
 
@@ -46,7 +46,7 @@ ___
 
 Ƭ **Parameters**: *T extends function ? T : undefined[]*
 
-*Defined in [declarations.ts:5](https://github.com/toggle-corp/fujs/blob/8801a55/src/declarations.ts#L5)*
+*Defined in [declarations.ts:5](https://github.com/toggle-corp/fujs/blob/4664803/src/declarations.ts#L5)*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 Ƭ **ReturnType**: *T extends function ? R : never*
 
-*Defined in [declarations.ts:6](https://github.com/toggle-corp/fujs/blob/8801a55/src/declarations.ts#L6)*
+*Defined in [declarations.ts:6](https://github.com/toggle-corp/fujs/blob/4664803/src/declarations.ts#L6)*

@@ -33,7 +33,7 @@
 
 \+ **new Ymd**(`year`: number, `month`: number, `day`: number): *[Ymd](_calendar_.ymd.md)*
 
-*Defined in [calendar.ts:9](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L9)*
+*Defined in [calendar.ts:9](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L9)*
 
 **Parameters:**
 
@@ -51,7 +51,7 @@ Name | Type |
 
 ▸ **getDay**(): *number*
 
-*Defined in [calendar.ts:25](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L25)*
+*Defined in [calendar.ts:25](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L25)*
 
 **Returns:** *number*
 
@@ -61,7 +61,7 @@ ___
 
 ▸ **getMonth**(): *number*
 
-*Defined in [calendar.ts:23](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L23)*
+*Defined in [calendar.ts:23](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L23)*
 
 **Returns:** *number*
 
@@ -71,7 +71,7 @@ ___
 
 ▸ **getString**(): *string*
 
-*Defined in [calendar.ts:17](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L17)*
+*Defined in [calendar.ts:17](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L17)*
 
 **Returns:** *string*
 
@@ -81,7 +81,7 @@ ___
 
 ▸ **getYear**(): *number*
 
-*Defined in [calendar.ts:21](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L21)*
+*Defined in [calendar.ts:21](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L21)*
 
 **Returns:** *number*
 
@@ -91,7 +91,7 @@ ___
 
 ▸ **isEqual**(`other`: [Ymd](_calendar_.ymd.md)): *boolean*
 
-*Defined in [calendar.ts:27](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L27)*
+*Defined in [calendar.ts:27](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L27)*
 
 **Parameters:**
 
@@ -107,7 +107,7 @@ ___
 
 ▸ **isGreaterThan**(`other`: [Ymd](_calendar_.ymd.md)): *boolean*
 
-*Defined in [calendar.ts:47](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L47)*
+*Defined in [calendar.ts:47](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L47)*
 
 **Parameters:**
 
@@ -123,7 +123,7 @@ ___
 
 ▸ **isGreaterThanOrEqual**(`other`: [Ymd](_calendar_.ymd.md)): *boolean*
 
-*Defined in [calendar.ts:43](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L43)*
+*Defined in [calendar.ts:43](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L43)*
 
 **Parameters:**
 
@@ -139,7 +139,7 @@ ___
 
 ▸ **isLessThan**(`other`: [Ymd](_calendar_.ymd.md)): *boolean*
 
-*Defined in [calendar.ts:33](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L33)*
+*Defined in [calendar.ts:33](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L33)*
 
 **Parameters:**
 
@@ -155,7 +155,7 @@ ___
 
 ▸ **isLessThanOrEqual**(`other`: [Ymd](_calendar_.ymd.md)): *boolean*
 
-*Defined in [calendar.ts:51](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L51)*
+*Defined in [calendar.ts:51](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L51)*
 
 **Parameters:**
 
@@ -171,7 +171,7 @@ ___
 
 ▸ **isNotEqual**(`other`: [Ymd](_calendar_.ymd.md)): *boolean*
 
-*Defined in [calendar.ts:39](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L39)*
+*Defined in [calendar.ts:39](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L39)*
 
 **Parameters:**
 

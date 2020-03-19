@@ -17,7 +17,7 @@
 
 ▸ **doesObjectHaveNoData**(`obj`: unknown, `invalids`: unknown[]): *boolean*
 
-*Defined in [object.ts:43](https://github.com/toggle-corp/fujs/blob/8801a55/src/object.ts#L43)*
+*Defined in [object.ts:43](https://github.com/toggle-corp/fujs/blob/4664803/src/object.ts#L43)*
 
 Identify if object has no data
 
@@ -36,7 +36,7 @@ ___
 
 ▸ **getFirstKeyByValue**<**T**>(`obj`: T, `value`: unknown): *string | undefined*
 
-*Defined in [object.ts:34](https://github.com/toggle-corp/fujs/blob/8801a55/src/object.ts#L34)*
+*Defined in [object.ts:34](https://github.com/toggle-corp/fujs/blob/4664803/src/object.ts#L34)*
 
 Get key of the first element in an object
 
@@ -59,7 +59,7 @@ ___
 
 ▸ **pick**<**T**>(`obj`: T, `keys`: keyof T[]): *object*
 
-*Defined in [object.ts:9](https://github.com/toggle-corp/fujs/blob/8801a55/src/object.ts#L9)*
+*Defined in [object.ts:9](https://github.com/toggle-corp/fujs/blob/4664803/src/object.ts#L9)*
 
 Pick only certain keys from an object
 
@@ -82,7 +82,7 @@ ___
 
 ▸ **removeKey**<**T**>(`obj`: T, `key`: keyof T): *T*
 
-*Defined in [object.ts:19](https://github.com/toggle-corp/fujs/blob/8801a55/src/object.ts#L19)*
+*Defined in [object.ts:19](https://github.com/toggle-corp/fujs/blob/4664803/src/object.ts#L19)*
 
 Remove a certain key from an object
 

@@ -48,16 +48,35 @@
         return data[index][month];
     };
 
+    const isValidDate = (ymd: Ymd): [boolean, string?] => {
+        if (ymd.getYear() < minDate.getYear() || ymd.getYear() > maxDate.getYear()) {
+            return [false, 'Year out of bounds'];
+        }
+        if (ymd.getMonth() < 0 || ymd.getMonth() > 12) {
+            return [false, 'Month out of bounds'];
+        }
+        if (ymd.getDay() < 0 || ymd.getDay() > getDaysInMonth(ymd.getYear(), ymd.getMonth())) {
+            return [false, 'Day out of bounds'];
+        }
+
+        // NOTE: can be inside min/max year but still be out of bounds for conversion
+        if (ymd.isGreaterThan(maxDate) || ymd.isLessThan(minDate)) {
+            return [false, 'Miti out of bounds'];
+        }
+        return [true];
+    };
+
     return {
         getMinYmd: () => minDate,
         getMaxYmd: () => maxDate,
+        isValidDate,
         isLeapYear,
         getDaysInYear,
         getDaysInMonth,
     };
 })()
 
-*Defined in [calendar.ts:295](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L295)*
+*Defined in [calendar.ts:291](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L291)*
 
 ___
 
@@ -188,13 +207,32 @@ ___
         getDaysInYear(year) === 366
     );
 
+    const isValidDate = (ymd: Ymd): [boolean, string?] => {
+        if (ymd.getYear() < minDate.getYear() || ymd.getYear() > maxDate.getYear()) {
+            return [false, 'Year out of bounds'];
+        }
+        if (ymd.getMonth() < 0 || ymd.getMonth() > 12) {
+            return [false, 'Month out of bounds'];
+        }
+        if (ymd.getDay() < 0 || ymd.getDay() > getDaysInMonth(ymd.getYear(), ymd.getMonth())) {
+            return [false, 'Day out of bounds'];
+        }
+
+        // NOTE: can be inside min/max year but still be out of bounds for conversion
+        if (ymd.isGreaterThan(maxDate) || ymd.isLessThan(minDate)) {
+            return [false, 'Miti out of bounds'];
+        }
+        return [true];
+    };
+
     return {
         getMinYmd: () => minDate,
         getMaxYmd: () => maxDate,
+        isValidDate,
         isLeapYear,
         getDaysInYear,
         getDaysInMonth,
     };
 })()
 
-*Defined in [calendar.ts:330](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L330)*
+*Defined in [calendar.ts:345](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L345)*

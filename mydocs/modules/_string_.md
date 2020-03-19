@@ -24,7 +24,7 @@
 
 ▸ **camelToKebab**(`str`: [Maybe](_declarations_.md#maybe)‹string›): *undefined | null | string*
 
-*Defined in [string.ts:149](https://github.com/toggle-corp/fujs/blob/8801a55/src/string.ts#L149)*
+*Defined in [string.ts:149](https://github.com/toggle-corp/fujs/blob/4664803/src/string.ts#L149)*
 
 Convert camel case to kebab case
 
@@ -45,7 +45,7 @@ ___
 
 ▸ **camelToNormal**(`str`: [Maybe](_declarations_.md#maybe)‹string›, `separator`: string): *undefined | null | string*
 
-*Defined in [string.ts:116](https://github.com/toggle-corp/fujs/blob/8801a55/src/string.ts#L116)*
+*Defined in [string.ts:116](https://github.com/toggle-corp/fujs/blob/4664803/src/string.ts#L116)*
 
 **Parameters:**
 
@@ -62,7 +62,7 @@ ___
 
 ▸ **camelToSnake**(`str`: [Maybe](_declarations_.md#maybe)‹string›): *undefined | null | string*
 
-*Defined in [string.ts:133](https://github.com/toggle-corp/fujs/blob/8801a55/src/string.ts#L133)*
+*Defined in [string.ts:133](https://github.com/toggle-corp/fujs/blob/4664803/src/string.ts#L133)*
 
 Convert camel case to snake case
 
@@ -83,7 +83,7 @@ ___
 
 ▸ **capitalize**(`str`: [Maybe](_declarations_.md#maybe)‹string›): *undefined | null | string*
 
-*Defined in [string.ts:33](https://github.com/toggle-corp/fujs/blob/8801a55/src/string.ts#L33)*
+*Defined in [string.ts:33](https://github.com/toggle-corp/fujs/blob/4664803/src/string.ts#L33)*
 
 Change the first letter of word to uppercase
 
@@ -101,7 +101,7 @@ ___
 
 ▸ **caseInsensitiveSubmatch**(`longText`: [Maybe](_declarations_.md#maybe)‹string | number›, `shortText`: [Maybe](_declarations_.md#maybe)‹string | number›): *boolean*
 
-*Defined in [string.ts:191](https://github.com/toggle-corp/fujs/blob/8801a55/src/string.ts#L191)*
+*Defined in [string.ts:191](https://github.com/toggle-corp/fujs/blob/4664803/src/string.ts#L191)*
 
 Identify if shortText is inside longText
 
@@ -123,7 +123,7 @@ ___
 
 ▸ **formatPdfText**(`text`: string): *string*
 
-*Defined in [string.ts:45](https://github.com/toggle-corp/fujs/blob/8801a55/src/string.ts#L45)*
+*Defined in [string.ts:45](https://github.com/toggle-corp/fujs/blob/4664803/src/string.ts#L45)*
 
 Format text, extracted from pdfs, to remove extraneous spaces
 
@@ -141,7 +141,7 @@ ___
 
 ▸ **getRatingForContentInString**(`content`: [Maybe](_declarations_.md#maybe)‹string›, `str`: [Maybe](_declarations_.md#maybe)‹string›): *number*
 
-*Defined in [string.ts:68](https://github.com/toggle-corp/fujs/blob/8801a55/src/string.ts#L68)*
+*Defined in [string.ts:68](https://github.com/toggle-corp/fujs/blob/4664803/src/string.ts#L68)*
 
 Get rating for content in string
 
@@ -160,7 +160,7 @@ ___
 
 ▸ **padStart**(`value`: [Maybe](_declarations_.md#maybe)‹string | number›, `length`: number, `pad`: string): *string*
 
-*Defined in [string.ts:18](https://github.com/toggle-corp/fujs/blob/8801a55/src/string.ts#L18)*
+*Defined in [string.ts:18](https://github.com/toggle-corp/fujs/blob/4664803/src/string.ts#L18)*
 
 Add padding before string or number
 
@@ -183,7 +183,7 @@ ___
 
 ▸ **randomString**(`length`: number, `mixedCase`: boolean): *string*
 
-*Defined in [string.ts:82](https://github.com/toggle-corp/fujs/blob/8801a55/src/string.ts#L82)*
+*Defined in [string.ts:82](https://github.com/toggle-corp/fujs/blob/4664803/src/string.ts#L82)*
 
 Get random string
 
@@ -202,7 +202,7 @@ ___
 
 ▸ **splitInWhitespace**(`str`: [Maybe](_declarations_.md#maybe)‹string›): *string[]*
 
-*Defined in [string.ts:162](https://github.com/toggle-corp/fujs/blob/8801a55/src/string.ts#L162)*
+*Defined in [string.ts:162](https://github.com/toggle-corp/fujs/blob/4664803/src/string.ts#L162)*
 
 Split sentence
 
@@ -220,7 +220,7 @@ ___
 
 ▸ **trimWhitespace**(`str`: [Maybe](_declarations_.md#maybe)‹string›): *undefined | null | string*
 
-*Defined in [string.ts:174](https://github.com/toggle-corp/fujs/blob/8801a55/src/string.ts#L174)*
+*Defined in [string.ts:174](https://github.com/toggle-corp/fujs/blob/4664803/src/string.ts#L174)*
 
 Convert all whitespaces into single space
 
