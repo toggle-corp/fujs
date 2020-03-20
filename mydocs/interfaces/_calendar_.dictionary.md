@@ -15,6 +15,7 @@
 * [getMaxYmd](_calendar_.dictionary.md#getmaxymd)
 * [getMinYmd](_calendar_.dictionary.md#getminymd)
 * [isLeapYear](_calendar_.dictionary.md#isleapyear)
+* [isValidDate](_calendar_.dictionary.md#isvaliddate)
 
 ## Properties
 
@@ -22,7 +23,7 @@
 
 • **getDaysInMonth**: *function*
 
-*Defined in [calendar.ts:58](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L58)*
+*Defined in [calendar.ts:58](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L58)*
 
 #### Type declaration:
 
@@ -41,7 +42,7 @@ ___
 
 • **getDaysInYear**: *function*
 
-*Defined in [calendar.ts:57](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L57)*
+*Defined in [calendar.ts:57](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L57)*
 
 #### Type declaration:
 
@@ -59,7 +60,7 @@ ___
 
 • **getMaxYmd**: *function*
 
-*Defined in [calendar.ts:62](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L62)*
+*Defined in [calendar.ts:64](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L64)*
 
 #### Type declaration:
 
@@ -71,7 +72,7 @@ ___
 
 • **getMinYmd**: *function*
 
-*Defined in [calendar.ts:61](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L61)*
+*Defined in [calendar.ts:63](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L63)*
 
 #### Type declaration:
 
@@ -83,7 +84,7 @@ ___
 
 • **isLeapYear**: *function*
 
-*Defined in [calendar.ts:59](https://github.com/toggle-corp/fujs/blob/8801a55/src/calendar.ts#L59)*
+*Defined in [calendar.ts:59](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L59)*
 
 #### Type declaration:
 
@@ -94,3 +95,21 @@ ___
 Name | Type |
 ------ | ------ |
 `year` | number |
+
+___
+
+###  isValidDate
+
+• **isValidDate**: *function*
+
+*Defined in [calendar.ts:61](https://github.com/toggle-corp/fujs/blob/4664803/src/calendar.ts#L61)*
+
+#### Type declaration:
+
+▸ (`ymd`: [Ymd](../classes/_calendar_.ymd.md)): *[boolean, undefined | string]*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`ymd` | [Ymd](../classes/_calendar_.ymd.md) |

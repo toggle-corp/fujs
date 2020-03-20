@@ -17,7 +17,7 @@
 
 ▸ **listToGroupList**<**T**>(`list`: [Maybe](_declarations_.md#maybe)‹T[]›, `keySelector`: KeySelector‹T›): *[Obj](_declarations_.md#obj)‹T[]›*
 
-*Defined in [transform.ts:115](https://github.com/toggle-corp/fujs/blob/8801a55/src/transform.ts#L115)*
+*Defined in [transform.ts:115](https://github.com/toggle-corp/fujs/blob/4664803/src/transform.ts#L115)*
 
 Group list into object of list.
 Items in list are grouped by key returned by keySelector
@@ -37,7 +37,7 @@ Name | Type | Description |
 
 ▸ **listToGroupList**<**T**, **Q**>(`list`: [Maybe](_declarations_.md#maybe)‹T[]›, `keySelector`: KeySelector‹T›, `modifier`: Modifier‹T, Q›): *[Obj](_declarations_.md#obj)‹Q[]›*
 
-*Defined in [transform.ts:119](https://github.com/toggle-corp/fujs/blob/8801a55/src/transform.ts#L119)*
+*Defined in [transform.ts:119](https://github.com/toggle-corp/fujs/blob/4664803/src/transform.ts#L119)*
 
 **Type parameters:**
 
@@ -61,7 +61,7 @@ ___
 
 ▸ **listToMap**<**T**>(`list`: [Maybe](_declarations_.md#maybe)‹T[]›, `keySelector`: KeySelector‹T›): *[Obj](_declarations_.md#obj)‹T›*
 
-*Defined in [transform.ts:24](https://github.com/toggle-corp/fujs/blob/8801a55/src/transform.ts#L24)*
+*Defined in [transform.ts:24](https://github.com/toggle-corp/fujs/blob/4664803/src/transform.ts#L24)*
 
 Transform list to object
 
@@ -80,7 +80,7 @@ Name | Type | Description |
 
 ▸ **listToMap**<**T**, **Q**>(`list`: [Maybe](_declarations_.md#maybe)‹T[]›, `keySelector`: KeySelector‹T›, `modifier`: Modifier‹T, Q›): *[Obj](_declarations_.md#obj)‹Q›*
 
-*Defined in [transform.ts:28](https://github.com/toggle-corp/fujs/blob/8801a55/src/transform.ts#L28)*
+*Defined in [transform.ts:28](https://github.com/toggle-corp/fujs/blob/4664803/src/transform.ts#L28)*
 
 **Type parameters:**
 
@@ -104,7 +104,7 @@ ___
 
 ▸ **mapToList**<**T**>(`obj`: [Maybe](_declarations_.md#maybe)‹[Obj](_declarations_.md#obj)‹T››): *T[]*
 
-*Defined in [transform.ts:58](https://github.com/toggle-corp/fujs/blob/8801a55/src/transform.ts#L58)*
+*Defined in [transform.ts:58](https://github.com/toggle-corp/fujs/blob/4664803/src/transform.ts#L58)*
 
 Transform object to list
 
@@ -122,7 +122,7 @@ Name | Type |
 
 ▸ **mapToList**<**T**, **Q**>(`obj`: [Maybe](_declarations_.md#maybe)‹[Obj](_declarations_.md#obj)‹T››, `modifier`: ListModifier‹T, Q›): *Q[]*
 
-*Defined in [transform.ts:59](https://github.com/toggle-corp/fujs/blob/8801a55/src/transform.ts#L59)*
+*Defined in [transform.ts:59](https://github.com/toggle-corp/fujs/blob/4664803/src/transform.ts#L59)*
 
 **Type parameters:**
 
@@ -145,7 +145,7 @@ ___
 
 ▸ **mapToMap**<**T**>(`obj`: [Maybe](_declarations_.md#maybe)‹[Obj](_declarations_.md#obj)‹T››, `keySelector?`: NewKeySelector‹T›): *[Obj](_declarations_.md#obj)‹T›*
 
-*Defined in [transform.ts:80](https://github.com/toggle-corp/fujs/blob/8801a55/src/transform.ts#L80)*
+*Defined in [transform.ts:80](https://github.com/toggle-corp/fujs/blob/4664803/src/transform.ts#L80)*
 
 Transform object to object
 
@@ -164,7 +164,7 @@ Name | Type | Description |
 
 ▸ **mapToMap**<**T**, **Q**>(`obj`: [Maybe](_declarations_.md#maybe)‹[Obj](_declarations_.md#obj)‹T››, `keySelector`: NewKeySelector‹T› | undefined, `modifier`: Modifier‹T, Q›): *[Obj](_declarations_.md#obj)‹Q›*
 
-*Defined in [transform.ts:84](https://github.com/toggle-corp/fujs/blob/8801a55/src/transform.ts#L84)*
+*Defined in [transform.ts:84](https://github.com/toggle-corp/fujs/blob/4664803/src/transform.ts#L84)*
 
 **Type parameters:**
 

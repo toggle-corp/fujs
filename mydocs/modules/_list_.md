@@ -20,7 +20,7 @@
 
 ▸ **findDifferenceInList**<**T**>(`listA`: T[], `listB`: T[], `keySelector`: KeySelector‹T›): *object*
 
-*Defined in [list.ts:123](https://github.com/toggle-corp/fujs/blob/8801a55/src/list.ts#L123)*
+*Defined in [list.ts:123](https://github.com/toggle-corp/fujs/blob/4664803/src/list.ts#L123)*
 
 Find difference between two list
 
@@ -54,7 +54,7 @@ ___
 
 ▸ **getDefinedElementAround**<**T**>(`list`: [Maybe](_declarations_.md#maybe)‹T›[], `currentIndex`: number): *undefined | null | T*
 
-*Defined in [list.ts:52](https://github.com/toggle-corp/fujs/blob/8801a55/src/list.ts#L52)*
+*Defined in [list.ts:52](https://github.com/toggle-corp/fujs/blob/4664803/src/list.ts#L52)*
 
 Get a defined element around certain index in a list
 
@@ -77,7 +77,7 @@ ___
 
 ▸ **getDuplicates**<**T**>(`list`: [Maybe](_declarations_.md#maybe)‹T[]›, `keySelector`: KeySelector‹T›): *string[]*
 
-*Defined in [list.ts:103](https://github.com/toggle-corp/fujs/blob/8801a55/src/list.ts#L103)*
+*Defined in [list.ts:103](https://github.com/toggle-corp/fujs/blob/4664803/src/list.ts#L103)*
 
 Get a duplicate count for each element in a list
 
@@ -105,7 +105,7 @@ ___
 
 ▸ **getElementAround**<**T**>(`list`: T[], `index`: number): *T | undefined*
 
-*Defined in [list.ts:36](https://github.com/toggle-corp/fujs/blob/8801a55/src/list.ts#L36)*
+*Defined in [list.ts:36](https://github.com/toggle-corp/fujs/blob/4664803/src/list.ts#L36)*
 
 Get an element around certain index in a list
 
@@ -128,7 +128,7 @@ ___
 
 ▸ **getRandomFromList**<**T**>(`items`: T[]): *T*
 
-*Defined in [list.ts:26](https://github.com/toggle-corp/fujs/blob/8801a55/src/list.ts#L26)*
+*Defined in [list.ts:26](https://github.com/toggle-corp/fujs/blob/4664803/src/list.ts#L26)*
 
 Get a random item from the list
 
@@ -150,7 +150,7 @@ ___
 
 ▸ **isListEqual**(`list1`: unknown[], `list2`: unknown[]): *boolean*
 
-*Defined in [list.ts:14](https://github.com/toggle-corp/fujs/blob/8801a55/src/list.ts#L14)*
+*Defined in [list.ts:14](https://github.com/toggle-corp/fujs/blob/4664803/src/list.ts#L14)*
 
 Indentify if two list are the same
 
@@ -172,7 +172,7 @@ ___
 
 ▸ **unique**<**T**>(`list`: T[] | undefined, `getItemHash?`: undefined | function): *undefined | T[]*
 
-*Defined in [list.ts:167](https://github.com/toggle-corp/fujs/blob/8801a55/src/list.ts#L167)*
+*Defined in [list.ts:167](https://github.com/toggle-corp/fujs/blob/4664803/src/list.ts#L167)*
 
 Find unique items from a list
 
