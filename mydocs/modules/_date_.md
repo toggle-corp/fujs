@@ -31,7 +31,7 @@
 
 • **MIN_YEAR**: *1990* = 1990
 
-*Defined in [date.ts:312](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L312)*
+*Defined in [date.ts:315](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L315)*
 
 ## Functions
 
@@ -39,7 +39,7 @@
 
 ▸ **breakFormat**(`format`: string): *Value[]*
 
-*Defined in [date.ts:59](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L59)*
+*Defined in [date.ts:59](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L59)*
 
 Break timedate format into time unit, date unit and other unit.
 
@@ -60,9 +60,9 @@ ___
 
 ###  decodeDate
 
-▸ **decodeDate**(`value`: [Maybe](_declarations_.md#maybe)‹string | number›): *undefined | Date*
+▸ **decodeDate**(`value`: undefined): *undefined*
 
-*Defined in [date.ts:288](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L288)*
+*Defined in [date.ts:288](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L288)*
 
 Change timestamp or 'yyyy-MM-dd' string into date
 
@@ -70,9 +70,33 @@ Change timestamp or 'yyyy-MM-dd' string into date
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`value` | [Maybe](_declarations_.md#maybe)‹string &#124; number› | timestamp or 'yyyy-MM-dd' string  |
+`value` | undefined | timestamp or 'yyyy-MM-dd' string  |
 
-**Returns:** *undefined | Date*
+**Returns:** *undefined*
+
+▸ **decodeDate**(`value`: null): *undefined*
+
+*Defined in [date.ts:289](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L289)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`value` | null |
+
+**Returns:** *undefined*
+
+▸ **decodeDate**(`value`: string | number): *Date*
+
+*Defined in [date.ts:290](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L290)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`value` | string &#124; number |
+
+**Returns:** *Date*
 
 ___
 
@@ -80,7 +104,7 @@ ___
 
 ▸ **encodeDate**(`date`: Date): *string*
 
-*Defined in [date.ts:279](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L279)*
+*Defined in [date.ts:279](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L279)*
 
 Change date into 'yyyy-MM-dd' string
 
@@ -98,7 +122,7 @@ ___
 
 ▸ **formatDateToString**(`date`: Date, `format`: string): *string*
 
-*Defined in [date.ts:187](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L187)*
+*Defined in [date.ts:187](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L187)*
 
 Format date
 
@@ -119,7 +143,7 @@ ___
 
 ▸ **getDate**(`datetime`: string | number): *number*
 
-*Defined in [date.ts:199](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L199)*
+*Defined in [date.ts:199](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L199)*
 
 Set hour, minute and second to zero in given datetime
 
@@ -139,7 +163,7 @@ ___
 
 ▸ **getDateDifferenceHumanReadable**(`a`: string, `b`: string): *string*
 
-*Defined in [date.ts:225](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L225)*
+*Defined in [date.ts:225](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L225)*
 
 Get number of days betwen two datetime
 
@@ -160,7 +184,7 @@ ___
 
 ▸ **getDifferenceInDays**(`a`: string | number, `b`: string | number): *number*
 
-*Defined in [date.ts:212](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L212)*
+*Defined in [date.ts:212](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L212)*
 
 Get number of days betwen two datetime
 
@@ -181,7 +205,7 @@ ___
 
 ▸ **getErrorForDateValues**(`ymd`: Partial‹Ymd›): *undefined | string*
 
-*Defined in [date.ts:342](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L342)*
+*Defined in [date.ts:345](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L345)*
 
 Identify problem with ymd value
 
@@ -202,7 +226,7 @@ ___
 
 ▸ **getErrorForTimeValues**(`val`: Partial‹Hms›): *undefined | string*
 
-*Defined in [date.ts:399](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L399)*
+*Defined in [date.ts:402](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L402)*
 
 Identify problem with hms value
 
@@ -223,7 +247,7 @@ ___
 
 ▸ **getNumDaysInMonth**(`date`: [Maybe](_declarations_.md#maybe)‹Date›): *number*
 
-*Defined in [date.ts:267](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L267)*
+*Defined in [date.ts:267](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L267)*
 
 Get number of days in certain year and month from a date
 
@@ -243,7 +267,7 @@ ___
 
 ▸ **getNumDaysInMonthX**(`year`: [Maybe](_declarations_.md#maybe)‹number›, `month`: [Maybe](_declarations_.md#maybe)‹number›): *number*
 
-*Defined in [date.ts:254](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L254)*
+*Defined in [date.ts:254](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L254)*
 
 Get number of days in certain year and month
 
@@ -267,7 +291,7 @@ ___
 
 ▸ **isDateValuesComplete**(`ymd`: Partial‹Ymd›): *ymd is Ymd*
 
-*Defined in [date.ts:325](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L325)*
+*Defined in [date.ts:328](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L328)*
 
 Identify if ymd value is complete
 
@@ -285,7 +309,7 @@ ___
 
 ▸ **isTimeValuesComplete**(`val`: Partial‹Hms›): *val is Hms*
 
-*Defined in [date.ts:382](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L382)*
+*Defined in [date.ts:385](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L385)*
 
 Identify if hms value is complete
 
@@ -303,7 +327,7 @@ ___
 
 ▸ **populateFormat**(`formatList`: Value[], `date`: Date): *Value[]*
 
-*Defined in [date.ts:138](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/date.ts#L138)*
+*Defined in [date.ts:138](https://github.com/toggle-corp/fujs/blob/e17c407/src/date.ts#L138)*
 
 Populate the format list with date
 
