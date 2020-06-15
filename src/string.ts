@@ -30,6 +30,9 @@ export function padStart(value: Maybe<string | number>, length: number, pad = '0
  *
  * @param str
  */
+export function capitalize(str: null): null;
+export function capitalize(str: undefined): undefined;
+export function capitalize(str: string): string;
 export function capitalize(str: Maybe<string>) {
     if (isTruthyString(str)) {
         return str.replace(/\b\w/g, (l) => l.toUpperCase());
@@ -113,6 +116,10 @@ export function randomString(length = 16, mixedCase = false) {
 const reOne = /([a-z])([A-Z])([A-Z])/g;
 const reTwo = /([a-z])([A-Z])/g;
 const reThree = /([A-Z])([A-Z])([a-z])/g;
+
+export function camelToNormal(str: undefined, separator?: string): undefined;
+export function camelToNormal(str: null, separator?: string): null;
+export function camelToNormal(str: string, separator?: string): string;
 export function camelToNormal(str: Maybe<string>, separator = ' ') {
     if (isNotDefined(str)) {
         return str;
@@ -130,11 +137,15 @@ export function camelToNormal(str: Maybe<string>, separator = ' ') {
  * @remarks
  * Only support alphabets (not numerals)
  */
+export function camelToSnake(str: undefined): undefined;
+export function camelToSnake(str: null): null;
+export function camelToSnake(str: string): string;
 export function camelToSnake(str: Maybe<string>) {
-    const value = camelToNormal(str, '_');
-    if (isNotDefined(value) || value.length <= 1) {
-        return value;
+    if (isNotDefined(str)) {
+        return str;
     }
+
+    const value = camelToNormal(str, '_');
     return value.charAt(0).toLowerCase() + value.slice(1);
 }
 
@@ -146,11 +157,15 @@ export function camelToSnake(str: Maybe<string>) {
  * @remarks
  * Only support alphabets (not numerals)
  */
+export function camelToKebab(str: undefined): undefined;
+export function camelToKebab(str: null): null;
+export function camelToKebab(str: string): string;
 export function camelToKebab(str: Maybe<string>) {
-    const value = camelToNormal(str, '-');
-    if (isNotDefined(value) || value.length <= 1) {
-        return value;
+    if (isNotDefined(str)) {
+        return str;
     }
+
+    const value = camelToNormal(str, '-');
     return value.charAt(0).toLowerCase() + value.slice(1);
 }
 
@@ -171,6 +186,9 @@ export function splitInWhitespace(str: Maybe<string>): string[] {
  *
  * @param str
  */
+export function trimWhitespace(str: undefined): undefined;
+export function trimWhitespace(str: null): null;
+export function trimWhitespace(str: string): string;
 export function trimWhitespace(str: Maybe<string>) {
     if (isNotDefined(str)) {
         return str;

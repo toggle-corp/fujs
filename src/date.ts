@@ -285,6 +285,9 @@ export function encodeDate(date: Date): string {
  *
  * @param value timestamp or 'yyyy-MM-dd' string
  */
+export function decodeDate(value: undefined): undefined;
+export function decodeDate(value: null): undefined;
+export function decodeDate(value: string | number): Date;
 export function decodeDate(value: Maybe<string | number>) {
     // Let's assume that the value is in local time zone
 

@@ -76,7 +76,7 @@ test('find difference in list', () => {
 });
 
 test('unique in list', () => {
-    expect(unique([1, 2, 3, 1, 2, 3, 1]))
+    expect(unique([1, 2, 3, 1, 2, 3, 1]).map((i) => i))
         .toEqual([1, 2, 3]);
     expect(unique([1, 2, 3]))
         .toEqual([1, 2, 3]);

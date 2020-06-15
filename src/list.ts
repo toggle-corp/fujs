@@ -3,7 +3,7 @@ import { isNotDefined, isDefined } from './core';
 import { listToMap } from './transform';
 
 /**
- * Indentify if two list are the same
+ * Identify if two list are the same
  *
  * @param list1
  * @param list2
@@ -164,7 +164,10 @@ export function findDifferenceInList<T>(listA: T[], listB: T[], keySelector: Key
  * If getItemHash is not supplied, comparision is done by casting items in list
  * to string
  */
-export function unique<T>(list: T[] | undefined, getItemHash?: ((item: T) => string | number)) {
+export function unique<T>(list: undefined, getItemHash?: ((item: T) => string | number)): undefined;
+export function unique<T>(list: null, getItemHash?: ((item: T) => string | number)): undefined;
+export function unique<T>(list: T[], getItemHash?: ((item: T) => string | number)): T[];
+export function unique<T>(list: Maybe<T[]>, getItemHash?: ((item: T) => string | number)) {
     if (isNotDefined(list)) {
         return undefined;
     }
