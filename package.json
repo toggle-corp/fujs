@@ -1,6 +1,6 @@
 {
     "name": "@togglecorp/fujs",
-    "version": "1.9.0-beta.0",
+    "version": "1.9.1",
     "description": "Friendly Utility for JS",
     "files": [
         "/build"
@@ -13,6 +13,7 @@
         "build": "rollup -c && tsc",
         "watch": "rollup -cw",
         "lint": "eslint ./src/**/*.ts --rule 'import/no-unresolved: 0'",
+        "generate-doc": "typedoc --theme markdown --out mydocs --includes src --exclude '**/*.test.ts' --excludeNotExported --excludePrivate --excludeProtected",
         "test": "TZ=Asia/Katmandu jest",
         "test:coverage": "TZ=Asia/Katmandu jest --coverage"
     },

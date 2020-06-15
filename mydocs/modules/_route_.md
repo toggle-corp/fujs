@@ -15,7 +15,7 @@
 
 ▸ **isParamRequired**(`route`: string, `param`: string): *boolean*
 
-*Defined in [route.ts:48](https://github.com/toggle-corp/fujs/blob/4664803/src/route.ts#L48)*
+*Defined in [route.ts:48](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/route.ts#L48)*
 
 Identify if param is required in certain route
 
@@ -34,7 +34,7 @@ ___
 
 ▸ **reverseRoute**(`route`: string, `params`: [Obj](_declarations_.md#obj)‹string | number›): *string*
 
-*Defined in [route.ts:8](https://github.com/toggle-corp/fujs/blob/4664803/src/route.ts#L8)*
+*Defined in [route.ts:8](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/route.ts#L8)*
 
 Fill parameters in route url
 

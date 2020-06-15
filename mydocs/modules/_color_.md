@@ -24,7 +24,7 @@
 
 ▸ **getColorOnBgColor**(`color`: HexColor, `colorOnLight`: HexColor, `colorOnDark`: HexColor): *string*
 
-*Defined in [color.ts:39](https://github.com/toggle-corp/fujs/blob/4664803/src/color.ts#L39)*
+*Defined in [color.ts:39](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/color.ts#L39)*
 
 Get appropriate foreground color for a given background color.
 
@@ -46,7 +46,7 @@ ___
 
 ▸ **getContrastYIQ**(`color`: HexColor): *number*
 
-*Defined in [color.ts:14](https://github.com/toggle-corp/fujs/blob/4664803/src/color.ts#L14)*
+*Defined in [color.ts:14](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/color.ts#L14)*
 
 Convert hex to yiq colorspace and get the luma value
 
@@ -66,7 +66,7 @@ ___
 
 ▸ **getHashFromString**(`str`: string): *number*
 
-*Defined in [color.ts:48](https://github.com/toggle-corp/fujs/blob/4664803/src/color.ts#L48)*
+*Defined in [color.ts:48](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/color.ts#L48)*
 
 Get hash from a string.
 
@@ -86,7 +86,7 @@ ___
 
 ▸ **getHexFromCode**(`code`: number): *HexColor*
 
-*Defined in [color.ts:61](https://github.com/toggle-corp/fujs/blob/4664803/src/color.ts#L61)*
+*Defined in [color.ts:61](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/color.ts#L61)*
 
 Get color from a number.
 
@@ -106,7 +106,7 @@ ___
 
 ▸ **getHexFromRgb**(`color`: RgbRawColor): *undefined | string*
 
-*Defined in [color.ts:93](https://github.com/toggle-corp/fujs/blob/4664803/src/color.ts#L93)*
+*Defined in [color.ts:93](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/color.ts#L93)*
 
 Get hex color from rgb color.
 
@@ -124,7 +124,7 @@ ___
 
 ▸ **getHexFromRgbRaw**(`color`: RgbColor): *string*
 
-*Defined in [color.ts:83](https://github.com/toggle-corp/fujs/blob/4664803/src/color.ts#L83)*
+*Defined in [color.ts:83](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/color.ts#L83)*
 
 Get hex color from rgb color.
 
@@ -142,7 +142,7 @@ ___
 
 ▸ **getHexFromString**(`str`: string): *string*
 
-*Defined in [color.ts:75](https://github.com/toggle-corp/fujs/blob/4664803/src/color.ts#L75)*
+*Defined in [color.ts:75](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/color.ts#L75)*
 
 Get color from string.
 
@@ -160,7 +160,7 @@ ___
 
 ▸ **getRgbFromHex**(`hex`: HexColor): *RgbRawColor | undefined*
 
-*Defined in [color.ts:126](https://github.com/toggle-corp/fujs/blob/4664803/src/color.ts#L126)*
+*Defined in [color.ts:126](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/color.ts#L126)*
 
 Get rgb color from hex color 'rgb(255, 255, 255)'.
 
@@ -178,7 +178,7 @@ ___
 
 ▸ **getRgbRawFromHex**(`color`: HexColor): *RgbColor | undefined*
 
-*Defined in [color.ts:109](https://github.com/toggle-corp/fujs/blob/4664803/src/color.ts#L109)*
+*Defined in [color.ts:109](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/color.ts#L109)*
 
 Get rgb color from hex color.
 
@@ -196,7 +196,7 @@ ___
 
 ▸ **interpolateRgb**(`color1`: RgbColor, `color2`: RgbColor, `factor`: number): *[number, number, number]*
 
-*Defined in [color.ts:144](https://github.com/toggle-corp/fujs/blob/4664803/src/color.ts#L144)*
+*Defined in [color.ts:144](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/color.ts#L144)*
 
 Interpolate two rgb colors.
 
@@ -218,7 +218,7 @@ ___
 
 ▸ **isValidHexColor**(`color`: string): *boolean*
 
-*Defined in [color.ts:27](https://github.com/toggle-corp/fujs/blob/4664803/src/color.ts#L27)*
+*Defined in [color.ts:27](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/color.ts#L27)*
 
 Identifies if given color is valid color.
 

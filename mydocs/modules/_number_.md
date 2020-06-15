@@ -19,7 +19,7 @@
 
 ▸ **addSeparator**(`num`: [Maybe](_declarations_.md#maybe)‹string | number›, `separator`: string, `decimalSeparator`: string): *undefined | null | string*
 
-*Defined in [number.ts:12](https://github.com/toggle-corp/fujs/blob/4664803/src/number.ts#L12)*
+*Defined in [number.ts:12](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/number.ts#L12)*
 
 Get comma separated number
 
@@ -39,7 +39,7 @@ ___
 
 ▸ **formattedNormalize**(`num`: number, `lang`: [Lang](../enums/_number_.lang.md)): *object | object*
 
-*Defined in [number.ts:65](https://github.com/toggle-corp/fujs/blob/4664803/src/number.ts#L65)*
+*Defined in [number.ts:65](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/number.ts#L65)*
 
 Get normalized number
 

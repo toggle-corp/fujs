@@ -15,7 +15,7 @@
 
 • **en**: = "en"
 
-*Defined in [number.ts:34](https://github.com/toggle-corp/fujs/blob/4664803/src/number.ts#L34)*
+*Defined in [number.ts:34](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/number.ts#L34)*
 
 ___
 
@@ -23,4 +23,4 @@ ___
 
 • **np**: = "ne"
 
-*Defined in [number.ts:35](https://github.com/toggle-corp/fujs/blob/4664803/src/number.ts#L35)*
+*Defined in [number.ts:35](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/number.ts#L35)*
