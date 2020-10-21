@@ -85,15 +85,18 @@ test('unique in list', () => {
     const foo = [
         { uid: 14, name: 'hari' },
         { uid: 15, name: 'kiran' },
+        { uid: 12, name: 'shyam', description: 'with more data' },
+        { uid: 16, name: 'chyame', description: 'that guy' },
         { uid: 12, name: 'shyam' },
-        { uid: 16, name: 'chyame' },
-        { uid: 12, name: 'shyam' },
+        { uid: 16, name: 'chyame', description: 'not that guy' },
+        { uid: 10, name: 'gita' },
     ];
     const bar = [
         { uid: 14, name: 'hari' },
         { uid: 15, name: 'kiran' },
-        { uid: 12, name: 'shyam' },
-        { uid: 16, name: 'chyame' },
+        { uid: 12, name: 'shyam', description: 'with more data' },
+        { uid: 16, name: 'chyame', description: 'that guy' },
+        { uid: 10, name: 'gita' },
     ];
     expect(unique(foo, (item) => item.uid)).toEqual(bar);
 });

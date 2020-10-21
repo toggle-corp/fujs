@@ -86,7 +86,7 @@ export function getDefinedElementAround<T>(list: Maybe<T>[], currentIndex: numbe
 }
 
 interface KeySelector<T>{
-    (element: T): string | number;
+    (element: T): string | number | boolean;
 }
 
 /**
@@ -105,7 +105,7 @@ export function getDuplicates<T>(list: Maybe<T[]>, keySelector: KeySelector<T>):
         list,
         keySelector,
         (_, key, __, acc) => (
-            isDefined(acc[key]) ? acc[key] + 1 : 1
+            isDefined(acc[String(key)]) ? acc[String(key)] + 1 : 1
         ),
     );
     return Object.keys(counts).filter((key) => counts[key] > 1);
@@ -129,10 +129,10 @@ export function findDifferenceInList<T>(listA: T[], listB: T[], keySelector: Key
     const mapA = listToMap(listA, keySelector, (e) => e);
     listB.forEach((elem) => {
         const key = keySelector(elem);
-        if (isNotDefined(mapA[key])) {
+        if (isNotDefined(mapA[String(key)])) {
             added.push(elem);
-        } else if (mapA[key] !== elem) {
-            modified.push({ old: mapA[key], new: elem });
+        } else if (mapA[String(key)] !== elem) {
+            modified.push({ old: mapA[String(key)], new: elem });
         } else {
             unmodified.push(elem);
         }
@@ -141,7 +141,7 @@ export function findDifferenceInList<T>(listA: T[], listB: T[], keySelector: Key
     const mapB = listToMap(listB, keySelector, (e) => e);
     listA.forEach((elem) => {
         const key = keySelector(elem);
-        if (isNotDefined(mapB[key])) {
+        if (isNotDefined(mapB[String(key)])) {
             removed.push(elem);
         }
     });
