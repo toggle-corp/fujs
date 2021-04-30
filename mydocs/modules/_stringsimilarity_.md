@@ -15,7 +15,7 @@
 
 ▸ **getTrigramSimilarity**(`foo`: string, `bar`: string): *number*
 
-*Defined in [stringSimilarity.ts:29](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/stringSimilarity.ts#L29)*
+*Defined in [stringSimilarity.ts:29](https://github.com/toggle-corp/fujs/blob/e17c407/src/stringSimilarity.ts#L29)*
 
 Get trigram similarity between two sentences
 
@@ -34,7 +34,7 @@ ___
 
 ▸ **getTrigrams**(`sentence`: string): *Set‹string›*
 
-*Defined in [stringSimilarity.ts:7](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/stringSimilarity.ts#L7)*
+*Defined in [stringSimilarity.ts:7](https://github.com/toggle-corp/fujs/blob/e17c407/src/stringSimilarity.ts#L7)*
 
 Get trigrams from a sentence
 

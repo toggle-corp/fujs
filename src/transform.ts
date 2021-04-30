@@ -1,18 +1,20 @@
 import { isNotDefined } from './core';
 import { Obj, Maybe } from './declarations';
 
+type OptionKey = string | number | boolean;
+
 interface Modifier<T, Q>{
-    (element: T, key: string | number, index: number, acc: Obj<Q>): Q;
+    (element: T, key: OptionKey, index: number, acc: Obj<Q>): Q;
 }
 interface ListModifier<T, Q>{
-    (element: T, key: string | number, index: number, acc: Q[]): Q;
+    (element: T, key: OptionKey, index: number, acc: Q[]): Q;
 }
 interface KeySelector<T>{
-    (element: T): string | number;
+    (element: T): OptionKey;
 }
 
 interface NewKeySelector<T>{
-    (key: string, element: T): string | number;
+    (key: string, element: T): OptionKey;
 }
 
 /**
@@ -41,7 +43,7 @@ export function listToMap<T, Q>(
     return list.reduce(
         (acc, elem, i) => {
             const key = keySelector(elem);
-            acc[key] = modifier
+            acc[String(key)] = modifier
                 ? modifier(elem, key, i, acc)
                 : elem;
             return acc;
@@ -98,7 +100,7 @@ export function mapToMap<T, Q>(
         (acc, k, i) => {
             const elem = obj[k];
             const key = keySelector ? keySelector(k, elem) : k;
-            acc[key] = modifier ? modifier(elem, k, i, acc) : elem;
+            acc[String(key)] = modifier ? modifier(elem, k, i, acc) : elem;
             return acc;
         },
         {},
@@ -135,10 +137,10 @@ export function listToGroupList<T, Q>(
             const value = modifier
                 ? modifier(elem, key, i, acc)
                 : elem;
-            if (acc[key]) {
-                acc[key].push(value);
+            if (acc[String(key)]) {
+                acc[String(key)].push(value);
             } else {
-                acc[key] = [value];
+                acc[String(key)] = [value];
             }
             return acc;
         },

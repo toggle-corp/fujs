@@ -17,21 +17,49 @@
 
 ###  addSeparator
 
-▸ **addSeparator**(`num`: [Maybe](_declarations_.md#maybe)‹string | number›, `separator`: string, `decimalSeparator`: string): *undefined | null | string*
+▸ **addSeparator**(`num`: undefined, `sep?`: undefined | string, `decimalSep?`: undefined | string): *undefined*
 
-*Defined in [number.ts:12](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/number.ts#L12)*
+*Defined in [number.ts:12](https://github.com/toggle-corp/fujs/blob/e17c407/src/number.ts#L12)*
 
 Get comma separated number
 
 **Parameters:**
 
-Name | Type | Default | Description |
------- | ------ | ------ | ------ |
-`num` | [Maybe](_declarations_.md#maybe)‹string &#124; number› | - | - |
-`separator` | string | "," | thousand separator |
-`decimalSeparator` | string | "." | decimal separator  |
+Name | Type |
+------ | ------ |
+`num` | undefined |
+`sep?` | undefined &#124; string |
+`decimalSep?` | undefined &#124; string |
 
-**Returns:** *undefined | null | string*
+**Returns:** *undefined*
+
+▸ **addSeparator**(`num`: null, `sep?`: undefined | string, `decimalSep?`: undefined | string): *null*
+
+*Defined in [number.ts:13](https://github.com/toggle-corp/fujs/blob/e17c407/src/number.ts#L13)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`num` | null |
+`sep?` | undefined &#124; string |
+`decimalSep?` | undefined &#124; string |
+
+**Returns:** *null*
+
+▸ **addSeparator**(`num`: string | number, `sep?`: undefined | string, `decimalSep?`: undefined | string): *string*
+
+*Defined in [number.ts:14](https://github.com/toggle-corp/fujs/blob/e17c407/src/number.ts#L14)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`num` | string &#124; number |
+`sep?` | undefined &#124; string |
+`decimalSep?` | undefined &#124; string |
+
+**Returns:** *string*
 
 ___
 
@@ -39,7 +67,7 @@ ___
 
 ▸ **formattedNormalize**(`num`: number, `lang`: [Lang](../enums/_number_.lang.md)): *object | object*
 
-*Defined in [number.ts:65](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/number.ts#L65)*
+*Defined in [number.ts:64](https://github.com/toggle-corp/fujs/blob/e17c407/src/number.ts#L64)*
 
 Get normalized number
 

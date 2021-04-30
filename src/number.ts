@@ -9,11 +9,10 @@ import { Maybe, Obj } from './declarations';
  * @param separator thousand separator
  * @param decimalSeparator decimal separator
  */
-export function addSeparator(
-    num: Maybe<string | number>,
-    separator = ',',
-    decimalSeparator = '.',
-) {
+export function addSeparator(num: undefined, sep?: string, decimalSep?: string): undefined;
+export function addSeparator(num: null, sep?: string, decimalSep?: string): null;
+export function addSeparator(num: string | number, sep?: string, decimalSep?: string): string;
+export function addSeparator(num: Maybe<string | number>, separator = ',', decimalSeparator = '.') {
     if (isNotDefined(num)) {
         return num;
     }

@@ -23,7 +23,7 @@
 
 • **getDaysInMonth**: *function*
 
-*Defined in [calendar.ts:58](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/calendar.ts#L58)*
+*Defined in [calendar.ts:58](https://github.com/toggle-corp/fujs/blob/e17c407/src/calendar.ts#L58)*
 
 #### Type declaration:
 
@@ -42,7 +42,7 @@ ___
 
 • **getDaysInYear**: *function*
 
-*Defined in [calendar.ts:57](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/calendar.ts#L57)*
+*Defined in [calendar.ts:57](https://github.com/toggle-corp/fujs/blob/e17c407/src/calendar.ts#L57)*
 
 #### Type declaration:
 
@@ -60,7 +60,7 @@ ___
 
 • **getMaxYmd**: *function*
 
-*Defined in [calendar.ts:64](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/calendar.ts#L64)*
+*Defined in [calendar.ts:64](https://github.com/toggle-corp/fujs/blob/e17c407/src/calendar.ts#L64)*
 
 #### Type declaration:
 
@@ -72,7 +72,7 @@ ___
 
 • **getMinYmd**: *function*
 
-*Defined in [calendar.ts:63](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/calendar.ts#L63)*
+*Defined in [calendar.ts:63](https://github.com/toggle-corp/fujs/blob/e17c407/src/calendar.ts#L63)*
 
 #### Type declaration:
 
@@ -84,7 +84,7 @@ ___
 
 • **isLeapYear**: *function*
 
-*Defined in [calendar.ts:59](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/calendar.ts#L59)*
+*Defined in [calendar.ts:59](https://github.com/toggle-corp/fujs/blob/e17c407/src/calendar.ts#L59)*
 
 #### Type declaration:
 
@@ -102,7 +102,7 @@ ___
 
 • **isValidDate**: *function*
 
-*Defined in [calendar.ts:61](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/calendar.ts#L61)*
+*Defined in [calendar.ts:61](https://github.com/toggle-corp/fujs/blob/e17c407/src/calendar.ts#L61)*
 
 #### Type declaration:
 

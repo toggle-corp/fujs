@@ -22,9 +22,9 @@
 
 ###  camelToKebab
 
-▸ **camelToKebab**(`str`: [Maybe](_declarations_.md#maybe)‹string›): *undefined | null | string*
+▸ **camelToKebab**(`str`: undefined): *undefined*
 
-*Defined in [string.ts:149](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/string.ts#L149)*
+*Defined in [string.ts:160](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L160)*
 
 Convert camel case to kebab case
 
@@ -35,34 +35,84 @@ Only support alphabets (not numerals)
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`str` | [Maybe](_declarations_.md#maybe)‹string› |   |
+`str` | undefined |   |
 
-**Returns:** *undefined | null | string*
+**Returns:** *undefined*
+
+▸ **camelToKebab**(`str`: null): *null*
+
+*Defined in [string.ts:161](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L161)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`str` | null |
+
+**Returns:** *null*
+
+▸ **camelToKebab**(`str`: string): *string*
+
+*Defined in [string.ts:162](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L162)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`str` | string |
+
+**Returns:** *string*
 
 ___
 
 ###  camelToNormal
 
-▸ **camelToNormal**(`str`: [Maybe](_declarations_.md#maybe)‹string›, `separator`: string): *undefined | null | string*
+▸ **camelToNormal**(`str`: undefined, `separator?`: undefined | string): *undefined*
 
-*Defined in [string.ts:116](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/string.ts#L116)*
+*Defined in [string.ts:120](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L120)*
 
 **Parameters:**
 
-Name | Type | Default |
------- | ------ | ------ |
-`str` | [Maybe](_declarations_.md#maybe)‹string› | - |
-`separator` | string | " " |
+Name | Type |
+------ | ------ |
+`str` | undefined |
+`separator?` | undefined &#124; string |
 
-**Returns:** *undefined | null | string*
+**Returns:** *undefined*
+
+▸ **camelToNormal**(`str`: null, `separator?`: undefined | string): *null*
+
+*Defined in [string.ts:121](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L121)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`str` | null |
+`separator?` | undefined &#124; string |
+
+**Returns:** *null*
+
+▸ **camelToNormal**(`str`: string, `separator?`: undefined | string): *string*
+
+*Defined in [string.ts:122](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L122)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`str` | string |
+`separator?` | undefined &#124; string |
+
+**Returns:** *string*
 
 ___
 
 ###  camelToSnake
 
-▸ **camelToSnake**(`str`: [Maybe](_declarations_.md#maybe)‹string›): *undefined | null | string*
+▸ **camelToSnake**(`str`: undefined): *undefined*
 
-*Defined in [string.ts:133](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/string.ts#L133)*
+*Defined in [string.ts:140](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L140)*
 
 Convert camel case to snake case
 
@@ -73,17 +123,41 @@ Only support alphabets (not numerals)
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`str` | [Maybe](_declarations_.md#maybe)‹string› |   |
+`str` | undefined |   |
 
-**Returns:** *undefined | null | string*
+**Returns:** *undefined*
+
+▸ **camelToSnake**(`str`: null): *null*
+
+*Defined in [string.ts:141](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L141)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`str` | null |
+
+**Returns:** *null*
+
+▸ **camelToSnake**(`str`: string): *string*
+
+*Defined in [string.ts:142](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L142)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`str` | string |
+
+**Returns:** *string*
 
 ___
 
 ###  capitalize
 
-▸ **capitalize**(`str`: [Maybe](_declarations_.md#maybe)‹string›): *undefined | null | string*
+▸ **capitalize**(`str`: null): *null*
 
-*Defined in [string.ts:33](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/string.ts#L33)*
+*Defined in [string.ts:33](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L33)*
 
 Change the first letter of word to uppercase
 
@@ -91,9 +165,33 @@ Change the first letter of word to uppercase
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`str` | [Maybe](_declarations_.md#maybe)‹string› |   |
+`str` | null |   |
 
-**Returns:** *undefined | null | string*
+**Returns:** *null*
+
+▸ **capitalize**(`str`: undefined): *undefined*
+
+*Defined in [string.ts:34](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L34)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`str` | undefined |
+
+**Returns:** *undefined*
+
+▸ **capitalize**(`str`: string): *string*
+
+*Defined in [string.ts:35](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L35)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`str` | string |
+
+**Returns:** *string*
 
 ___
 
@@ -101,7 +199,7 @@ ___
 
 ▸ **caseInsensitiveSubmatch**(`longText`: [Maybe](_declarations_.md#maybe)‹string | number›, `shortText`: [Maybe](_declarations_.md#maybe)‹string | number›): *boolean*
 
-*Defined in [string.ts:191](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/string.ts#L191)*
+*Defined in [string.ts:209](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L209)*
 
 Identify if shortText is inside longText
 
@@ -123,7 +221,7 @@ ___
 
 ▸ **formatPdfText**(`text`: string): *string*
 
-*Defined in [string.ts:45](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/string.ts#L45)*
+*Defined in [string.ts:48](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L48)*
 
 Format text, extracted from pdfs, to remove extraneous spaces
 
@@ -141,7 +239,7 @@ ___
 
 ▸ **getRatingForContentInString**(`content`: [Maybe](_declarations_.md#maybe)‹string›, `str`: [Maybe](_declarations_.md#maybe)‹string›): *number*
 
-*Defined in [string.ts:68](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/string.ts#L68)*
+*Defined in [string.ts:71](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L71)*
 
 Get rating for content in string
 
@@ -160,7 +258,7 @@ ___
 
 ▸ **padStart**(`value`: [Maybe](_declarations_.md#maybe)‹string | number›, `length`: number, `pad`: string): *string*
 
-*Defined in [string.ts:18](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/string.ts#L18)*
+*Defined in [string.ts:18](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L18)*
 
 Add padding before string or number
 
@@ -183,7 +281,7 @@ ___
 
 ▸ **randomString**(`length`: number, `mixedCase`: boolean): *string*
 
-*Defined in [string.ts:82](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/string.ts#L82)*
+*Defined in [string.ts:85](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L85)*
 
 Get random string
 
@@ -202,7 +300,7 @@ ___
 
 ▸ **splitInWhitespace**(`str`: [Maybe](_declarations_.md#maybe)‹string›): *string[]*
 
-*Defined in [string.ts:162](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/string.ts#L162)*
+*Defined in [string.ts:177](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L177)*
 
 Split sentence
 
@@ -218,9 +316,9 @@ ___
 
 ###  trimWhitespace
 
-▸ **trimWhitespace**(`str`: [Maybe](_declarations_.md#maybe)‹string›): *undefined | null | string*
+▸ **trimWhitespace**(`str`: undefined): *undefined*
 
-*Defined in [string.ts:174](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/string.ts#L174)*
+*Defined in [string.ts:189](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L189)*
 
 Convert all whitespaces into single space
 
@@ -228,6 +326,30 @@ Convert all whitespaces into single space
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`str` | [Maybe](_declarations_.md#maybe)‹string› |   |
+`str` | undefined |   |
 
-**Returns:** *undefined | null | string*
+**Returns:** *undefined*
+
+▸ **trimWhitespace**(`str`: null): *null*
+
+*Defined in [string.ts:190](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L190)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`str` | null |
+
+**Returns:** *null*
+
+▸ **trimWhitespace**(`str`: string): *string*
+
+*Defined in [string.ts:191](https://github.com/toggle-corp/fujs/blob/e17c407/src/string.ts#L191)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`str` | string |
+
+**Returns:** *string*

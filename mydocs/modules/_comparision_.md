@@ -24,7 +24,7 @@
 
 • **compareBoolean**: *(Anonymous function)* = comparision((x: boolean) => x, (a, b) => (Number(a) - Number(b)))
 
-*Defined in [comparision.ts:34](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/comparision.ts#L34)*
+*Defined in [comparision.ts:34](https://github.com/toggle-corp/fujs/blob/e17c407/src/comparision.ts#L34)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
     return dateA.getTime() - dateB.getTime();
 })
 
-*Defined in [comparision.ts:37](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/comparision.ts#L37)*
+*Defined in [comparision.ts:37](https://github.com/toggle-corp/fujs/blob/e17c407/src/comparision.ts#L37)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **compareLength**: *(Anonymous function)* = comparision((x: string | unknown[]) => x.length, (a, b) => (a - b))
 
-*Defined in [comparision.ts:44](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/comparision.ts#L44)*
+*Defined in [comparision.ts:44](https://github.com/toggle-corp/fujs/blob/e17c407/src/comparision.ts#L44)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **compareNumber**: *(Anonymous function)* = comparision((x: number) => x, (a, b) => (a - b))
 
-*Defined in [comparision.ts:36](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/comparision.ts#L36)*
+*Defined in [comparision.ts:36](https://github.com/toggle-corp/fujs/blob/e17c407/src/comparision.ts#L36)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **compareString**: *(Anonymous function)* = comparision((x: string) => x, (a, b) => a.localeCompare(b))
 
-*Defined in [comparision.ts:35](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/comparision.ts#L35)*
+*Defined in [comparision.ts:35](https://github.com/toggle-corp/fujs/blob/e17c407/src/comparision.ts#L35)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **compareStringAsNumber**: *(Anonymous function)* = comparision((x: string) => Number(x), (a, b) => a - b)
 
-*Defined in [comparision.ts:43](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/comparision.ts#L43)*
+*Defined in [comparision.ts:43](https://github.com/toggle-corp/fujs/blob/e17c407/src/comparision.ts#L43)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **compareStringByWordCount**: *(Anonymous function)* = comparision((x: string) => x.split(/\s+/).length, (a, b) => a - b)
 
-*Defined in [comparision.ts:45](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/comparision.ts#L45)*
+*Defined in [comparision.ts:45](https://github.com/toggle-corp/fujs/blob/e17c407/src/comparision.ts#L45)*
 
 ## Functions
 
@@ -84,7 +84,7 @@ ___
 
 ▸ **compareStringSearch**(`x`: [Maybe](_declarations_.md#maybe)‹string›, `y`: [Maybe](_declarations_.md#maybe)‹string›, `z`: [Maybe](_declarations_.md#maybe)‹string›, `d?`: undefined | number): *number*
 
-*Defined in [comparision.ts:47](https://github.com/toggle-corp/fujs/blob/25ba3d4/src/comparision.ts#L47)*
+*Defined in [comparision.ts:47](https://github.com/toggle-corp/fujs/blob/e17c407/src/comparision.ts#L47)*
 
 **Parameters:**
 
