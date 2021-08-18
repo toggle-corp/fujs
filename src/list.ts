@@ -1,6 +1,6 @@
 import { Maybe } from './declarations';
 import { isNotDefined, isDefined } from './core';
-import { listToMap } from './transform';
+import { listToMap, OptionKey, KeySelector } from './transform';
 
 /**
  * Identify if two list are the same
@@ -85,10 +85,6 @@ export function getDefinedElementAround<T>(list: Maybe<T>[], currentIndex: numbe
     return list[j];
 }
 
-interface KeySelector<T>{
-    (element: T): string | number | boolean;
-}
-
 /**
  * Get a duplicate count for each element in a list
  *
@@ -100,8 +96,22 @@ interface KeySelector<T>{
  * @remarks
  * The map only includes element for which there is a duplicate
  */
-export function getDuplicates<T>(list: Maybe<T[]>, keySelector: KeySelector<T>): string[] {
-    const counts = listToMap<T, number>(
+export function getDuplicates<T, K extends OptionKey>(
+    list: T[],
+    keySelector: KeySelector<T, K>,
+): string[];
+export function getDuplicates<T, K extends OptionKey>(
+    list: Maybe<T[]>,
+    keySelector: KeySelector<T, K>,
+): string[] | undefined;
+export function getDuplicates<T, K extends OptionKey>(
+    list: Maybe<T[]>,
+    keySelector: KeySelector<T, K>,
+) {
+    if (!list) {
+        return undefined;
+    }
+    const counts = listToMap<T, number, K>(
         list,
         keySelector,
         (_, key, __, acc) => (
@@ -120,7 +130,11 @@ export function getDuplicates<T>(list: Maybe<T[]>, keySelector: KeySelector<T>):
  *
  * @returns list of added, modified, removed and unmodified elements
  */
-export function findDifferenceInList<T>(listA: T[], listB: T[], keySelector: KeySelector<T>) {
+export function findDifferenceInList<T, K extends OptionKey>(
+    listA: T[],
+    listB: T[],
+    keySelector: KeySelector<T, K>,
+) {
     const modified: {old: T; new: T}[] = [];
     const added: T[] = [];
     const removed: T[] = [];

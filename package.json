@@ -9,8 +9,8 @@
     "module": "build/index.es.js",
     "typings": "build/index.d.ts",
     "scripts": {
-        "prepare": "rollup -c && tsc",
         "build": "rollup -c && tsc",
+        "prepack": "yarn build",
         "watch": "rollup -cw",
         "lint": "eslint ./src/**/*.ts --rule 'import/no-unresolved: 0'",
         "generate-doc": "typedoc --theme markdown --out mydocs --includes src --exclude '**/*.test.ts' --excludeNotExported --excludePrivate --excludeProtected",
