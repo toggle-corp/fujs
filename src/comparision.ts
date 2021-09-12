@@ -8,9 +8,9 @@ interface Comparator<A> {
     (foo: A, bar: A): number;
 }
 
-const comparision = <A, B>(
+const comparison = <A, B>(
     extractor: Extractor<A, B>,
-    comparisionFunc: Comparator<B>,
+    comparisonFunc: Comparator<B>,
 ) => (
         x: Maybe<A>,
         y: Maybe<A>,
@@ -27,22 +27,22 @@ const comparision = <A, B>(
         if (isNotDefined(b)) {
             return direction * -1;
         }
-        return direction * comparisionFunc(a, b);
+        return direction * comparisonFunc(a, b);
     };
 
 // NOTE: func is never called for boolean
-export const compareBoolean = comparision((x: boolean) => x, (a, b) => (Number(a) - Number(b)));
-export const compareString = comparision((x: string) => x, (a, b) => a.localeCompare(b));
-export const compareNumber = comparision((x: number) => x, (a, b) => (a - b));
-export const compareDate = comparision((x: Date | string | number) => x, (a, b) => {
+export const compareBoolean = comparison((x: boolean) => x, (a, b) => (Number(a) - Number(b)));
+export const compareString = comparison((x: string) => x, (a, b) => a.localeCompare(b));
+export const compareNumber = comparison((x: number) => x, (a, b) => (a - b));
+export const compareDate = comparison((x: Date | string | number) => x, (a, b) => {
     const dateA = new Date(a);
     const dateB = new Date(b);
     return dateA.getTime() - dateB.getTime();
 });
 
-export const compareStringAsNumber = comparision((x: string) => Number(x), (a, b) => a - b);
-export const compareLength = comparision((x: string | unknown[]) => x.length, (a, b) => (a - b));
-export const compareStringByWordCount = comparision((x: string) => x.split(/\s+/).length, (a, b) => a - b);
+export const compareStringAsNumber = comparison((x: string) => Number(x), (a, b) => a - b);
+export const compareLength = comparison((x: string | unknown[]) => x.length, (a, b) => (a - b));
+export const compareStringByWordCount = comparison((x: string) => x.split(/\s+/).length, (a, b) => a - b);
 
 export const compareStringSearch = (
     x: Maybe<string>,
@@ -53,7 +53,7 @@ export const compareStringSearch = (
     if (!z) {
         return 0;
     }
-    return comparision(
+    return comparison(
         (a: string) => a,
         (a: string, b: string) => {
             const searchText = z.toLowerCase();

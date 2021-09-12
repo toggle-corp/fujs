@@ -32,7 +32,11 @@ test('convert list to map', () => {
         4: 'ale',
     };
     expect(listToMap(input, (e) => e.id, (e) => e.name)).toEqual(output2);
-    expect(listToMap<Input, string>(undefined, (e) => e.id, (e) => e.name)).toEqual({});
+    const vl = listToMap(undefined, (e: Input) => e.id, (e: Input) => e.name);
+    console.log(vl);
+    expect(
+        listToMap(undefined, (e: Input) => e.id, (e: Input) => e.name),
+    ).toEqual({});
 });
 
 test('convert map to list', () => {
@@ -82,7 +86,7 @@ test('convert map to map', () => {
         4: 'ale',
     };
     expect(mapToMap(output, (k) => k, (elem) => elem.name)).toEqual(output2);
-    expect(mapToMap<Input, string>(undefined, (k) => k, (e) => e.name)).toEqual({});
+    expect(mapToMap<Input, string, string>(undefined, (k) => k, (e) => e.name)).toEqual({});
 
     const newObj = {
         abc: 1,
@@ -128,5 +132,7 @@ test('group list into map', () => {
         ],
     };
     expect(listToGroupList(input, (e) => e.id, (e) => e.name)).toEqual(outputTwo);
-    expect(listToGroupList<Input, string>(undefined, (e) => e.id, (e) => e.name)).toEqual({});
+    expect(
+        listToGroupList(undefined, (e: Input) => e.id, (e: Input) => e.name),
+    ).toEqual({});
 });
