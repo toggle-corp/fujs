@@ -5,3 +5,4 @@ node_modules
 build
 coverage
 .rpt2_cache
+stats.html

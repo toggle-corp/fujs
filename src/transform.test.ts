@@ -32,8 +32,6 @@ test('convert list to map', () => {
         4: 'ale',
     };
     expect(listToMap(input, (e) => e.id, (e) => e.name)).toEqual(output2);
-    const vl = listToMap(undefined, (e: Input) => e.id, (e: Input) => e.name);
-    console.log(vl);
     expect(
         listToMap(undefined, (e: Input) => e.id, (e: Input) => e.name),
     ).toEqual({});

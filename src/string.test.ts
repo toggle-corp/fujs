@@ -59,7 +59,6 @@ test('split from whitespaces', () => {
     expect(splitInWhitespace('hari\t is\ngood boy  ')).toEqual(['hari', 'is', 'good', 'boy']);
 });
 
-
 test('trim out whitespaces', () => {
     expect(trimWhitespace(undefined)).toEqual(undefined);
     expect(trimWhitespace('')).toEqual('');

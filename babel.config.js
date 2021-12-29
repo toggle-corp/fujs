@@ -9,20 +9,14 @@ module.exports = function config(api) {
 
         plugins: [
             // Reuse babel's injected headers
-            '@babel/plugin-transform-runtime',
+            // ["@babel/plugin-transform-runtime", { "version": "^7.11.2" }],
 
-            // Stage 2
-            ['@babel/plugin-proposal-decorators', { legacy: true }],
-            '@babel/plugin-proposal-function-sent',
-            '@babel/plugin-proposal-export-namespace-from',
-            '@babel/plugin-proposal-numeric-separator',
-            '@babel/plugin-proposal-throw-expressions',
+            // Handle absolute imports
+            ['polyfill-corejs3', {
+                method: 'usage-pure',
+            }],
 
-            // Stage 3
             '@babel/plugin-syntax-dynamic-import',
-            '@babel/plugin-syntax-import-meta',
-            ['@babel/plugin-proposal-class-properties', { loose: false }],
-            '@babel/plugin-proposal-json-strings',
         ],
     };
 };

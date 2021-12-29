@@ -52,7 +52,6 @@ test('isList', () => {
     expect(isList({ name: 'hari' })).toBe(false);
 });
 
-
 test('email condition', () => {
     expect(isValidEmail('hari@test.com')).toBe(true);
     expect(isValidEmail('panda')).toBe(false);
