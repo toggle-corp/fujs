@@ -14,7 +14,7 @@
         "watch": "rollup -cw",
         "typecheck": "tsc",
         "lint": "eslint ./src/**/*.ts",
-        "generate-doc": "typedoc --theme markdown --out mydocs --includes src --exclude '**/*.test.ts' --excludeNotExported --excludePrivate --excludeProtected",
+        "generate-doc": "typedoc --theme markdown --out mydocs src/index.ts --exclude '**/*.test.ts' --excludePrivate --excludeProtected",
         "test": "TZ=Asia/Katmandu jest",
         "test:coverage": "TZ=Asia/Katmandu jest --coverage"
     },
