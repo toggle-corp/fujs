@@ -2,6 +2,9 @@ name: fujs CI
 
 on:
   pull_request:
+  push:
+    branches:
+      - master
 
 jobs:
   build_test:
@@ -56,7 +59,17 @@ jobs:
         env:
             DOCKER_IMAGE: ${{ steps.prep.outputs.tagged_image }}
         run: |
-          docker run --rm --workdir="/code/" $DOCKER_IMAGE sh -c 'yarn test'
+          docker run --rm --workdir="/code/" -v "`pwd`/coverage:/code/coverage" $DOCKER_IMAGE sh -c 'yarn test:coverage'
+
+      - name: 🤞 Publish coverage to code climate 🧪
+        uses: paambaati/codeclimate-action@v2.7.5
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CODE_CLIMATE_ID }}
+        with:
+          coverageCommand: echo "Noop"
+
+      - name: 🤞 Publish coverage to code cov 🧪
+        uses: codecov/codecov-action@v2
 
       - name: 🤞 Run Build 🧪
         env:
