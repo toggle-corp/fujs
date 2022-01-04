@@ -56,7 +56,7 @@ export function listToMap<T, Q, K extends OptionKey>(
     const value = list.reduce(
         (acc, elem, i) => {
             const key = keySelector(elem);
-            acc[String(key)] = modifier
+            acc[key] = modifier
                 ? modifier(elem, key, i, acc as Partial<Record<K, Q>>)
                 : elem;
             return acc;
@@ -137,8 +137,8 @@ export function mapToMap<T, Q, K extends OptionKey>(
     const value = Object.keys(obj).reduce(
         (acc, k, i) => {
             const elem = obj[k];
-            const key = keySelector ? keySelector(k, elem) : k;
-            acc[String(key)] = modifier
+            const key = keySelector ? keySelector(k, elem) : (k as K);
+            acc[key] = modifier
                 ? modifier(elem, k, i, acc as Partial<Record<K, Q>>)
                 : elem;
             return acc;
@@ -187,10 +187,12 @@ export function listToGroupList<T, Q, K extends OptionKey>(
             const value = modifier
                 ? modifier(elem, key, i, acc as Partial<Record<K, Q[]>>)
                 : elem;
-            if (acc[String(key)]) {
-                acc[String(key)].push(value);
+
+            const group = acc[key];
+            if (group) {
+                group.push(value);
             } else {
-                acc[String(key)] = [value];
+                acc[key] = [value];
             }
             return acc;
         },

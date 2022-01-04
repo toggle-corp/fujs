@@ -1,17 +1,15 @@
 {
   "compilerOptions": {
-    "emitDeclarationOnly": true,
-    "declaration": true,
-    "baseUrl": ".",
     "rootDir": "./src",
-    "outDir": "./build",
-    "diagnostics": true,
-    "extendedDiagnostics": true,
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["dom", "es6", "es7", "es2017.object"],
+    "lib": ["dom", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
+
+    "skipLibCheck": true,
+
+    "resolveJsonModule": true,
 
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -22,15 +20,14 @@
     "strict": true,
     "downlevelIteration": true,
 
-    "pretty": true,
-    "removeComments": true,
     "target": "esnext",
 
     "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
     "esModuleInterop": true,
     "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true
+
+    "noEmit": true
   },
   "exclude": [
     "node_modules",

@@ -1,5 +1,5 @@
-- Addresses xxxxxx (eg: #1)
-- Depends on xxxxxx (eg: #1)
+- Addresses xxxxxx
+- Depends on xxxxxx
 
 ## Changes
 
@@ -10,13 +10,16 @@
 ## This PR doesn't introduce any:
 
 - [ ] temporary files, auto-generated files or secret keys
-- [ ] build works
-- [ ] eslint issues
-- [ ] typescript issues
 - [ ] `console.log` meant for debugging
 - [ ] typos
 - [ ] unwanted comments
+- [ ] eslint issues
+- [ ] typescript issues
+- [ ] test errors
 
 ## This PR contains valid:
 
 - [ ] tests
+- [ ] acceptable test coverage
+- [ ] build works
+- [ ] docs

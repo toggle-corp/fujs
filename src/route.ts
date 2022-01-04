@@ -1,5 +1,6 @@
 import { Obj } from './declarations';
 
+// FIXME: remove this
 /**
  * Fill parameters in route url
  * @param route route template
@@ -29,6 +30,7 @@ export function reverseRoute(route: string, params: Obj<string | number>): strin
                 param = params[path];
 
                 if (!param) {
+                    // eslint-disable-next-line no-console
                     console.error(`Value for param ${path} not supplied`);
                 }
 

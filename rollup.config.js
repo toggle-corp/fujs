@@ -1,7 +1,9 @@
-import commonjs from 'rollup-plugin-commonjs';
-import resolve from 'rollup-plugin-node-resolve';
-import babel from 'rollup-plugin-babel';
-import { eslint } from 'rollup-plugin-eslint';
+import commonjs from '@rollup/plugin-commonjs';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import { babel } from '@rollup/plugin-babel';
+import eslint from '@rollup/plugin-eslint';
+import { visualizer } from 'rollup-plugin-visualizer';
+import filesize from 'rollup-plugin-filesize';
 
 import pkg from './package.json';
 
@@ -25,22 +27,23 @@ export default {
     ],
     plugins: [
         // Allows node_modules resolution
-        resolve({ extensions: ['.js', '.ts'] }),
+        nodeResolve({ extensions: ['.js', '.ts'] }),
 
         // Allow bundling cjs modules. Rollup doesn't understand cjs
         commonjs(),
 
         eslint({
             throwOnError: true,
+            include: ['**/*.jsx', '**/*.js', '**/*.ts', '**/*.tsx'],
         }),
 
         babel({
+            // babelHelpers: 'runtime',
+            babelHelpers: 'bundled',
             exclude: 'node_modules/**',
             extensions: ['.js', '.ts'],
-            sourceMaps: true,
-            inputSourceMap: true,
-
-            runtimeHelpers: true,
         }),
+        filesize(),
+        visualizer({ template: 'sunburst' }),
     ],
 };

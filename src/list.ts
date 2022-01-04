@@ -114,11 +114,12 @@ export function getDuplicates<T, K extends OptionKey>(
     const counts = listToMap<T, number, K>(
         list,
         keySelector,
-        (_, key, __, acc) => (
-            isDefined(acc[String(key)]) ? acc[String(key)] + 1 : 1
-        ),
+        (_, key, __, acc) => {
+            const value: number | undefined = acc[key];
+            return isDefined(value) ? value + 1 : 1;
+        },
     );
-    return Object.keys(counts).filter((key) => counts[key] > 1);
+    return Object.keys(counts).filter((key) => counts[key as K] > 1);
 }
 
 /**
@@ -143,10 +144,10 @@ export function findDifferenceInList<T, K extends OptionKey>(
     const mapA = listToMap(listA, keySelector, (e) => e);
     listB.forEach((elem) => {
         const key = keySelector(elem);
-        if (isNotDefined(mapA[String(key)])) {
+        if (isNotDefined(mapA[key])) {
             added.push(elem);
-        } else if (mapA[String(key)] !== elem) {
-            modified.push({ old: mapA[String(key)], new: elem });
+        } else if (mapA[key] !== elem) {
+            modified.push({ old: mapA[key], new: elem });
         } else {
             unmodified.push(elem);
         }
@@ -155,7 +156,7 @@ export function findDifferenceInList<T, K extends OptionKey>(
     const mapB = listToMap(listB, keySelector, (e) => e);
     listA.forEach((elem) => {
         const key = keySelector(elem);
-        if (isNotDefined(mapB[String(key)])) {
+        if (isNotDefined(mapB[key])) {
             removed.push(elem);
         }
     });

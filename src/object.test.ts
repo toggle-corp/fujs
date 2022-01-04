@@ -12,7 +12,6 @@ test('get key by value', () => {
     expect(getFirstKeyByValue(map, 'shyam')).toEqual('shyam');
 });
 
-
 test('pick', () => {
     expect(pick({ hari: undefined, shyam: 2 }, ['hari'])).toEqual({ hari: undefined });
     expect(pick({ hari: 1, shyam: 2 }, ['hari'])).toEqual({ hari: 1 });

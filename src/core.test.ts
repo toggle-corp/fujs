@@ -67,7 +67,6 @@ test('should difference the sets', () => {
     expect(difference(seta, setb)).toEqual(differenced);
 });
 
-
 test('resolve', () => {
     expect(resolve((a: number, b: number) => a + b, 1, 2)).toBe(3);
     expect(resolve(1)).toBe(1);

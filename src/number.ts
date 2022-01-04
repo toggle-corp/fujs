@@ -64,6 +64,7 @@ const mappings: Obj<Mapping> = {
 export function formattedNormalize(num: number, lang: Lang = Lang.np) {
     const mapping = mappings[lang];
     if (isNotDefined(mapping)) {
+        // eslint-disable-next-line no-console
         console.error(`Mapping not defined for ${lang}`);
         return { number: num };
     }

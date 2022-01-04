@@ -58,7 +58,6 @@ test('encode date to string', () => {
     expect(encodeDate(date)).toEqual(dateStr);
 });
 
-
 test('decode date from string and timestamp', () => {
     const date = new Date(2016, 11, 13);
     const dateStr = '2016-12-13';

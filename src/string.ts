@@ -103,7 +103,6 @@ export function randomString(length = 16, mixedCase = false) {
     */
 }
 
-
 /**
  * Convert camel case to space separated words
  *

@@ -16,41 +16,41 @@ export class Ymd {
 
     public getString = () => (
         `${padStart(this.y, 4)}-${padStart(this.m, 2)}-${padStart(this.d, 2)}`
-    )
+    );
 
-    public getYear = () => this.y
+    public getYear = () => this.y;
 
-    public getMonth = () => this.m
+    public getMonth = () => this.m;
 
-    public getDay = () => this.d
+    public getDay = () => this.d;
 
     public isEqual = (other: Ymd) => (
         this.y === other.y
         && this.m === other.m
         && this.d === other.d
-    )
+    );
 
     public isLessThan = (other: Ymd) => (
         this.y < other.y
         || (this.y === other.y && this.m < other.m)
         || (this.y === other.y && this.m === other.m && this.d < other.d)
-    )
+    );
 
     public isNotEqual = (other: Ymd) => (
         !this.isEqual(other)
-    )
+    );
 
     public isGreaterThanOrEqual = (other: Ymd) => (
         !this.isLessThan(other)
-    )
+    );
 
     public isGreaterThan = (other: Ymd) => (
         !this.isEqual(other) && !this.isLessThan(other)
-    )
+    );
 
     public isLessThanOrEqual = (other: Ymd) => (
         this.isEqual(other) || this.isLessThan(other)
-    )
+    );
 }
 
 export interface Dictionary {
@@ -87,15 +87,15 @@ export class Miti extends Ymd {
 
     public getWeek = () => (
         ((this.totalDays + 6) % 7) + 1
-    )
+    );
 
     public getDaysInCurrentMonth = () => (
         this.dict.getDaysInMonth(this.getYear(), this.getMonth())
-    )
+    );
 
     public getDaysInCurrentYear = () => (
         this.dict.getDaysInYear(this.getYear())
-    )
+    );
 
     public getDifference = (sub: Ymd) => {
         const mitiIsAfterSub = this.isGreaterThan(sub);
@@ -149,7 +149,7 @@ export class Miti extends Ymd {
         }
 
         return sign * no;
-    }
+    };
 
     public addYears = (no: number) => {
         const y = this.getYear() + no;
@@ -158,7 +158,7 @@ export class Miti extends Ymd {
         const d = Math.min(this.getDay(), this.dict.getDaysInMonth(y, m));
 
         return new Miti(y, m, d, this.dict);
-    }
+    };
 
     public addMonths = (no: number) => {
         // NOTE: 'no' can be more than 12
@@ -168,7 +168,7 @@ export class Miti extends Ymd {
         const d = Math.min(this.getDay(), this.dict.getDaysInMonth(y, m));
 
         return new Miti(y, m, d, this.dict);
-    }
+    };
 
     public addDays = (no: number) => {
         // return a clone of itself
@@ -225,7 +225,7 @@ export class Miti extends Ymd {
         }
 
         return new Miti(y, m, d, this.dict);
-    }
+    };
 
     public subtractDays = (no: number) => {
         if (no === 0) {
@@ -279,13 +279,13 @@ export class Miti extends Ymd {
             }
         }
         return new Miti(y, m, d, this.dict);
-    }
+    };
 
     public convertTo = (dict: Dictionary) => {
         const minYmd = dict.getMinYmd();
         const newMiti = new Miti(minYmd.getYear(), minYmd.getMonth(), minYmd.getDay(), dict);
         return newMiti.addDays(this.totalDays);
-    }
+    };
 }
 
 export const AD: Dictionary = (() => {

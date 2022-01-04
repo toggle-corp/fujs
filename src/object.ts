@@ -32,7 +32,7 @@ export function removeKey<T extends object>(obj: T, key: keyof T) {
  * @param value
  */
 export function getFirstKeyByValue<T>(obj: T, value: unknown): string | undefined {
-    return Object.keys(obj).find((key) => obj[key] === value);
+    return Object.keys(obj).find((key) => obj[key as keyof T] === value);
 }
 
 /**
@@ -58,7 +58,7 @@ export function doesObjectHaveNoData(obj: unknown, invalids: unknown[] = []): bo
             return true;
         }
         return Object.keys(obj).every(
-            (key) => doesObjectHaveNoData(obj[key], invalids),
+            (key) => doesObjectHaveNoData(obj[key as keyof object], invalids),
         );
     }
 
