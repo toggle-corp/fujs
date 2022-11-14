@@ -1,6 +1,6 @@
 module.exports = {
     extends: [
-        'airbnb/base',
+        'airbnb-base',
 
         'plugin:@typescript-eslint/recommended',
     ],
@@ -9,7 +9,6 @@ module.exports = {
         jest: true,
     },
     plugins: [
-        'import',
         '@typescript-eslint',
     ],
     settings: {
@@ -38,23 +37,12 @@ module.exports = {
         'no-use-before-define': 0,
         '@typescript-eslint/no-use-before-define': 1,
 
+        // note you must disable the base rule as it can report incorrect errors
         'no-shadow': 0,
         '@typescript-eslint/no-shadow': ['error'],
 
+        // 'import/no-unresolved': ['error', { ignore: Object.keys(pkg.peerDependencies) }],
         'import/extensions': ['off', 'never'],
         'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-
-        'prefer-destructuring': 'warn',
-        'function-paren-newline': ['warn', 'consistent'],
-        'object-curly-newline': [2, {
-            ObjectExpression: { consistent: true },
-            ObjectPattern: { consistent: true },
-            ImportDeclaration: { consistent: true },
-            ExportDeclaration: { consistent: true },
-        }],
-
-        '@typescript-eslint/no-empty-interface': 0,
-        '@typescript-eslint/explicit-function-return-type': 0,
-        '@typescript-eslint/camelcase': 0,
     },
 };

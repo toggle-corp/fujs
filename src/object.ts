@@ -31,7 +31,7 @@ export function removeKey<T extends object>(obj: T, key: keyof T) {
  * @param obj
  * @param value
  */
-export function getFirstKeyByValue<T>(obj: T, value: unknown): string | undefined {
+export function getFirstKeyByValue<T extends object>(obj: T, value: unknown): string | undefined {
     return Object.keys(obj).find((key) => obj[key as keyof T] === value);
 }
 

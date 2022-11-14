@@ -1,41 +1,35 @@
 {
-  "compilerOptions": {
-    "rootDir": "./src",
-    "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
-    "lib": ["dom", "esnext"],
-    "module": "esnext",
-    "moduleResolution": "node",
-
-    "skipLibCheck": true,
-
-    "resolveJsonModule": true,
-
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "strict": true,
-    "downlevelIteration": true,
-
-    "target": "esnext",
-
-    "allowSyntheticDefaultImports": true,
-    "alwaysStrict": true,
-    "esModuleInterop": true,
-    "strictNullChecks": true,
-
-    "noEmit": true
-  },
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest",
-    "**/*.test.ts"
-  ]
+    "compilerOptions": {
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "downlevelIteration": true,
+        "alwaysStrict": true,
+        "strictNullChecks": true,
+        "target": "es6",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "noEmit": true,
+        "jsx": "react",
+        "rootDir": "./src",
+        "sourceMap": true,
+        "baseUrl": ".",
+    },
+    "exclude": ["node_modules", "build", "coverage", "**/*.test.ts"],
+    "include": ["./src/index.ts"]
 }

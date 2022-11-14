@@ -13,13 +13,14 @@
 
 ### KeySelector
 
-▸ **KeySelector**(`element`): `K`
+▸ **KeySelector**(`element`, `index`): `K`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `element` | `T` |
+| `index` | `number` |
 
 #### Returns
 
@@ -27,4 +28,4 @@
 
 #### Defined in
 
-[transform.ts:16](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L16)
+[transform.ts:16](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L16)

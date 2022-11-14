@@ -6,6 +6,8 @@ import {
     getDuplicates,
     findDifferenceInList,
     unique,
+    max,
+    min,
 } from './list';
 
 test('random is from list', () => {
@@ -99,4 +101,28 @@ test('unique in list', () => {
         { uid: 10, name: 'gita' },
     ];
     expect(unique(foo, (item) => item.uid)).toEqual(bar);
+});
+
+test('max in list', () => {
+    const one = { key: 1, name: 'one' };
+    const two = { key: 2, name: 'two' };
+    const three = { key: 3, name: 'three' };
+
+    expect(max(undefined, () => 0)).toEqual(undefined);
+    expect(max([], () => 0)).toEqual(undefined);
+    expect(max([one, two, three], (item) => item.key)).toEqual(three);
+    expect(max([one, three, two], (item) => item.key)).toEqual(three);
+    expect(max([three, two, one], (item) => item.key)).toEqual(three);
+});
+
+test('min in list', () => {
+    const one = { key: 1, name: 'one' };
+    const two = { key: 2, name: 'two' };
+    const three = { key: 3, name: 'three' };
+
+    expect(min(undefined, () => 0)).toEqual(undefined);
+    expect(min([], () => 0)).toEqual(undefined);
+    expect(min([one, two, three], (item) => item.key)).toEqual(one);
+    expect(min([two, one, three], (item) => item.key)).toEqual(one);
+    expect(min([three, two, one], (item) => item.key)).toEqual(one);
 });

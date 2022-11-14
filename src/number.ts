@@ -1,5 +1,5 @@
 import { isNotDefined } from './core';
-import { Maybe, Obj } from './declarations';
+import { Maybe } from './declarations';
 
 // TODO: get methods from Numeral
 
@@ -29,45 +29,18 @@ export function addSeparator(num: Maybe<string | number>, separator = ',', decim
     return x1 + x2;
 }
 
-export enum Lang {
-    en = 'en',
-    np = 'ne',
-}
-
-type Mapping = {
-    suffix: string;
-    value: number;
-}[];
-
-const nepaliMapping = [
-    { suffix: 'Ar', value: 1000000000 },
-    { suffix: 'Cr', value: 10000000 },
-    { suffix: 'Lac', value: 100000 },
-];
-
-const englishMapping = [
-    { suffix: 'B', value: 1000000000 },
-    { suffix: 'M', value: 1000000 },
-    { suffix: 'K', value: 1000 },
-];
-
-const mappings: Obj<Mapping> = {
-    [Lang.np]: nepaliMapping,
-    [Lang.en]: englishMapping,
-};
-
 /**
  * Get normalized number
  * @param num
  * @param lang language
  */
-export function formattedNormalize(num: number, lang: Lang = Lang.np) {
-    const mapping = mappings[lang];
-    if (isNotDefined(mapping)) {
-        // eslint-disable-next-line no-console
-        console.error(`Mapping not defined for ${lang}`);
-        return { number: num };
-    }
+export function formattedNormalize(num: number) {
+    const mapping = [
+        { suffix: 'B', value: 1000000000 },
+        { suffix: 'M', value: 1000000 },
+        { suffix: 'K', value: 1000 },
+    ];
+
     const rule = mapping.find((n) => num >= n.value);
 
     if (isNotDefined(rule)) {

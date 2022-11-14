@@ -13,7 +13,7 @@ interface GroupListModifier<T, Q, K extends OptionKey>{
     (element: T, key: K, index: number, acc: Partial<Record<K, Q[]>>): Q;
 }
 export interface KeySelector<T, K extends OptionKey>{
-    (element: T): K;
+    (element: T, index: number): K;
 }
 
 interface NewKeySelector<T, K extends OptionKey>{
@@ -55,7 +55,7 @@ export function listToMap<T, Q, K extends OptionKey>(
     }
     const value = list.reduce(
         (acc, elem, i) => {
-            const key = keySelector(elem);
+            const key = keySelector(elem, i);
             acc[key] = modifier
                 ? modifier(elem, key, i, acc as Partial<Record<K, Q>>)
                 : elem;
@@ -183,7 +183,7 @@ export function listToGroupList<T, Q, K extends OptionKey>(
     }
     const val = list.reduce(
         (acc, elem, i) => {
-            const key = keySelector(elem);
+            const key = keySelector(elem, i);
             const value = modifier
                 ? modifier(elem, key, i, acc as Partial<Record<K, Q[]>>)
                 : elem;

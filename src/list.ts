@@ -142,8 +142,8 @@ export function findDifferenceInList<T, K extends OptionKey>(
     const unmodified: T[] = [];
 
     const mapA = listToMap(listA, keySelector, (e) => e);
-    listB.forEach((elem) => {
-        const key = keySelector(elem);
+    listB.forEach((elem, i) => {
+        const key = keySelector(elem, i);
         if (isNotDefined(mapA[key])) {
             added.push(elem);
         } else if (mapA[key] !== elem) {
@@ -154,8 +154,8 @@ export function findDifferenceInList<T, K extends OptionKey>(
     });
 
     const mapB = listToMap(listB, keySelector, (e) => e);
-    listA.forEach((elem) => {
-        const key = keySelector(elem);
+    listA.forEach((elem, i) => {
+        const key = keySelector(elem, i);
         if (isNotDefined(mapB[key])) {
             removed.push(elem);
         }
@@ -210,4 +210,36 @@ export function unique<T>(list: Maybe<T[]>, getItemHash?: ((item: T) => string |
         return list;
     }
     return arrWithUnique;
+}
+
+export function max<T>(list: Maybe<T[]>, comparator: (val: T) => number): T | undefined {
+    if (!list || list.length <= 0) {
+        return undefined;
+    }
+    let maxItem = list[0];
+    let maxValue = comparator(maxItem);
+    list.forEach((item) => {
+        const myValue = comparator(item);
+        if (myValue > maxValue) {
+            maxValue = myValue;
+            maxItem = item;
+        }
+    });
+    return maxItem;
+}
+
+export function min<T>(list: Maybe<T[]>, comparator: (val: T) => number): T | undefined {
+    if (!list || list.length <= 0) {
+        return undefined;
+    }
+    let minItem = list[0];
+    let minValue = comparator(minItem);
+    list.forEach((item) => {
+        const myValue = comparator(item);
+        if (myValue < minValue) {
+            minValue = myValue;
+            minItem = item;
+        }
+    });
+    return minItem;
 }

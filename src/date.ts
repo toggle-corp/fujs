@@ -2,6 +2,8 @@ import { Maybe } from './declarations';
 import { padStart } from './string';
 import { isTruthy, isFalsy } from './core';
 
+// FIXME: do not use date library
+
 const MONTHS: string[] = [
     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
