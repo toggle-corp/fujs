@@ -28,8 +28,9 @@
         "jsx": "react",
         "rootDir": "./src",
         "sourceMap": true,
+        "noUncheckedIndexedAccess": true,
         "baseUrl": ".",
     },
-    "exclude": ["node_modules", "build", "coverage", "**/*.test.ts"],
-    "include": ["./src/index.ts"]
+    "exclude": ["node_modules", "build", "coverage"],
+    "include": ["./src/index.ts", "**/*.test.ts"]
 }

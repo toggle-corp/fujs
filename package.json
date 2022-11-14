@@ -12,11 +12,11 @@
         "build": "rollup -c && tsc --project tsconfig-typings.json",
         "watch": "rollup -c -w",
         "prepack": "yarn build",
-        "typecheck": "tsc",
+        "typecheck": "tsc --project tsconfig-typings.json",
         "check-unused": "unimported",
         "test": "TZ=Asia/Katmandu jest",
         "test:coverage": "TZ=Asia/Katmandu jest --coverage",
-        "lint": "eslint ./src --report-unused-disable-directives",
+        "lint": "eslint ./src --report-unused-disable-directives --ignore-pattern '**/*.test.ts'",
         "generate-doc": "typedoc --theme markdown --out mydocs src/index.ts --exclude '**/*.test.ts' --excludePrivate --excludeProtected"
     },
     "repository": {

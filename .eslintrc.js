@@ -26,10 +26,13 @@ module.exports = {
         },
         sourceType: 'module',
         allowImportExportEverywhere: true,
+        project: ['tsconfig.json'],
     },
     rules: {
         strict: 1,
         indent: ['error', 4, { SwitchCase: 1 }],
+
+        '@typescript-eslint/no-unnecessary-condition': 'warn',
 
         'no-unused-vars': 0,
         '@typescript-eslint/no-unused-vars': 1,

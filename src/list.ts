@@ -212,34 +212,61 @@ export function unique<T>(list: Maybe<T[]>, getItemHash?: ((item: T) => string |
     return arrWithUnique;
 }
 
-export function max<T>(list: Maybe<T[]>, comparator: (val: T) => number): T | undefined {
+export function max<T>(
+    list: Maybe<T[]>,
+    getNumericValue: (val: T) => number | null | undefined,
+): T | undefined {
     if (!list || list.length <= 0) {
         return undefined;
     }
-    let maxItem = list[0];
-    let maxValue = comparator(maxItem);
-    list.forEach((item) => {
-        const myValue = comparator(item);
-        if (myValue > maxValue) {
-            maxValue = myValue;
-            maxItem = item;
-        }
-    });
-    return maxItem;
+
+    interface Acc {
+        maxItem: T | undefined,
+        maxValue: number | undefined | null,
+    }
+
+    const values = list.reduce(
+        (acc: Acc, item: T) => {
+            const { maxValue } = acc;
+            const myValue = getNumericValue(item);
+            return isDefined(myValue) && (isNotDefined(maxValue) || myValue > maxValue)
+                ? { maxValue: myValue, maxItem: item }
+                : acc;
+        },
+        {
+            maxItem: undefined,
+            maxValue: undefined,
+        },
+    );
+    return values.maxItem;
 }
 
-export function min<T>(list: Maybe<T[]>, comparator: (val: T) => number): T | undefined {
+export function min<T>(
+    list: Maybe<T[]>,
+    getNumericValue: (val: T) => number | null | undefined,
+): T | undefined {
     if (!list || list.length <= 0) {
         return undefined;
     }
-    let minItem = list[0];
-    let minValue = comparator(minItem);
-    list.forEach((item) => {
-        const myValue = comparator(item);
-        if (myValue < minValue) {
-            minValue = myValue;
-            minItem = item;
-        }
-    });
-    return minItem;
+
+    interface Acc {
+        minItem: T | undefined,
+        minValue: number | undefined | null,
+    }
+
+    const values = list.reduce(
+        (acc: Acc, item: T) => {
+            const { minValue } = acc;
+            const myValue = getNumericValue(item);
+            return isDefined(myValue) && (isNotDefined(minValue) || myValue < minValue)
+                ? { minValue: myValue, minItem: item }
+                : acc;
+        },
+        {
+            minItem: undefined,
+            minValue: undefined,
+        },
+    );
+
+    return values.minItem;
 }

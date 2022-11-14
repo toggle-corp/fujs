@@ -16,7 +16,7 @@ export function addSeparator(num: Maybe<string | number>, separator = ',', decim
     if (isNotDefined(num)) {
         return num;
     }
-    const [before, after] = String(num).split(decimalSeparator);
+    const [before = '', after = ''] = String(num).split(decimalSeparator);
 
     let x1 = before;
     const rgx = /(\d+)(\d{3})/;
@@ -24,7 +24,7 @@ export function addSeparator(num: Maybe<string | number>, separator = ',', decim
         x1 = x1.replace(rgx, `$1${separator}$2`);
     }
 
-    const x2 = after !== undefined ? `${decimalSeparator}${after}` : '';
+    const x2 = after !== '' ? `${decimalSeparator}${after}` : '';
 
     return x1 + x2;
 }

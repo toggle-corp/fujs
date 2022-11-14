@@ -94,7 +94,7 @@ export function mapToList<T, Q>(
     }
     return Object.keys(obj).reduce(
         (acc, key, i) => {
-            const elem = obj[key];
+            const elem = obj[key] as T;
             acc.push(modifier ? modifier(elem, key, i, acc as Q[]) : elem);
             return acc;
         },
@@ -136,7 +136,7 @@ export function mapToMap<T, Q, K extends OptionKey>(
     }
     const value = Object.keys(obj).reduce(
         (acc, k, i) => {
-            const elem = obj[k];
+            const elem = obj[k] as T;
             const key = keySelector ? keySelector(k, elem) : (k as K);
             acc[key] = modifier
                 ? modifier(elem, k, i, acc as Partial<Record<K, Q>>)

@@ -4,12 +4,33 @@ import { isTruthy, isFalsy } from './core';
 
 // FIXME: do not use date library
 
-const MONTHS: string[] = [
+const MONTHS: [
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+] = [
     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
 ];
 
-const DAYS: string[] = [
+const DAYS: [
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+] = [
     'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat',
 ];
 
@@ -141,16 +162,16 @@ export function populateFormat(formatList: Value[], date: Date) {
     return formatList.map((format) => {
         if (format.type === ValueType.date) {
             const year = date.getFullYear();
-            const month = date.getMonth() + 1;
+            const month = date.getMonth() as 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
             const day = date.getDate();
-            const weekName = DAYS[date.getDay()];
+            const weekName = DAYS[date.getDay() as 0 | 1 | 2 | 3 | 4 | 5 | 6];
 
             const newFormat = { ...format };
             newFormat.value = newFormat.value
                 .replace('yyyy', String(year))
-                .replace('yy', String(date.getFullYear() % 100))
-                .replace('MMM', MONTHS[date.getMonth()])
-                .replace('MM', padStart(month, 2))
+                .replace('yy', String(year % 100))
+                .replace('MMM', MONTHS[month])
+                .replace('MM', padStart(month + 1, 2))
                 .replace('EEE', weekName)
                 .replace('dd', padStart(day, 2));
             return newFormat;

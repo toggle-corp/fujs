@@ -7,5 +7,6 @@
         "outDir": "./build/esm",
         "baseUrl": "./src"
     },
+    "exclude": ["node_modules", "build", "coverage"],
     "include": ["./src/index.ts"]
 }
