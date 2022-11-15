@@ -1,3 +1,6 @@
+import {
+    isDefined,
+} from './core';
 /**
  * Get `a` modulo `b`
  *
@@ -56,9 +59,16 @@ export function median(values: number[]) {
 
     const centerIndex = Math.floor(sortedValues.length / 2);
 
-    return sortedValues.length % 2
-        ? sortedValues[centerIndex]
-        : (sortedValues[centerIndex - 1] + sortedValues[centerIndex]) / 2.0;
+    if (sortedValues.length % 2 !== 0) {
+        return sortedValues[centerIndex];
+    }
+    const firstValue = sortedValues[centerIndex - 1];
+    const secondValue = sortedValues[centerIndex];
+
+    if (isDefined(firstValue) && isDefined(secondValue)) {
+        return (firstValue + secondValue) / 2.0;
+    }
+    return firstValue ?? secondValue;
 }
 
 // min, max, output

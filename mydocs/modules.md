@@ -4,10 +4,6 @@
 
 ## Table of contents
 
-### Enumerations
-
-- [Lang](enums/Lang.md)
-
 ### Classes
 
 - [Miti](classes/Miti.md)
@@ -18,7 +14,7 @@
 - [Dictionary](interfaces/Dictionary.md)
 - [KeySelector](interfaces/KeySelector.md)
 
-### Type aliases
+### Type Aliases
 
 - [FirstArgument](modules.md#firstargument)
 - [Maybe](modules.md#maybe)
@@ -112,8 +108,10 @@
 - [listToMap](modules.md#listtomap)
 - [mapToList](modules.md#maptolist)
 - [mapToMap](modules.md#maptomap)
+- [max](modules.md#max)
 - [mean](modules.md#mean)
 - [median](modules.md#median)
+- [min](modules.md#min)
 - [modulo](modules.md#modulo)
 - [noOp](modules.md#noop)
 - [normalize](modules.md#normalize)
@@ -131,7 +129,7 @@
 - [union](modules.md#union)
 - [unique](modules.md#unique)
 
-## Type aliases
+## Type Aliases
 
 ### FirstArgument
 
@@ -145,7 +143,7 @@
 
 #### Defined in
 
-[declarations.ts:5](https://github.com/toggle-corp/fujs/blob/397d852/src/declarations.ts#L5)
+[declarations.ts:5](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/declarations.ts#L5)
 
 ___
 
@@ -161,7 +159,7 @@ ___
 
 #### Defined in
 
-[declarations.ts:1](https://github.com/toggle-corp/fujs/blob/397d852/src/declarations.ts#L1)
+[declarations.ts:1](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/declarations.ts#L1)
 
 ___
 
@@ -181,7 +179,7 @@ ___
 
 #### Defined in
 
-[declarations.ts:2](https://github.com/toggle-corp/fujs/blob/397d852/src/declarations.ts#L2)
+[declarations.ts:2](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/declarations.ts#L2)
 
 ___
 
@@ -191,7 +189,7 @@ ___
 
 #### Defined in
 
-[transform.ts:4](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L4)
+[transform.ts:4](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L4)
 
 ___
 
@@ -207,7 +205,7 @@ ___
 
 #### Defined in
 
-[declarations.ts:7](https://github.com/toggle-corp/fujs/blob/397d852/src/declarations.ts#L7)
+[declarations.ts:7](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/declarations.ts#L7)
 
 ___
 
@@ -223,47 +221,47 @@ ___
 
 #### Defined in
 
-[declarations.ts:9](https://github.com/toggle-corp/fujs/blob/397d852/src/declarations.ts#L9)
+[declarations.ts:9](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/declarations.ts#L9)
 
 ## Variables
 
 ### AD
 
-• **AD**: [`Dictionary`](interfaces/Dictionary.md)
+• `Const` **AD**: [`Dictionary`](interfaces/Dictionary.md)
 
 #### Defined in
 
-[calendar.ts:291](https://github.com/toggle-corp/fujs/blob/397d852/src/calendar.ts#L291)
+[calendar.ts:291](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/calendar.ts#L291)
 
 ___
 
 ### BS
 
-• **BS**: [`Dictionary`](interfaces/Dictionary.md)
+• `Const` **BS**: [`Dictionary`](interfaces/Dictionary.md)
 
 #### Defined in
 
-[calendar.ts:345](https://github.com/toggle-corp/fujs/blob/397d852/src/calendar.ts#L345)
+[calendar.ts:345](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/calendar.ts#L345)
 
 ___
 
 ### MIN\_YEAR
 
-• **MIN\_YEAR**: ``1990``
+• `Const` **MIN\_YEAR**: ``1990``
 
 #### Defined in
 
-[date.ts:315](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L315)
+[date.ts:317](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L317)
 
 ___
 
 ### basicTypes
 
-• **basicTypes**: `string`[]
+• `Const` **basicTypes**: `string`[]
 
 #### Defined in
 
-[type.ts:27](https://github.com/toggle-corp/fujs/blob/397d852/src/type.ts#L27)
+[type.ts:27](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/type.ts#L27)
 
 ## Functions
 
@@ -287,7 +285,7 @@ final classname
 
 #### Defined in
 
-[cs.ts:10](https://github.com/toggle-corp/fujs/blob/397d852/src/cs.ts#L10)
+[cs.ts:10](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/cs.ts#L10)
 
 ___
 
@@ -311,7 +309,7 @@ Get comma separated number
 
 #### Defined in
 
-[number.ts:12](https://github.com/toggle-corp/fujs/blob/397d852/src/number.ts#L12)
+[number.ts:12](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/number.ts#L12)
 
 ▸ **addSeparator**(`num`, `sep?`, `decimalSep?`): ``null``
 
@@ -329,7 +327,7 @@ Get comma separated number
 
 #### Defined in
 
-[number.ts:13](https://github.com/toggle-corp/fujs/blob/397d852/src/number.ts#L13)
+[number.ts:13](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/number.ts#L13)
 
 ▸ **addSeparator**(`num`, `sep?`, `decimalSep?`): `string`
 
@@ -347,7 +345,7 @@ Get comma separated number
 
 #### Defined in
 
-[number.ts:14](https://github.com/toggle-corp/fujs/blob/397d852/src/number.ts#L14)
+[number.ts:14](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/number.ts#L14)
 
 ___
 
@@ -371,7 +369,7 @@ Get number bounded on two sides
 
 #### Defined in
 
-[statistics.ts:87](https://github.com/toggle-corp/fujs/blob/397d852/src/statistics.ts#L87)
+[statistics.ts:87](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/statistics.ts#L87)
 
 ___
 
@@ -381,7 +379,8 @@ ___
 
 Break timedate format into time unit, date unit and other unit.
 
-**`remarks`**
+**`Remarks`**
+
 The date unit are: yyyy, yy, MMM, MM, dd, EEE.
 The time unit are: hh, mm, ss, aaa.
 Anything can come in between date and time unit and they will be treated as separator.
@@ -398,7 +397,7 @@ Anything can come in between date and time unit and they will be treated as sepa
 
 #### Defined in
 
-[date.ts:59](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L59)
+[date.ts:61](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L61)
 
 ___
 
@@ -427,7 +426,7 @@ Get the bucket for a given number
 
 #### Defined in
 
-[statistics.ts:73](https://github.com/toggle-corp/fujs/blob/397d852/src/statistics.ts#L73)
+[statistics.ts:73](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/statistics.ts#L73)
 
 ___
 
@@ -437,7 +436,8 @@ ___
 
 Convert camel case to kebab case
 
-**`remarks`**
+**`Remarks`**
+
 Only support alphabets (not numerals)
 
 #### Parameters
@@ -452,7 +452,7 @@ Only support alphabets (not numerals)
 
 #### Defined in
 
-[string.ts:159](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L159)
+[string.ts:159](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L159)
 
 ▸ **camelToKebab**(`str`): ``null``
 
@@ -468,7 +468,7 @@ Only support alphabets (not numerals)
 
 #### Defined in
 
-[string.ts:160](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L160)
+[string.ts:160](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L160)
 
 ▸ **camelToKebab**(`str`): `string`
 
@@ -484,7 +484,7 @@ Only support alphabets (not numerals)
 
 #### Defined in
 
-[string.ts:161](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L161)
+[string.ts:161](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L161)
 
 ___
 
@@ -505,7 +505,7 @@ ___
 
 #### Defined in
 
-[string.ts:119](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L119)
+[string.ts:119](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L119)
 
 ▸ **camelToNormal**(`str`, `separator?`): ``null``
 
@@ -522,7 +522,7 @@ ___
 
 #### Defined in
 
-[string.ts:120](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L120)
+[string.ts:120](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L120)
 
 ▸ **camelToNormal**(`str`, `separator?`): `string`
 
@@ -539,7 +539,7 @@ ___
 
 #### Defined in
 
-[string.ts:121](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L121)
+[string.ts:121](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L121)
 
 ___
 
@@ -549,7 +549,8 @@ ___
 
 Convert camel case to snake case
 
-**`remarks`**
+**`Remarks`**
+
 Only support alphabets (not numerals)
 
 #### Parameters
@@ -564,7 +565,7 @@ Only support alphabets (not numerals)
 
 #### Defined in
 
-[string.ts:139](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L139)
+[string.ts:139](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L139)
 
 ▸ **camelToSnake**(`str`): ``null``
 
@@ -580,7 +581,7 @@ Only support alphabets (not numerals)
 
 #### Defined in
 
-[string.ts:140](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L140)
+[string.ts:140](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L140)
 
 ▸ **camelToSnake**(`str`): `string`
 
@@ -596,7 +597,7 @@ Only support alphabets (not numerals)
 
 #### Defined in
 
-[string.ts:141](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L141)
+[string.ts:141](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L141)
 
 ___
 
@@ -618,7 +619,7 @@ Change the first letter of word to uppercase
 
 #### Defined in
 
-[string.ts:33](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L33)
+[string.ts:33](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L33)
 
 ▸ **capitalize**(`str`): `undefined`
 
@@ -634,7 +635,7 @@ Change the first letter of word to uppercase
 
 #### Defined in
 
-[string.ts:34](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L34)
+[string.ts:34](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L34)
 
 ▸ **capitalize**(`str`): `string`
 
@@ -650,7 +651,7 @@ Change the first letter of word to uppercase
 
 #### Defined in
 
-[string.ts:35](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L35)
+[string.ts:35](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L35)
 
 ___
 
@@ -660,7 +661,8 @@ ___
 
 Identify if shortText is inside longText
 
-**`remarks`**
+**`Remarks`**
+
 The match is case-insensitive
 
 #### Parameters
@@ -676,7 +678,7 @@ The match is case-insensitive
 
 #### Defined in
 
-[string.ts:208](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L208)
+[string.ts:208](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L208)
 
 ___
 
@@ -705,13 +707,13 @@ and should the message of overriden shown
 
 #### Defined in
 
-[misc.ts:12](https://github.com/toggle-corp/fujs/blob/397d852/src/misc.ts#L12)
+[misc.ts:12](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/misc.ts#L12)
 
 ___
 
 ### compareBoolean
 
-▸ `Const` **compareBoolean**(`x`, `y`, `direction?`): `number`
+▸ **compareBoolean**(`x`, `y`, `direction?`): `number`
 
 #### Parameters
 
@@ -727,13 +729,13 @@ ___
 
 #### Defined in
 
-[comparision.ts:34](https://github.com/toggle-corp/fujs/blob/397d852/src/comparision.ts#L34)
+[comparision.ts:14](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/comparision.ts#L14)
 
 ___
 
 ### compareDate
 
-▸ `Const` **compareDate**(`x`, `y`, `direction?`): `number`
+▸ **compareDate**(`x`, `y`, `direction?`): `number`
 
 #### Parameters
 
@@ -749,13 +751,13 @@ ___
 
 #### Defined in
 
-[comparision.ts:37](https://github.com/toggle-corp/fujs/blob/397d852/src/comparision.ts#L37)
+[comparision.ts:14](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/comparision.ts#L14)
 
 ___
 
 ### compareLength
 
-▸ `Const` **compareLength**(`x`, `y`, `direction?`): `number`
+▸ **compareLength**(`x`, `y`, `direction?`): `number`
 
 #### Parameters
 
@@ -771,13 +773,13 @@ ___
 
 #### Defined in
 
-[comparision.ts:44](https://github.com/toggle-corp/fujs/blob/397d852/src/comparision.ts#L44)
+[comparision.ts:14](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/comparision.ts#L14)
 
 ___
 
 ### compareNumber
 
-▸ `Const` **compareNumber**(`x`, `y`, `direction?`): `number`
+▸ **compareNumber**(`x`, `y`, `direction?`): `number`
 
 #### Parameters
 
@@ -793,13 +795,13 @@ ___
 
 #### Defined in
 
-[comparision.ts:36](https://github.com/toggle-corp/fujs/blob/397d852/src/comparision.ts#L36)
+[comparision.ts:14](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/comparision.ts#L14)
 
 ___
 
 ### compareString
 
-▸ `Const` **compareString**(`x`, `y`, `direction?`): `number`
+▸ **compareString**(`x`, `y`, `direction?`): `number`
 
 #### Parameters
 
@@ -815,13 +817,13 @@ ___
 
 #### Defined in
 
-[comparision.ts:35](https://github.com/toggle-corp/fujs/blob/397d852/src/comparision.ts#L35)
+[comparision.ts:14](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/comparision.ts#L14)
 
 ___
 
 ### compareStringAsNumber
 
-▸ `Const` **compareStringAsNumber**(`x`, `y`, `direction?`): `number`
+▸ **compareStringAsNumber**(`x`, `y`, `direction?`): `number`
 
 #### Parameters
 
@@ -837,13 +839,13 @@ ___
 
 #### Defined in
 
-[comparision.ts:43](https://github.com/toggle-corp/fujs/blob/397d852/src/comparision.ts#L43)
+[comparision.ts:14](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/comparision.ts#L14)
 
 ___
 
 ### compareStringByWordCount
 
-▸ `Const` **compareStringByWordCount**(`x`, `y`, `direction?`): `number`
+▸ **compareStringByWordCount**(`x`, `y`, `direction?`): `number`
 
 #### Parameters
 
@@ -859,13 +861,13 @@ ___
 
 #### Defined in
 
-[comparision.ts:45](https://github.com/toggle-corp/fujs/blob/397d852/src/comparision.ts#L45)
+[comparision.ts:14](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/comparision.ts#L14)
 
 ___
 
 ### compareStringSearch
 
-▸ `Const` **compareStringSearch**(`x`, `y`, `z`, `d?`): `number`
+▸ **compareStringSearch**(`x`, `y`, `z`, `d?`): `number`
 
 #### Parameters
 
@@ -882,7 +884,7 @@ ___
 
 #### Defined in
 
-[comparision.ts:47](https://github.com/toggle-corp/fujs/blob/397d852/src/comparision.ts#L47)
+[comparision.ts:47](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/comparision.ts#L47)
 
 ___
 
@@ -904,7 +906,7 @@ Change timestamp or 'yyyy-MM-dd' string into date
 
 #### Defined in
 
-[date.ts:288](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L288)
+[date.ts:290](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L290)
 
 ▸ **decodeDate**(`value`): `undefined`
 
@@ -920,7 +922,7 @@ Change timestamp or 'yyyy-MM-dd' string into date
 
 #### Defined in
 
-[date.ts:289](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L289)
+[date.ts:291](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L291)
 
 ▸ **decodeDate**(`value`): `Date`
 
@@ -936,7 +938,7 @@ Change timestamp or 'yyyy-MM-dd' string into date
 
 #### Defined in
 
-[date.ts:290](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L290)
+[date.ts:292](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L292)
 
 ___
 
@@ -967,7 +969,7 @@ difference between two sets
 
 #### Defined in
 
-[core.ts:35](https://github.com/toggle-corp/fujs/blob/397d852/src/core.ts#L35)
+[core.ts:35](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/core.ts#L35)
 
 ___
 
@@ -990,7 +992,7 @@ Identify if object has no data
 
 #### Defined in
 
-[object.ts:43](https://github.com/toggle-corp/fujs/blob/397d852/src/object.ts#L43)
+[object.ts:43](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/object.ts#L43)
 
 ___
 
@@ -1012,7 +1014,7 @@ Change date into 'yyyy-MM-dd' string
 
 #### Defined in
 
-[date.ts:279](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L279)
+[date.ts:281](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L281)
 
 ___
 
@@ -1052,7 +1054,7 @@ list of added, modified, removed and unmodified elements
 
 #### Defined in
 
-[list.ts:134](https://github.com/toggle-corp/fujs/blob/397d852/src/list.ts#L134)
+[list.ts:134](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/list.ts#L134)
 
 ___
 
@@ -1077,7 +1079,7 @@ formatted date
 
 #### Defined in
 
-[date.ts:187](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L187)
+[date.ts:189](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L189)
 
 ___
 
@@ -1099,22 +1101,21 @@ Format text, extracted from pdfs, to remove extraneous spaces
 
 #### Defined in
 
-[string.ts:48](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L48)
+[string.ts:48](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L48)
 
 ___
 
 ### formattedNormalize
 
-▸ **formattedNormalize**(`num`, `lang?`): { `normalizeSuffix`: `undefined` = suffix; `number`: `number` = num } \| { `normalizeSuffix`: `string` = suffix; `number`: `number`  }
+▸ **formattedNormalize**(`num`): { `normalizeSuffix`: `undefined` = suffix; `number`: `number` = num } \| { `normalizeSuffix`: `string` = suffix; `number`: `number`  }
 
 Get normalized number
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `num` | `number` | `undefined` |  |
-| `lang` | [`Lang`](enums/Lang.md) | `Lang.np` | language |
+| Name | Type |
+| :------ | :------ |
+| `num` | `number` |
 
 #### Returns
 
@@ -1122,7 +1123,7 @@ Get normalized number
 
 #### Defined in
 
-[number.ts:64](https://github.com/toggle-corp/fujs/blob/397d852/src/number.ts#L64)
+[number.ts:37](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/number.ts#L37)
 
 ___
 
@@ -1148,7 +1149,7 @@ appropriate foreground color
 
 #### Defined in
 
-[color.ts:39](https://github.com/toggle-corp/fujs/blob/397d852/src/color.ts#L39)
+[color.ts:39](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/color.ts#L39)
 
 ___
 
@@ -1172,7 +1173,7 @@ yiq luma value
 
 #### Defined in
 
-[color.ts:14](https://github.com/toggle-corp/fujs/blob/397d852/src/color.ts#L14)
+[color.ts:14](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/color.ts#L14)
 
 ___
 
@@ -1196,7 +1197,7 @@ timestamp with hour, minute and second set to zero
 
 #### Defined in
 
-[date.ts:199](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L199)
+[date.ts:201](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L201)
 
 ___
 
@@ -1221,7 +1222,7 @@ number of days between two datetime
 
 #### Defined in
 
-[date.ts:225](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L225)
+[date.ts:227](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L227)
 
 ___
 
@@ -1250,7 +1251,7 @@ Get a defined element around certain index in a list
 
 #### Defined in
 
-[list.ts:52](https://github.com/toggle-corp/fujs/blob/397d852/src/list.ts#L52)
+[list.ts:52](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/list.ts#L52)
 
 ___
 
@@ -1275,7 +1276,7 @@ number of days between two datetime
 
 #### Defined in
 
-[date.ts:212](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L212)
+[date.ts:214](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L214)
 
 ___
 
@@ -1285,7 +1286,8 @@ ___
 
 Get a duplicate count for each element in a list
 
-**`remarks`**
+**`Remarks`**
+
 The map only includes element for which there is a duplicate
 
 #### Type parameters
@@ -1310,7 +1312,7 @@ map of element key and duplicate count
 
 #### Defined in
 
-[list.ts:99](https://github.com/toggle-corp/fujs/blob/397d852/src/list.ts#L99)
+[list.ts:99](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/list.ts#L99)
 
 ▸ **getDuplicates**<`T`, `K`\>(`list`, `keySelector`): `string`[] \| `undefined`
 
@@ -1334,7 +1336,7 @@ map of element key and duplicate count
 
 #### Defined in
 
-[list.ts:103](https://github.com/toggle-corp/fujs/blob/397d852/src/list.ts#L103)
+[list.ts:103](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/list.ts#L103)
 
 ___
 
@@ -1363,7 +1365,7 @@ Get an element around certain index in a list
 
 #### Defined in
 
-[list.ts:36](https://github.com/toggle-corp/fujs/blob/397d852/src/list.ts#L36)
+[list.ts:36](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/list.ts#L36)
 
 ___
 
@@ -1373,7 +1375,8 @@ ___
 
 Identify problem with ymd value
 
-**`remarks`**
+**`Remarks`**
+
 The return value will be undefined if there are no problems.
 
 #### Parameters
@@ -1388,17 +1391,18 @@ The return value will be undefined if there are no problems.
 
 #### Defined in
 
-[date.ts:345](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L345)
+[date.ts:347](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L347)
 
 ___
 
 ### getErrorForTimeValues
 
-▸ `Const` **getErrorForTimeValues**(`val`): `undefined` \| `string`
+▸ **getErrorForTimeValues**(`val`): `undefined` \| `string`
 
 Identify problem with hms value
 
-**`remarks`**
+**`Remarks`**
+
 The return value will be undefined if there are no problems.
 
 #### Parameters
@@ -1413,7 +1417,7 @@ The return value will be undefined if there are no problems.
 
 #### Defined in
 
-[date.ts:402](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L402)
+[date.ts:404](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L404)
 
 ___
 
@@ -1425,9 +1429,9 @@ Get key of the first element in an object
 
 #### Type parameters
 
-| Name |
-| :------ |
-| `T` |
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `object` |
 
 #### Parameters
 
@@ -1442,7 +1446,7 @@ Get key of the first element in an object
 
 #### Defined in
 
-[object.ts:34](https://github.com/toggle-corp/fujs/blob/397d852/src/object.ts#L34)
+[object.ts:34](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/object.ts#L34)
 
 ___
 
@@ -1466,7 +1470,7 @@ hash derived from string
 
 #### Defined in
 
-[color.ts:48](https://github.com/toggle-corp/fujs/blob/397d852/src/color.ts#L48)
+[color.ts:48](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/color.ts#L48)
 
 ___
 
@@ -1490,7 +1494,7 @@ color derived from hash
 
 #### Defined in
 
-[color.ts:61](https://github.com/toggle-corp/fujs/blob/397d852/src/color.ts#L61)
+[color.ts:61](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/color.ts#L61)
 
 ___
 
@@ -1512,7 +1516,7 @@ Get hex color from rgb color.
 
 #### Defined in
 
-[color.ts:93](https://github.com/toggle-corp/fujs/blob/397d852/src/color.ts#L93)
+[color.ts:93](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/color.ts#L93)
 
 ___
 
@@ -1534,7 +1538,7 @@ Get hex color from rgb color.
 
 #### Defined in
 
-[color.ts:83](https://github.com/toggle-corp/fujs/blob/397d852/src/color.ts#L83)
+[color.ts:83](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/color.ts#L83)
 
 ___
 
@@ -1556,7 +1560,7 @@ Get color from string.
 
 #### Defined in
 
-[color.ts:75](https://github.com/toggle-corp/fujs/blob/397d852/src/color.ts#L75)
+[color.ts:75](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/color.ts#L75)
 
 ___
 
@@ -1588,7 +1592,7 @@ the nth node
 
 #### Defined in
 
-[linkedlist.ts:16](https://github.com/toggle-corp/fujs/blob/397d852/src/linkedlist.ts#L16)
+[linkedlist.ts:16](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/linkedlist.ts#L16)
 
 ___
 
@@ -1612,7 +1616,7 @@ number of days
 
 #### Defined in
 
-[date.ts:267](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L267)
+[date.ts:269](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L269)
 
 ___
 
@@ -1622,7 +1626,8 @@ ___
 
 Get number of days in certain year and month
 
-**`remarks`**
+**`Remarks`**
+
 Month starts from 1 (not zero)
 
 #### Parameters
@@ -1640,7 +1645,7 @@ number of days
 
 #### Defined in
 
-[date.ts:254](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L254)
+[date.ts:256](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L256)
 
 ___
 
@@ -1663,7 +1668,7 @@ Get list of numbers from `start` to `end`
 
 #### Defined in
 
-[statistics.ts:110](https://github.com/toggle-corp/fujs/blob/397d852/src/statistics.ts#L110)
+[statistics.ts:110](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/statistics.ts#L110)
 
 ___
 
@@ -1691,7 +1696,7 @@ Get a random item from the list
 
 #### Defined in
 
-[list.ts:26](https://github.com/toggle-corp/fujs/blob/397d852/src/list.ts#L26)
+[list.ts:26](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/list.ts#L26)
 
 ___
 
@@ -1714,7 +1719,7 @@ Get rating for content in string
 
 #### Defined in
 
-[string.ts:71](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L71)
+[string.ts:71](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L71)
 
 ___
 
@@ -1736,7 +1741,7 @@ Get rgb color from hex color 'rgb(255, 255, 255)'.
 
 #### Defined in
 
-[color.ts:126](https://github.com/toggle-corp/fujs/blob/397d852/src/color.ts#L126)
+[color.ts:126](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/color.ts#L126)
 
 ___
 
@@ -1758,7 +1763,7 @@ Get rgb color from hex color.
 
 #### Defined in
 
-[color.ts:109](https://github.com/toggle-corp/fujs/blob/397d852/src/color.ts#L109)
+[color.ts:109](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/color.ts#L109)
 
 ___
 
@@ -1781,7 +1786,7 @@ Get trigram similarity between two sentences
 
 #### Defined in
 
-[stringSimilarity.ts:29](https://github.com/toggle-corp/fujs/blob/397d852/src/stringSimilarity.ts#L29)
+[stringSimilarity.ts:29](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/stringSimilarity.ts#L29)
 
 ___
 
@@ -1803,7 +1808,7 @@ Get trigrams from a sentence
 
 #### Defined in
 
-[stringSimilarity.ts:7](https://github.com/toggle-corp/fujs/blob/397d852/src/stringSimilarity.ts#L7)
+[stringSimilarity.ts:7](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/stringSimilarity.ts#L7)
 
 ___
 
@@ -1829,7 +1834,7 @@ interpolated rgb color
 
 #### Defined in
 
-[color.ts:144](https://github.com/toggle-corp/fujs/blob/397d852/src/color.ts#L144)
+[color.ts:144](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/color.ts#L144)
 
 ___
 
@@ -1860,7 +1865,7 @@ intersection of two sets
 
 #### Defined in
 
-[core.ts:25](https://github.com/toggle-corp/fujs/blob/397d852/src/core.ts#L25)
+[core.ts:25](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/core.ts#L25)
 
 ___
 
@@ -1882,7 +1887,7 @@ ymd is Ymd
 
 #### Defined in
 
-[date.ts:328](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L328)
+[date.ts:330](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L330)
 
 ___
 
@@ -1910,7 +1915,7 @@ val is T
 
 #### Defined in
 
-[core.ts:63](https://github.com/toggle-corp/fujs/blob/397d852/src/core.ts#L63)
+[core.ts:63](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/core.ts#L63)
 
 ___
 
@@ -1934,7 +1939,7 @@ val is undefined \| null
 
 #### Defined in
 
-[core.ts:73](https://github.com/toggle-corp/fujs/blob/397d852/src/core.ts#L73)
+[core.ts:73](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/core.ts#L73)
 
 ___
 
@@ -1957,7 +1962,7 @@ val is undefined \| null
 
 #### Defined in
 
-[core.ts:91](https://github.com/toggle-corp/fujs/blob/397d852/src/core.ts#L91)
+[core.ts:91](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/core.ts#L91)
 
 ___
 
@@ -1980,7 +1985,7 @@ value is number
 
 #### Defined in
 
-[type.ts:23](https://github.com/toggle-corp/fujs/blob/397d852/src/type.ts#L23)
+[type.ts:23](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/type.ts#L23)
 
 ___
 
@@ -2002,7 +2007,7 @@ item is unknown[]
 
 #### Defined in
 
-[type.ts:5](https://github.com/toggle-corp/fujs/blob/397d852/src/type.ts#L5)
+[type.ts:5](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/type.ts#L5)
 
 ___
 
@@ -2012,7 +2017,8 @@ ___
 
 Identify if two list are the same
 
-**`remarks`**
+**`Remarks`**
+
 The function assumes that the elements aren't mutated
 
 #### Parameters
@@ -2028,7 +2034,7 @@ The function assumes that the elements aren't mutated
 
 #### Defined in
 
-[list.ts:14](https://github.com/toggle-corp/fujs/blob/397d852/src/list.ts#L14)
+[list.ts:14](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/list.ts#L14)
 
 ___
 
@@ -2050,7 +2056,7 @@ Identifies if value is NaN.
 
 #### Defined in
 
-[core.ts:43](https://github.com/toggle-corp/fujs/blob/397d852/src/core.ts#L43)
+[core.ts:43](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/core.ts#L43)
 
 ___
 
@@ -2073,7 +2079,7 @@ val is undefined \| null
 
 #### Defined in
 
-[core.ts:55](https://github.com/toggle-corp/fujs/blob/397d852/src/core.ts#L55)
+[core.ts:55](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/core.ts#L55)
 
 ___
 
@@ -2096,7 +2102,7 @@ item is object
 
 #### Defined in
 
-[type.ts:14](https://github.com/toggle-corp/fujs/blob/397d852/src/type.ts#L14)
+[type.ts:14](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/type.ts#L14)
 
 ___
 
@@ -2119,13 +2125,13 @@ Identify if param is required in certain route
 
 #### Defined in
 
-[route.ts:50](https://github.com/toggle-corp/fujs/blob/397d852/src/route.ts#L50)
+[route.ts:50](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/route.ts#L50)
 
 ___
 
 ### isTimeValuesComplete
 
-▸ `Const` **isTimeValuesComplete**(`val`): val is Hms
+▸ **isTimeValuesComplete**(`val`): val is Hms
 
 Identify if hms value is complete
 
@@ -2141,7 +2147,7 @@ val is Hms
 
 #### Defined in
 
-[date.ts:385](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L385)
+[date.ts:387](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L387)
 
 ___
 
@@ -2170,7 +2176,7 @@ val is T
 
 #### Defined in
 
-[core.ts:82](https://github.com/toggle-corp/fujs/blob/397d852/src/core.ts#L82)
+[core.ts:82](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/core.ts#L82)
 
 ___
 
@@ -2192,7 +2198,7 @@ val is string
 
 #### Defined in
 
-[core.ts:99](https://github.com/toggle-corp/fujs/blob/397d852/src/core.ts#L99)
+[core.ts:99](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/core.ts#L99)
 
 ___
 
@@ -2214,7 +2220,7 @@ Identifies if string is a valid email.
 
 #### Defined in
 
-[type.ts:70](https://github.com/toggle-corp/fujs/blob/397d852/src/type.ts#L70)
+[type.ts:70](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/type.ts#L70)
 
 ___
 
@@ -2236,7 +2242,7 @@ Identifies if given color is valid color.
 
 #### Defined in
 
-[color.ts:27](https://github.com/toggle-corp/fujs/blob/397d852/src/color.ts#L27)
+[color.ts:27](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/color.ts#L27)
 
 ___
 
@@ -2258,7 +2264,7 @@ Identifies if string is a valid url.
 
 #### Defined in
 
-[type.ts:79](https://github.com/toggle-corp/fujs/blob/397d852/src/type.ts#L79)
+[type.ts:79](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/type.ts#L79)
 
 ___
 
@@ -2289,7 +2295,7 @@ Items in list are grouped by key returned by keySelector
 
 #### Defined in
 
-[transform.ts:158](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L158)
+[transform.ts:158](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L158)
 
 ▸ **listToGroupList**<`T`, `K`\>(`list`, `keySelector`): [`Obj`](modules.md#obj)<`T`[]\> \| `undefined`
 
@@ -2313,7 +2319,7 @@ Items in list are grouped by key returned by keySelector
 
 #### Defined in
 
-[transform.ts:162](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L162)
+[transform.ts:162](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L162)
 
 ▸ **listToGroupList**<`T`, `Q`, `K`\>(`list`, `keySelector`, `modifier`): [`Obj`](modules.md#obj)<`Q`[]\>
 
@@ -2339,7 +2345,7 @@ Items in list are grouped by key returned by keySelector
 
 #### Defined in
 
-[transform.ts:166](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L166)
+[transform.ts:166](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L166)
 
 ▸ **listToGroupList**<`T`, `Q`, `K`\>(`list`, `keySelector`, `modifier`): [`Obj`](modules.md#obj)<`Q`[]\> \| `undefined`
 
@@ -2365,7 +2371,7 @@ Items in list are grouped by key returned by keySelector
 
 #### Defined in
 
-[transform.ts:171](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L171)
+[transform.ts:171](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L171)
 
 ___
 
@@ -2395,7 +2401,7 @@ Transform list to object
 
 #### Defined in
 
-[transform.ts:29](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L29)
+[transform.ts:29](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L29)
 
 ▸ **listToMap**<`T`, `K`\>(`list`, `keySelector`): `Record`<`K`, `T`\> \| `undefined`
 
@@ -2419,7 +2425,7 @@ Transform list to object
 
 #### Defined in
 
-[transform.ts:33](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L33)
+[transform.ts:33](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L33)
 
 ▸ **listToMap**<`T`, `Q`, `K`\>(`list`, `keySelector`, `modifier`): `Record`<`K`, `Q`\>
 
@@ -2445,7 +2451,7 @@ Transform list to object
 
 #### Defined in
 
-[transform.ts:37](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L37)
+[transform.ts:37](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L37)
 
 ▸ **listToMap**<`T`, `Q`, `K`\>(`list`, `keySelector`, `modifier`): `Record`<`K`, `Q`\> \| `undefined`
 
@@ -2471,7 +2477,7 @@ Transform list to object
 
 #### Defined in
 
-[transform.ts:42](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L42)
+[transform.ts:42](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L42)
 
 ___
 
@@ -2499,7 +2505,7 @@ Transform object to list
 
 #### Defined in
 
-[transform.ts:74](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L74)
+[transform.ts:74](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L74)
 
 ▸ **mapToList**<`T`\>(`obj`): `T`[] \| `undefined`
 
@@ -2521,7 +2527,7 @@ Transform object to list
 
 #### Defined in
 
-[transform.ts:77](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L77)
+[transform.ts:77](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L77)
 
 ▸ **mapToList**<`T`, `Q`\>(`obj`, `modifier`): `Q`[]
 
@@ -2545,7 +2551,7 @@ Transform object to list
 
 #### Defined in
 
-[transform.ts:80](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L80)
+[transform.ts:80](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L80)
 
 ▸ **mapToList**<`T`, `Q`\>(`obj`, `modifier`): `Q`[] \| `undefined`
 
@@ -2569,7 +2575,7 @@ Transform object to list
 
 #### Defined in
 
-[transform.ts:84](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L84)
+[transform.ts:84](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L84)
 
 ___
 
@@ -2599,7 +2605,7 @@ Transform object to object
 
 #### Defined in
 
-[transform.ts:111](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L111)
+[transform.ts:111](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L111)
 
 ▸ **mapToMap**<`T`, `K`\>(`obj`, `keySelector?`): `Record`<`K`, `T`\> \| `undefined`
 
@@ -2623,7 +2629,7 @@ Transform object to object
 
 #### Defined in
 
-[transform.ts:115](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L115)
+[transform.ts:115](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L115)
 
 ▸ **mapToMap**<`T`, `Q`, `K`\>(`obj`, `keySelector`, `modifier`): `Record`<`K`, `Q`\>
 
@@ -2649,7 +2655,7 @@ Transform object to object
 
 #### Defined in
 
-[transform.ts:119](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L119)
+[transform.ts:119](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L119)
 
 ▸ **mapToMap**<`T`, `Q`, `K`\>(`obj`, `keySelector`, `modifier`): `Record`<`K`, `Q`\> \| `undefined`
 
@@ -2675,7 +2681,34 @@ Transform object to object
 
 #### Defined in
 
-[transform.ts:124](https://github.com/toggle-corp/fujs/blob/397d852/src/transform.ts#L124)
+[transform.ts:124](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/transform.ts#L124)
+
+___
+
+### max
+
+▸ **max**<`T`\>(`list`, `comparator`): `T` \| `undefined`
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `list` | [`Maybe`](modules.md#maybe)<`T`[]\> |
+| `comparator` | (`val`: `T`) => `number` |
+
+#### Returns
+
+`T` \| `undefined`
+
+#### Defined in
+
+[list.ts:215](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/list.ts#L215)
 
 ___
 
@@ -2697,7 +2730,7 @@ Get mean of all elements in a list
 
 #### Defined in
 
-[statistics.ts:38](https://github.com/toggle-corp/fujs/blob/397d852/src/statistics.ts#L38)
+[statistics.ts:38](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/statistics.ts#L38)
 
 ___
 
@@ -2719,7 +2752,34 @@ Get median of all elements in a list
 
 #### Defined in
 
-[statistics.ts:50](https://github.com/toggle-corp/fujs/blob/397d852/src/statistics.ts#L50)
+[statistics.ts:50](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/statistics.ts#L50)
+
+___
+
+### min
+
+▸ **min**<`T`\>(`list`, `comparator`): `T` \| `undefined`
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `list` | [`Maybe`](modules.md#maybe)<`T`[]\> |
+| `comparator` | (`val`: `T`) => `number` |
+
+#### Returns
+
+`T` \| `undefined`
+
+#### Defined in
+
+[list.ts:231](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/list.ts#L231)
 
 ___
 
@@ -2729,7 +2789,8 @@ ___
 
 Get `a` modulo `b`
 
-**`remarks`**
+**`Remarks`**
+
 Return a positive modulo
 
 #### Parameters
@@ -2745,7 +2806,7 @@ Return a positive modulo
 
 #### Defined in
 
-[statistics.ts:9](https://github.com/toggle-corp/fujs/blob/397d852/src/statistics.ts#L9)
+[statistics.ts:9](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/statistics.ts#L9)
 
 ___
 
@@ -2761,7 +2822,7 @@ Does nothing
 
 #### Defined in
 
-[core.ts:7](https://github.com/toggle-corp/fujs/blob/397d852/src/core.ts#L7)
+[core.ts:7](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/core.ts#L7)
 
 ___
 
@@ -2785,7 +2846,7 @@ Get normalized value for a number
 
 #### Defined in
 
-[statistics.ts:100](https://github.com/toggle-corp/fujs/blob/397d852/src/statistics.ts#L100)
+[statistics.ts:100](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/statistics.ts#L100)
 
 ___
 
@@ -2795,7 +2856,8 @@ ___
 
 Add padding before string or number
 
-**`remarks`**
+**`Remarks`**
+
 Use when String(num).padStart(length, str) not fully supported
 
 #### Parameters
@@ -2812,13 +2874,13 @@ Use when String(num).padStart(length, str) not fully supported
 
 #### Defined in
 
-[string.ts:18](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L18)
+[string.ts:18](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L18)
 
 ___
 
 ### pick
 
-▸ `Const` **pick**<`T`\>(`obj`, `keys`): `Object`
+▸ **pick**<`T`\>(`obj`, `keys`): `Object`
 
 Pick only certain keys from an object
 
@@ -2841,7 +2903,7 @@ Pick only certain keys from an object
 
 #### Defined in
 
-[object.ts:9](https://github.com/toggle-corp/fujs/blob/397d852/src/object.ts#L9)
+[object.ts:9](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/object.ts#L9)
 
 ___
 
@@ -2864,7 +2926,7 @@ Populate the format list with date
 
 #### Defined in
 
-[date.ts:138](https://github.com/toggle-corp/fujs/blob/397d852/src/date.ts#L138)
+[date.ts:140](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/date.ts#L140)
 
 ___
 
@@ -2887,7 +2949,7 @@ Get random string
 
 #### Defined in
 
-[string.ts:85](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L85)
+[string.ts:85](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L85)
 
 ___
 
@@ -2916,7 +2978,7 @@ Remove a certain key from an object
 
 #### Defined in
 
-[object.ts:19](https://github.com/toggle-corp/fujs/blob/397d852/src/object.ts#L19)
+[object.ts:19](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/object.ts#L19)
 
 ___
 
@@ -2948,7 +3010,7 @@ value resolved from user supplied function
 
 #### Defined in
 
-[core.ts:110](https://github.com/toggle-corp/fujs/blob/397d852/src/core.ts#L110)
+[core.ts:110](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/core.ts#L110)
 
 ___
 
@@ -2971,7 +3033,7 @@ Fill parameters in route url
 
 #### Defined in
 
-[route.ts:9](https://github.com/toggle-corp/fujs/blob/397d852/src/route.ts#L9)
+[route.ts:9](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/route.ts#L9)
 
 ___
 
@@ -2993,7 +3055,7 @@ Split sentence
 
 #### Defined in
 
-[string.ts:176](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L176)
+[string.ts:176](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L176)
 
 ___
 
@@ -3003,7 +3065,8 @@ ___
 
 Get sum of all elements in a list
 
-**`remarks`**
+**`Remarks`**
+
 Return a positive modulo
 
 #### Parameters
@@ -3018,7 +3081,7 @@ Return a positive modulo
 
 #### Defined in
 
-[statistics.ts:26](https://github.com/toggle-corp/fujs/blob/397d852/src/statistics.ts#L26)
+[statistics.ts:26](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/statistics.ts#L26)
 
 ___
 
@@ -3040,7 +3103,7 @@ Convert all whitespaces into single space
 
 #### Defined in
 
-[string.ts:188](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L188)
+[string.ts:188](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L188)
 
 ▸ **trimWhitespace**(`str`): ``null``
 
@@ -3056,7 +3119,7 @@ Convert all whitespaces into single space
 
 #### Defined in
 
-[string.ts:189](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L189)
+[string.ts:189](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L189)
 
 ▸ **trimWhitespace**(`str`): `string`
 
@@ -3072,13 +3135,13 @@ Convert all whitespaces into single space
 
 #### Defined in
 
-[string.ts:190](https://github.com/toggle-corp/fujs/blob/397d852/src/string.ts#L190)
+[string.ts:190](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/string.ts#L190)
 
 ___
 
 ### typeOf
 
-▸ `Const` **typeOf**(`item`): `string`
+▸ **typeOf**(`item`): `string`
 
 Get type of an item.
 Valid types: null, boolean, number, string, function, array, date, regexp, object, error, symbol
@@ -3097,7 +3160,7 @@ type of that item
 
 #### Defined in
 
-[type.ts:55](https://github.com/toggle-corp/fujs/blob/397d852/src/type.ts#L55)
+[type.ts:55](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/type.ts#L55)
 
 ___
 
@@ -3128,7 +3191,7 @@ union of two sets
 
 #### Defined in
 
-[core.ts:15](https://github.com/toggle-corp/fujs/blob/397d852/src/core.ts#L15)
+[core.ts:15](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/core.ts#L15)
 
 ___
 
@@ -3138,7 +3201,8 @@ ___
 
 Find unique items from a list
 
-**`remarks`**
+**`Remarks`**
+
 If getItemHash is not supplied, comparision is done by casting items in list
 to string
 
@@ -3161,7 +3225,7 @@ to string
 
 #### Defined in
 
-[list.ts:182](https://github.com/toggle-corp/fujs/blob/397d852/src/list.ts#L182)
+[list.ts:182](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/list.ts#L182)
 
 ▸ **unique**<`T`\>(`list`, `getItemHash?`): `undefined`
 
@@ -3184,7 +3248,7 @@ to string
 
 #### Defined in
 
-[list.ts:183](https://github.com/toggle-corp/fujs/blob/397d852/src/list.ts#L183)
+[list.ts:183](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/list.ts#L183)
 
 ▸ **unique**<`T`\>(`list`, `getItemHash?`): `T`[]
 
@@ -3207,4 +3271,4 @@ to string
 
 #### Defined in
 
-[list.ts:184](https://github.com/toggle-corp/fujs/blob/397d852/src/list.ts#L184)
+[list.ts:184](https://github.com/toggle-corp/fujs/blob/0c54ffd/src/list.ts#L184)

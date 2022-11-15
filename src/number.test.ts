@@ -1,7 +1,6 @@
 import {
     addSeparator,
     formattedNormalize,
-    Lang,
 } from './number';
 
 test('add thousand separator in number', () => {
@@ -10,10 +9,9 @@ test('add thousand separator in number', () => {
 });
 
 test('normalize numbers', () => {
-    expect(formattedNormalize(80000, 'du' as Lang)).toEqual({ number: 80000 });
-    expect(formattedNormalize(80000)).toEqual({ number: 80000, normalizeSuffix: undefined });
-    expect(formattedNormalize(100000)).toEqual({ number: 1, normalizeSuffix: 'Lac' });
-    expect(formattedNormalize(111110)).toEqual({ number: 1.1111, normalizeSuffix: 'Lac' });
-    expect(formattedNormalize(30000000)).toEqual({ number: 3, normalizeSuffix: 'Cr' });
-    expect(formattedNormalize(2000000000)).toEqual({ number: 2, normalizeSuffix: 'Ar' });
+    expect(formattedNormalize(80000)).toEqual({ number: 80, normalizeSuffix: 'K' });
+    expect(formattedNormalize(100000)).toEqual({ number: 100, normalizeSuffix: 'K' });
+    expect(formattedNormalize(1111100)).toEqual({ number: 1.1111, normalizeSuffix: 'M' });
+    expect(formattedNormalize(30000000)).toEqual({ number: 30, normalizeSuffix: 'M' });
+    expect(formattedNormalize(2000000000)).toEqual({ number: 2, normalizeSuffix: 'B' });
 });

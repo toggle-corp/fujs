@@ -1,6 +1,26 @@
 // eslint-disable-next-line max-classes-per-file
 import { padStart } from './string';
 
+function isValidMonth(value: number): value is 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 {
+    return value >= 1 && value <= 12;
+}
+
+type MonthDays = [
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+    number,
+];
+
 export class Ymd {
     private y: number;
 
@@ -292,7 +312,7 @@ export const AD: Dictionary = (() => {
     const minDate = new Ymd(1944, 1, 1);
     const maxDate = new Ymd(2034, 4, 12);
 
-    const data = [
+    const data: [MonthDays, MonthDays] = [
         [365, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
         [366, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
     ];
@@ -305,8 +325,8 @@ export const AD: Dictionary = (() => {
         isLeapYear(year) ? 366 : 365
     );
 
-    const getDaysInMonth = (year: number, month: number) => {
-        if (month < 1 || month > 12) {
+    const getDaysInMonth = (year: number, month: number): number => {
+        if (!isValidMonth(month)) {
             const error = new Error('Year out of bounds');
             throw error;
         }
@@ -346,7 +366,7 @@ export const BS: Dictionary = (() => {
     const minDate = new Ymd(2000, 9, 17);
     const maxDate = new Ymd(2090, 12, 30);
 
-    const data = [
+    const data: MonthDays[] = [
         [365, 30, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31],
         [365, 31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30],
         [365, 31, 31, 32, 32, 31, 30, 30, 29, 30, 29, 30, 30],
@@ -446,7 +466,12 @@ export const BS: Dictionary = (() => {
             throw error;
         }
         const index = year - minDate.getYear();
-        return data[index][0];
+        const yearData = data[index];
+        if (!yearData) {
+            const error = new Error('Year out of bounds');
+            throw error;
+        }
+        return yearData[0];
     };
 
     const getDaysInMonth = (year: number, month: number) => {
@@ -454,13 +479,18 @@ export const BS: Dictionary = (() => {
             const error = new Error('Year out of bounds');
             throw error;
         }
-        if (month < 1 || month > 12) {
+        if (!isValidMonth(month)) {
             const error = new Error('Month out of bounds');
             throw error;
         }
 
         const index = year - minDate.getYear();
-        return data[index][month];
+        const yearData = data[index];
+        if (!yearData) {
+            const error = new Error('Year out of bounds');
+            throw error;
+        }
+        return yearData[month];
     };
 
     const isLeapYear = (year: number) => (
@@ -471,10 +501,10 @@ export const BS: Dictionary = (() => {
         if (ymd.getYear() < minDate.getYear() || ymd.getYear() > maxDate.getYear()) {
             return [false, 'Year out of bounds'];
         }
-        if (ymd.getMonth() < 0 || ymd.getMonth() > 12) {
+        if (ymd.getMonth() < 1 || ymd.getMonth() > 12) {
             return [false, 'Month out of bounds'];
         }
-        if (ymd.getDay() < 0 || ymd.getDay() > getDaysInMonth(ymd.getYear(), ymd.getMonth())) {
+        if (ymd.getDay() < 1 || ymd.getDay() > getDaysInMonth(ymd.getYear(), ymd.getMonth())) {
             return [false, 'Day out of bounds'];
         }
 

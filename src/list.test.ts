@@ -6,6 +6,8 @@ import {
     getDuplicates,
     findDifferenceInList,
     unique,
+    max,
+    min,
 } from './list';
 
 test('random is from list', () => {
@@ -99,4 +101,48 @@ test('unique in list', () => {
         { uid: 10, name: 'gita' },
     ];
     expect(unique(foo, (item) => item.uid)).toEqual(bar);
+});
+
+test('max in list', () => {
+    interface Item {
+        key: number | null,
+        name: string;
+    }
+    const one: Item = { key: 1, name: 'one' };
+    const two: Item = { key: 2, name: 'two' };
+    const three: Item = { key: 3, name: 'three' };
+    const unk: Item = { key: null, name: 'unknown' };
+
+    expect(max(undefined, () => 0)).toEqual(undefined);
+    expect(max([], () => 0)).toEqual(undefined);
+
+    expect(max([unk], () => 0)).toEqual(unk);
+    expect(max([unk], (item: Item) => item.key)).toEqual(undefined);
+
+    expect(max([undefined, one, two, three], (item: Item | undefined) => item?.key)).toEqual(three);
+    expect(max([one, three, two, unk], (item: Item) => item.key)).toEqual(three);
+    expect(max([three, two, unk, one], (item: Item) => item.key)).toEqual(three);
+    expect(max([unk, three, undefined, two, one], (item) => item?.key)).toEqual(three);
+});
+
+test('min in list', () => {
+    interface Item {
+        key: number | null,
+        name: string;
+    }
+    const one: Item = { key: 1, name: 'one' };
+    const two: Item = { key: 2, name: 'two' };
+    const three: Item = { key: 3, name: 'three' };
+    const unk: Item = { key: null, name: 'unknown' };
+
+    expect(min(undefined, () => 0)).toEqual(undefined);
+    expect(min([], () => 0)).toEqual(undefined);
+
+    expect(min([unk], () => 0)).toEqual(unk);
+    expect(min([unk], (item: Item) => item.key)).toEqual(undefined);
+
+    expect(min([undefined, one, two, three], (item: Item | undefined) => item?.key)).toEqual(one);
+    expect(min([one, three, two, unk], (item: Item) => item.key)).toEqual(one);
+    expect(min([three, two, unk, one], (item: Item) => item.key)).toEqual(one);
+    expect(min([unk, three, undefined, two, one], (item) => item?.key)).toEqual(one);
 });

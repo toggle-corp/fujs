@@ -142,8 +142,8 @@ export function findDifferenceInList<T, K extends OptionKey>(
     const unmodified: T[] = [];
 
     const mapA = listToMap(listA, keySelector, (e) => e);
-    listB.forEach((elem) => {
-        const key = keySelector(elem);
+    listB.forEach((elem, i) => {
+        const key = keySelector(elem, i);
         if (isNotDefined(mapA[key])) {
             added.push(elem);
         } else if (mapA[key] !== elem) {
@@ -154,8 +154,8 @@ export function findDifferenceInList<T, K extends OptionKey>(
     });
 
     const mapB = listToMap(listB, keySelector, (e) => e);
-    listA.forEach((elem) => {
-        const key = keySelector(elem);
+    listA.forEach((elem, i) => {
+        const key = keySelector(elem, i);
         if (isNotDefined(mapB[key])) {
             removed.push(elem);
         }
@@ -210,4 +210,63 @@ export function unique<T>(list: Maybe<T[]>, getItemHash?: ((item: T) => string |
         return list;
     }
     return arrWithUnique;
+}
+
+export function max<T>(
+    list: Maybe<T[]>,
+    getNumericValue: (val: T) => number | null | undefined,
+): T | undefined {
+    if (!list || list.length <= 0) {
+        return undefined;
+    }
+
+    interface Acc {
+        maxItem: T | undefined,
+        maxValue: number | undefined | null,
+    }
+
+    const values = list.reduce(
+        (acc: Acc, item: T) => {
+            const { maxValue } = acc;
+            const myValue = getNumericValue(item);
+            return isDefined(myValue) && (isNotDefined(maxValue) || myValue > maxValue)
+                ? { maxValue: myValue, maxItem: item }
+                : acc;
+        },
+        {
+            maxItem: undefined,
+            maxValue: undefined,
+        },
+    );
+    return values.maxItem;
+}
+
+export function min<T>(
+    list: Maybe<T[]>,
+    getNumericValue: (val: T) => number | null | undefined,
+): T | undefined {
+    if (!list || list.length <= 0) {
+        return undefined;
+    }
+
+    interface Acc {
+        minItem: T | undefined,
+        minValue: number | undefined | null,
+    }
+
+    const values = list.reduce(
+        (acc: Acc, item: T) => {
+            const { minValue } = acc;
+            const myValue = getNumericValue(item);
+            return isDefined(myValue) && (isNotDefined(minValue) || myValue < minValue)
+                ? { minValue: myValue, minItem: item }
+                : acc;
+        },
+        {
+            minItem: undefined,
+            minValue: undefined,
+        },
+    );
+
+    return values.minItem;
 }
