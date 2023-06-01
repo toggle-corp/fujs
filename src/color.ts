@@ -11,7 +11,8 @@ type RgbRawColor = string;
  * @returns color derived from hash
  */
 export function getHexFromCode(code: number): HexColor {
-    const color = (code& 0x00FFFFFF)    // eslint-disable-line
+    // eslint-disable-next-line no-bitwise
+    const color = (code & 0x00FFFFFF)
         .toString(16)
         .toUpperCase();
 

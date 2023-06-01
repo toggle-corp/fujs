@@ -4,7 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import filesize from 'rollup-plugin-filesize';
 import eslint from '@rollup/plugin-eslint';
 
-import pkg from './package.json';
+import pkg from './package.json' assert { type: 'json' };
 
 const INPUT_FILE_PATH = 'src/index.ts';
 

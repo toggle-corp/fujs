@@ -1,45 +1,47 @@
 import {
-    Miti,
-    AD,
-    BS,
+    prepareDate,
+    toDateString,
+    addYearsInDate,
+    addMonthsInDate,
+    convertDate,
 } from './calendar';
 
 test('test getString', () => {
-    expect(new Miti(2012, 2, 12, BS).getString()).toEqual('2012-02-12');
-    expect(new Miti(2019, 11, 2, BS).getString()).toEqual('2019-11-02');
+    expect(toDateString(prepareDate(2012, 2, 12, 'AD'))).toEqual('2012-02-12');
+    expect(toDateString(prepareDate(2080, 11, 2, 'BS'))).toEqual('2080-11-02');
 });
 
 test('month value bounds', () => {
-    expect(() => { const miti = new Miti(2012, 13, 12, BS); }).toThrow(Error);
-    expect(() => { const miti = new Miti(2012, 0, 12, BS); }).toThrow(Error);
+    expect(() => { prepareDate(2080, 13, 12, 'BS'); }).toThrow(Error);
+    expect(() => { prepareDate(2080, 0, 12, 'BS'); }).toThrow(Error);
 });
 
 test('day value bounds', () => {
-    expect(() => { const miti = new Miti(2012, 1, -12, BS); }).toThrow(Error);
-    expect(() => { const miti = new Miti(2012, 0, 100, BS); }).toThrow(Error);
+    expect(() => { prepareDate(2080, 1, -12, 'BS'); }).toThrow(Error);
+    expect(() => { prepareDate(2080, 0, 100, 'BS'); }).toThrow(Error);
 });
 
 test('add year', () => {
-    expect(new Miti(2073, 12, 31, BS).addYears(5).getString()).toEqual('2078-12-30');
-    expect(new Miti(2073, 11, 10, BS).addYears(5).getString()).toEqual('2078-11-10');
-    expect(new Miti(2073, 11, 30, BS).addYears(1).getString()).toEqual('2074-11-30');
-    expect(new Miti(2062, 11, 29, BS).addYears(1).getString()).toEqual('2063-11-29');
-    expect(new Miti(2073, 11, 30, BS).addYears(1).getString()).toEqual('2074-11-30');
-    expect(new Miti(2073, 11, 29, BS).addYears(1).getString()).toEqual('2074-11-29');
+    expect(toDateString(addYearsInDate(prepareDate(2073, 12, 31, 'BS'), 5))).toEqual('2078-12-30');
+    expect(toDateString(addYearsInDate(prepareDate(2073, 11, 10, 'BS'), 5))).toEqual('2078-11-10');
+    expect(toDateString(addYearsInDate(prepareDate(2073, 11, 30, 'BS'), 1))).toEqual('2074-11-30');
+    expect(toDateString(addYearsInDate(prepareDate(2062, 11, 29, 'BS'), 1))).toEqual('2063-11-29');
+    expect(toDateString(addYearsInDate(prepareDate(2073, 11, 30, 'BS'), 1))).toEqual('2074-11-30');
+    expect(toDateString(addYearsInDate(prepareDate(2073, 11, 29, 'BS'), 1))).toEqual('2074-11-29');
 });
 
 test('add month', () => {
-    expect(new Miti(2073, 11, 10, BS).addMonths(1).getString()).toEqual('2073-12-10');
-    expect(new Miti(2073, 11, 10, BS).addMonths(2).getString()).toEqual('2074-01-10');
-    expect(new Miti(2073, 11, 10, BS).addMonths(3).getString()).toEqual('2074-02-10');
-    expect(new Miti(2073, 11, 10, BS).addMonths(13).getString()).toEqual('2074-12-10');
-    expect(new Miti(2058, 5, 31, BS).addMonths(12).getString()).toEqual('2059-05-31');
-    expect(new Miti(2058, 5, 31, BS).addMonths(16).getString()).toEqual('2059-09-30');
-    expect(new Miti(2056, 9, 30, BS).addMonths(24).getString()).toEqual('2058-09-29');
-    expect(new Miti(2073, 11, 10, BS).addMonths(14).getString()).toEqual('2075-01-10');
-    expect(new Miti(2073, 11, 30, BS).addMonths(2).getString()).toEqual('2074-01-30');
-    expect(new Miti(2074, 1, 31, BS).addMonths(7).getString()).toEqual('2074-08-29');
-    expect(new Miti(2074, 4, 32, BS).addMonths(4).getString()).toEqual('2074-08-29');
+    expect(toDateString(addMonthsInDate(prepareDate(2073, 11, 10, 'BS'), 1))).toEqual('2073-12-10');
+    expect(toDateString(addMonthsInDate(prepareDate(2073, 11, 10, 'BS'), 2))).toEqual('2074-01-10');
+    expect(toDateString(addMonthsInDate(prepareDate(2073, 11, 10, 'BS'), 3))).toEqual('2074-02-10');
+    expect(toDateString(addMonthsInDate(prepareDate(2073, 11, 10, 'BS'), 13))).toEqual('2074-12-10');
+    expect(toDateString(addMonthsInDate(prepareDate(2058, 5, 31, 'BS'), 12))).toEqual('2059-05-31');
+    expect(toDateString(addMonthsInDate(prepareDate(2058, 5, 31, 'BS'), 16))).toEqual('2059-09-30');
+    expect(toDateString(addMonthsInDate(prepareDate(2056, 9, 30, 'BS'), 24))).toEqual('2058-09-29');
+    expect(toDateString(addMonthsInDate(prepareDate(2073, 11, 10, 'BS'), 14))).toEqual('2075-01-10');
+    expect(toDateString(addMonthsInDate(prepareDate(2073, 11, 30, 'BS'), 2))).toEqual('2074-01-30');
+    expect(toDateString(addMonthsInDate(prepareDate(2074, 1, 31, 'BS'), 7))).toEqual('2074-08-29');
+    expect(toDateString(addMonthsInDate(prepareDate(2074, 4, 32, 'BS'), 4))).toEqual('2074-08-29');
 });
 
 test('date conversion', () => {
@@ -48,7 +50,6 @@ test('date conversion', () => {
         ['2090-09-16', '2033-12-31'],
         // TODO: this fails, may be the mapping for english is wrong
         // ['2090-12-30', '2034-04-12'],
-
         ['2063-12-16', '2007-03-30'],
         ['2063-12-17', '2007-03-31'],
         ['2063-12-18', '2007-04-01'],
@@ -7350,15 +7351,15 @@ test('date conversion', () => {
         ['2083-12-10', '2027-03-24'],
     ];
     dateFields.forEach(([nepali, english]) => {
-        const [y, m, d] = nepali.split('-');
-        const n = new Miti(+y, +m, +d, BS);
-        const e = n.convertTo(AD);
-        expect(e.getString()).toEqual(english);
+        const [y, m, d] = nepali.split('-') as [string, string, string];
+        const n = prepareDate(+y, +m, +d, 'BS');
+        const e = convertDate(n, 'AD');
+        expect(toDateString(e)).toEqual(english);
     });
     dateFields.forEach(([nepali, english]) => {
-        const [y, m, d] = english.split('-');
-        const e = new Miti(+y, +m, +d, AD);
-        const n = e.convertTo(BS);
-        expect(n.getString()).toEqual(nepali);
+        const [y, m, d] = english.split('-') as [string, string, string];
+        const e = prepareDate(+y, +m, +d, 'AD');
+        const n = convertDate(e, 'BS');
+        expect(toDateString(n)).toEqual(nepali);
     });
 });

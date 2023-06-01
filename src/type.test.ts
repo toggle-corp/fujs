@@ -156,6 +156,5 @@ test('type of', () => {
     expect(typeOf(/.txt$/)).toBe('regexp');
     expect(typeOf({})).toBe('object');
     expect(typeOf({ id: 1 })).toBe('object');
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     expect(typeOf(() => {})).toBe('function');
 });

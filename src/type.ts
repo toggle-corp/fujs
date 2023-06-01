@@ -24,7 +24,7 @@ export function isInteger(value: unknown): value is number {
     return typeof value === 'number' && value % 1 === 0;
 }
 
-export const basicTypes: string[] = [
+export const basicTypes = [
     'Boolean',
     'Number',
     'String',
@@ -35,10 +35,10 @@ export const basicTypes: string[] = [
     'Object',
     'Error',
     'Symbol',
-];
+] as const;
 
 // Mapping to hold javascript class to custom type
-const classToType = basicTypes.reduce(
+const classToType = basicTypes.reduce<{ [key in `[object ${typeof basicTypes[number]}]`]?: string }>(
     (acc, type: string) => ({
         ...acc,
         [`[object ${type}]`]: type.toLowerCase(),

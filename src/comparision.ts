@@ -8,10 +8,11 @@ interface Comparator<A> {
     (foo: A, bar: A): number;
 }
 
-const comparison = <A, B>(
+function comparison<A, B>(
     extractor: Extractor<A, B>,
     comparisonFunc: Comparator<B>,
-) => (
+) {
+    return (
         x: Maybe<A>,
         y: Maybe<A>,
         direction = 1,
@@ -29,6 +30,7 @@ const comparison = <A, B>(
         }
         return direction * comparisonFunc(a, b);
     };
+}
 
 // NOTE: func is never called for boolean
 export const compareBoolean = comparison((x: boolean) => x, (a, b) => (Number(a) - Number(b)));

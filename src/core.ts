@@ -3,7 +3,6 @@ import { Maybe, Parameters } from './declarations';
 /**
  * Does nothing
  */
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 export function noOp() {}
 
 /**
