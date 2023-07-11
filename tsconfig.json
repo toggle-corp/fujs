@@ -29,8 +29,7 @@
         "rootDir": "./src",
         "sourceMap": true,
         "noUncheckedIndexedAccess": true,
-        "baseUrl": ".",
+        "baseUrl": "."
     },
-    "exclude": ["node_modules", "build", "coverage"],
     "include": ["./src/index.ts", "**/*.test.ts"]
 }

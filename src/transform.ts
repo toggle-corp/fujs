@@ -53,7 +53,7 @@ export function listToMap<T, Q, K extends OptionKey>(
     if (isNotDefined(list)) {
         return undefined;
     }
-    const value = list.reduce(
+    const value = list.reduce<Partial<Record<K, T | Q>>>(
         (acc, elem, i) => {
             const key = keySelector(elem, i);
             acc[key] = modifier
@@ -61,7 +61,7 @@ export function listToMap<T, Q, K extends OptionKey>(
                 : elem;
             return acc;
         },
-        {} as Partial<Record<K, T | Q>>,
+        {},
     );
     return value;
 }

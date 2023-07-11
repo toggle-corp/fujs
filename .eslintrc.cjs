@@ -1,7 +1,6 @@
 module.exports = {
     extends: [
         'airbnb-base',
-
         'plugin:@typescript-eslint/recommended',
     ],
     env: {
@@ -47,5 +46,8 @@ module.exports = {
         // 'import/no-unresolved': ['error', { ignore: Object.keys(pkg.peerDependencies) }],
         'import/extensions': ['off', 'never'],
         'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+
+        '@typescript-eslint/no-empty-function': 0,
+        '@typescript-eslint/no-extra-semi': 0,
     },
 };
