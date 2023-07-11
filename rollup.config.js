@@ -1,8 +1,8 @@
 import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import filesize from 'rollup-plugin-filesize';
 import eslint from '@rollup/plugin-eslint';
+import filesize from 'rollup-plugin-filesize';
 
 import pkg from './package.json' assert { type: 'json' };
 
