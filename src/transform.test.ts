@@ -38,7 +38,7 @@ test('convert list to map', () => {
 });
 
 test('convert map to list', () => {
-    const output: { [key: string]: Input } = {
+    const output: Record<string, Input> = {
         1: { id: 1, name: 'hari' },
         2: { id: 2, name: 'shyam' },
         3: { id: 3, name: 'kiran' },
@@ -63,13 +63,13 @@ test('convert map to list', () => {
 });
 
 test('convert map to map', () => {
-    const output: { [key: string]: Input } = {
+    const output: Record<string, Input> = {
         1: { id: 1, name: 'hari' },
         2: { id: 2, name: 'shyam' },
         3: { id: 3, name: 'kiran' },
         4: { id: 4, name: 'ale' },
     };
-    const input: { [key: string]: Input } = {
+    const input: Record<string, Input> = {
         11: { id: 1, name: 'hari' },
         22: { id: 2, name: 'shyam' },
         33: { id: 3, name: 'kiran' },

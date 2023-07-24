@@ -1,4 +1,5 @@
-import { Maybe, Parameters } from './declarations';
+// import { Maybe, Parameters, ReturnType } from './declarations';
+import { Maybe } from './declarations';
 
 /**
  * Does nothing
@@ -99,6 +100,14 @@ export function isTruthyString(val: Maybe<string | false>): val is string {
     return !isFalsyString(val);
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Fn<A extends any[], R> = (...args: A) => R;
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function isFn<A extends any[], R, X>(value: Fn<A, R> | X): value is Fn<A, R> {
+    return typeof value === 'function';
+}
+
 /**
  * Resolves if first argument is function with other arguments as argument to
  * user supplied function.
@@ -106,9 +115,14 @@ export function isTruthyString(val: Maybe<string | false>): val is string {
  * @param args arguments for user supplied function
  * @returns value resolved from user supplied function
  */
-export function resolve<T>(variable: T, ...args: Parameters<T>) {
-    if (typeof variable === 'function') {
-        return variable(...args);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, max-len
+export function resolve<A extends any[], R>(variable: Fn<A, R>, ...args: Parameters<Fn<A, R>>): ReturnType<Fn<A, R>>;
+export function resolve<T>(variable: T): T;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, max-len
+export function resolve<A extends any[], R, T>(variable: Fn<A, R> | T, ...args: Parameters<Fn<A, R>>) {
+    if (isFn(variable)) {
+        const value = variable(...args);
+        return value;
     }
     return variable;
 }

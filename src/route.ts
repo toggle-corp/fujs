@@ -12,12 +12,12 @@ export function reverseRoute(route: string, params: Obj<string | number>): strin
     for (let i = 0; i < paths.length; i += 1) {
         let path = paths[i];
 
-        if (path && path.length > 0 && path.charAt(0) === ':') {
+        if (path && path.length > 0 && path.startsWith(':')) {
             path = path.substring(1);
             let param;
 
             // optional parameter
-            if (path.slice(-1) === '?') {
+            if (path.endsWith('?')) {
                 param = params[path.replace('?', '')];
 
                 // omit if value not supplied

@@ -179,10 +179,18 @@ export function findDifferenceInList<T, K extends OptionKey>(
  * If getItemHash is not supplied, comparision is done by casting items in list
  * to string
  */
-export function unique<T>(list: undefined, getItemHash?: ((item: T) => string | number)): undefined;
-export function unique<T>(list: null, getItemHash?: ((item: T) => string | number)): undefined;
-export function unique<T>(list: T[], getItemHash?: ((item: T) => string | number)): T[];
-export function unique<T>(list: Maybe<T[]>, getItemHash?: ((item: T) => string | number)) {
+export function unique<T>(
+    list: undefined | null,
+    getItemHash?: ((item: T) => string | number),
+): undefined;
+export function unique<T>(
+    list: T[],
+    getItemHash?: ((item: T) => string | number),
+): T[];
+export function unique<T>(
+    list: Maybe<T[]>,
+    getItemHash?: ((item: T) => string | number),
+) {
     if (isNotDefined(list)) {
         return undefined;
     }

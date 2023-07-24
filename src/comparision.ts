@@ -1,12 +1,8 @@
 import { Maybe } from './declarations';
 import { isNotDefined, isDefined } from './core';
 
-interface Extractor<A, B>{
-    (input: A): B;
-}
-interface Comparator<A> {
-    (foo: A, bar: A): number;
-}
+type Extractor<A, B> = (input: A) => B;
+type Comparator<A> = (foo: A, bar: A) => number;
 
 function comparison<A, B>(
     extractor: Extractor<A, B>,

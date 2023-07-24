@@ -82,6 +82,7 @@ test('unique in list', () => {
         .toEqual([1, 2, 3]);
     expect(unique([1, 2, 3]))
         .toEqual([1, 2, 3]);
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
     expect(unique(undefined))
         .toEqual(undefined);
     const foo = [
@@ -114,6 +115,7 @@ test('max in list', () => {
     const unk: Item = { key: null, name: 'unknown' };
 
     expect(max(undefined, () => 0)).toEqual(undefined);
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
     expect(max([], () => 0)).toEqual(undefined);
 
     expect(max([unk], () => 0)).toEqual(unk);
@@ -136,6 +138,7 @@ test('min in list', () => {
     const unk: Item = { key: null, name: 'unknown' };
 
     expect(min(undefined, () => 0)).toEqual(undefined);
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
     expect(min([], () => 0)).toEqual(undefined);
 
     expect(min([unk], () => 0)).toEqual(unk);

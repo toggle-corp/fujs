@@ -3,22 +3,27 @@ import { Obj, Maybe } from './declarations';
 
 export type OptionKey = string | number;
 
-interface Modifier<T, Q, K extends OptionKey>{
-    (element: T, key: K, index: number, acc: Partial<Record<K, Q>>): Q;
-}
-interface ListModifier<T, Q, K extends OptionKey>{
-    (element: T, key: K, index: number, acc: Q[]): Q;
-}
-interface GroupListModifier<T, Q, K extends OptionKey>{
-    (element: T, key: K, index: number, acc: Partial<Record<K, Q[]>>): Q;
-}
-export interface KeySelector<T, K extends OptionKey>{
-    (element: T, index: number): K;
-}
+type Modifier<T, Q, K extends OptionKey> = (
+    element: T,
+    key: K,
+    index: number,
+    acc: Partial<Record<K, Q>>
+) => Q;
+type ListModifier<T, Q, K extends OptionKey> = (
+    element: T,
+    key: K,
+    index: number,
+    acc: Q[]
+) => Q;
+type GroupListModifier<T, Q, K extends OptionKey> = (
+    element: T,
+    key: K,
+    index: number,
+    acc: Partial<Record<K, Q[]>>
+) => Q;
+export type KeySelector<T, K extends OptionKey> = (element: T, index: number) => K;
 
-interface NewKeySelector<T, K extends OptionKey>{
-    (key: string, element: T): K;
-}
+type NewKeySelector<T, K extends OptionKey> = (key: string, element: T) => K;
 
 /**
  * Transform list to object
@@ -92,14 +97,15 @@ export function mapToList<T, Q>(
     if (isNotDefined(obj)) {
         return undefined;
     }
-    return Object.keys(obj).reduce(
+    return Object.keys(obj).reduce<(
+Q|T)[]>(
         (acc, key, i) => {
             const elem = obj[key] as T;
             acc.push(modifier ? modifier(elem, key, i, acc as Q[]) : elem);
             return acc;
         },
-        [] as (Q|T)[],
-    );
+        [],
+        );
 }
 
 /**
@@ -134,7 +140,7 @@ export function mapToMap<T, Q, K extends OptionKey>(
     if (isNotDefined(obj)) {
         return undefined;
     }
-    const value = Object.keys(obj).reduce(
+    const value = Object.keys(obj).reduce<Partial<Record<K, T | Q>>>(
         (acc, k, i) => {
             const elem = obj[k] as T;
             const key = keySelector ? keySelector(k, elem) : (k as K);
@@ -143,7 +149,7 @@ export function mapToMap<T, Q, K extends OptionKey>(
                 : elem;
             return acc;
         },
-        {} as Partial<Record<K, T | Q>>,
+        {},
     );
     return value;
 }
@@ -181,7 +187,8 @@ export function listToGroupList<T, Q, K extends OptionKey>(
     if (isNotDefined(list)) {
         return undefined;
     }
-    const val = list.reduce(
+    type RecordItem = T | Q
+    const val = list.reduce<Partial<Record<K, RecordItem[]>>>(
         (acc, elem, i) => {
             const key = keySelector(elem, i);
             const value = modifier
@@ -196,7 +203,7 @@ export function listToGroupList<T, Q, K extends OptionKey>(
             }
             return acc;
         },
-        {} as Partial<Record<K, (T|Q)[]>>,
+        {},
     );
     return val;
 }

@@ -123,9 +123,19 @@ export function camelToNormal(str: Maybe<string>, separator = ' ') {
     if (isNotDefined(str)) {
         return str;
     }
-    return str.replace(reOne, (_, one, two, three) => `${one}${separator}${two}${three}`)
-        .replace(reTwo, (_, one, two) => `${one}${separator}${two.toLowerCase()}`)
-        .replace(reThree, (_, one, two, three) => `${one}${separator}${two.toLowerCase()}${three}`);
+    return str
+        .replace(
+            reOne,
+            (_, one: string, two: string, three: string) => `${one}${separator}${two}${three}`,
+        )
+        .replace(
+            reTwo,
+            (_, one: string, two: string) => `${one}${separator}${two.toLowerCase()}`,
+        )
+        .replace(
+            reThree,
+            (_, one: string, two: string, three: string) => `${one}${separator}${two.toLowerCase()}${three}`,
+        );
 }
 
 /**
@@ -177,7 +187,7 @@ export function splitInWhitespace(str: Maybe<string>): string[] {
     if (isNotDefined(str)) {
         return [];
     }
-    return str.match(/\S+/g) || [];
+    return str.match(/\S+/g) ?? [];
 }
 
 /**
