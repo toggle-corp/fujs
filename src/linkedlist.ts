@@ -1,8 +1,6 @@
 import { isNotDefined } from './core';
 
-interface LinkSelector<T> {
-    (node: T, index: number): T | undefined;
-}
+type LinkSelector<T> = (node: T, index: number) => T | undefined;
 
 /**
  * Get nth node from a linked list.

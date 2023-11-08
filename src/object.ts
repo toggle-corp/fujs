@@ -22,6 +22,7 @@ export function removeKey<T extends object>(obj: T, key: keyof T) {
     }
 
     const newObj = { ...obj };
+    // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
     delete newObj[key];
     return newObj;
 }

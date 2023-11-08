@@ -59,7 +59,7 @@ export const typeOf = (item: unknown): string => {
 
     const simpleType = typeof item;
     return (simpleType === 'object' || simpleType === 'function')
-        ? (classToType[classToType.toString.call(item) as keyof typeof classToType] || 'object')
+        ? (classToType[classToType.toString.call(item) as keyof typeof classToType] ?? 'object')
         : simpleType;
 };
 

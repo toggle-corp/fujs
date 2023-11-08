@@ -483,10 +483,6 @@ export function getWeekFromDate(date: DateAD | DateBS) {
     return ((totalDays + 6) % 7) + 1;
 }
 
-export function convertDate(date: DateAD, cal: 'BS'): DateBS;
-export function convertDate(date: DateBS, cal: 'AD'): DateAD;
-export function convertDate(date: DateBS, cal: 'BS'): DateBS;
-export function convertDate(date: DateAD, cal: 'AD'): DateAD;
 export function convertDate(date: DateAD | DateBS, cal: 'BS'): DateBS;
 export function convertDate(date: DateAD | DateBS, cal: 'AD'): DateAD;
 export function convertDate(date: DateAD | DateBS, cal: 'AD' | 'BS') {

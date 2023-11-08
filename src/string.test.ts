@@ -37,6 +37,7 @@ test('capitalize strings using capitalize', () => {
     expect(capitalize('class name')).toEqual('Class Name');
     expect(capitalize('what Are you?')).toEqual('What Are You?');
     expect(capitalize('? 12 w rT')).toEqual('? 12 W RT');
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
     expect(capitalize(undefined)).toEqual(undefined);
     expect(capitalize('')).toEqual('');
 });
@@ -60,6 +61,7 @@ test('split from whitespaces', () => {
 });
 
 test('trim out whitespaces', () => {
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
     expect(trimWhitespace(undefined)).toEqual(undefined);
     expect(trimWhitespace('')).toEqual('');
     expect(trimWhitespace('hari')).toEqual('hari');
@@ -81,6 +83,7 @@ test('left padding in number', () => {
 
 test('camel case to normal', () => {
     expect(camelToNormal('')).toEqual('');
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
     expect(camelToNormal(undefined)).toEqual(undefined);
     expect(camelToNormal('hariIsGood')).toEqual('hari is good');
     expect(camelToNormal('HariIsGood')).toEqual('Hari is good');
@@ -93,6 +96,7 @@ test('camel case to normal', () => {
 
 test('camel case to snake', () => {
     expect(camelToSnake('')).toEqual('');
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
     expect(camelToSnake(undefined)).toEqual(undefined);
     expect(camelToSnake('hariIsGood')).toEqual('hari_is_good');
     expect(camelToSnake('HariIsGood')).toEqual('hari_is_good');
@@ -105,6 +109,7 @@ test('camel case to snake', () => {
 
 test('camel case to kebab case', () => {
     expect(camelToKebab('')).toEqual('');
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
     expect(camelToKebab(undefined)).toEqual(undefined);
     expect(camelToKebab('hariIsGood')).toEqual('hari-is-good');
     expect(camelToKebab('HariIsGood')).toEqual('hari-is-good');
