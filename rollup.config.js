@@ -30,6 +30,7 @@ const OUTPUT_DATA = [
     {
         dir: 'build/cjs',
         format: 'cjs',
+        entryFileNames: '[name].cjs'
     },
     {
         dir: 'build/esm',
