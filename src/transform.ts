@@ -15,12 +15,17 @@ type ListModifier<T, Q, K extends OptionKey> = (
     index: number,
     acc: Q[]
 ) => Q;
-type GroupListModifier<T, Q, K extends OptionKey> = (
+type GroupItemModifier<T, Q, K extends OptionKey> = (
     element: T,
     key: K,
     index: number,
     acc: Partial<Record<K, Q[]>>
 ) => Q;
+type GroupListModifier<T, R> = (
+    elements: T[],
+    // FIXME: we need to pass key of type K
+    key: string,
+) => R;
 export type KeySelector<T, K extends OptionKey> = (element: T, index: number) => K;
 
 type NewKeySelector<T, K extends OptionKey> = (key: string, element: T) => K;
@@ -172,17 +177,42 @@ export function listToGroupList<T, K extends OptionKey>(
 export function listToGroupList<T, Q, K extends OptionKey>(
     list: T[],
     keySelector: KeySelector<T, K>,
-    modifier: GroupListModifier<T, Q, K>,
+    modifier: GroupItemModifier<T, Q, K>,
 ): Obj<Q[]>;
 export function listToGroupList<T, Q, K extends OptionKey>(
     list: Maybe<T[]>,
     keySelector: KeySelector<T, K>,
-    modifier: GroupListModifier<T, Q, K>,
+    modifier: GroupItemModifier<T, Q, K>,
 ): Obj<Q[]> | undefined;
-export function listToGroupList<T, Q, K extends OptionKey>(
+export function listToGroupList<T, Q, K extends OptionKey, R>(
+    list: T[],
+    keySelector: KeySelector<T, K>,
+    modifier: GroupItemModifier<T, Q, K>,
+    groupModifier: GroupListModifier<Q, R>,
+): Obj<R>;
+export function listToGroupList<T, Q, K extends OptionKey, R>(
     list: Maybe<T[]>,
     keySelector: KeySelector<T, K>,
-    modifier?: GroupListModifier<T, Q, K>,
+    modifier: GroupItemModifier<T, Q, K>,
+    groupModifier: GroupListModifier<Q, R>,
+): Obj<R> | undefined;
+export function listToGroupList<T, K extends OptionKey, R>(
+    list: T[],
+    keySelector: KeySelector<T, K>,
+    modifier: undefined,
+    groupModifier: GroupListModifier<T, R>,
+): Obj<R>;
+export function listToGroupList<T, K extends OptionKey, R>(
+    list: Maybe<T[]>,
+    keySelector: KeySelector<T, K>,
+    modifier: undefined,
+    groupModifier: GroupListModifier<T, R>,
+): Obj<R> | undefined;
+export function listToGroupList<T, Q, K extends OptionKey, R>(
+    list: Maybe<T[]>,
+    keySelector: KeySelector<T, K>,
+    modifier?: GroupItemModifier<T, Q, K>,
+    groupModifier?: GroupListModifier<T | Q, R>,
 ) {
     if (isNotDefined(list)) {
         return undefined;
@@ -205,5 +235,17 @@ export function listToGroupList<T, Q, K extends OptionKey>(
         },
         {},
     );
+    if (groupModifier) {
+        return Object.keys(val).reduce<Partial<Record<K, R>>>(
+            (acc, key) => {
+                const value = val[key as K];
+                if (value) {
+                    acc[key as K] = groupModifier(value, key);
+                }
+                return acc;
+            },
+            {},
+        );
+    }
     return val;
 }

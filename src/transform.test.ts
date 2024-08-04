@@ -129,8 +129,37 @@ test('group list into map', () => {
             'shyam',
         ],
     };
-    expect(listToGroupList(input, (e) => e.id, (e) => e.name)).toEqual(outputTwo);
-    expect(
-        listToGroupList(undefined, (e: Input) => e.id, (e: Input) => e.name),
-    ).toEqual(undefined);
+    expect(listToGroupList(
+        input,
+        (e) => e.id,
+        (e) => e.name,
+    )).toEqual(outputTwo);
+
+    const outputThree = {
+        1: { key: '1', count: 3 },
+        2: { key: '2', count: 1 },
+    };
+    expect(listToGroupList(
+        input,
+        (e) => e.id,
+        (e) => e.name,
+        (ez, k) => ({ key: k, count: ez.length }),
+    )).toEqual(outputThree);
+
+    const outputFour = {
+        1: { key: '1', count: 3 },
+        2: { key: '2', count: 1 },
+    };
+    expect(listToGroupList(
+        input,
+        (e) => e.id,
+        undefined,
+        (ez, k) => ({ key: k, count: ez.length }),
+    )).toEqual(outputFour);
+
+    expect(listToGroupList(
+        undefined,
+        (e: Input) => e.id,
+        (e: Input) => e.name,
+    )).toEqual(undefined);
 });
